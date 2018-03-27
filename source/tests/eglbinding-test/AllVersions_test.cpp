@@ -1,13 +1,13 @@
 
 #include <gmock/gmock.h>
 
-#include <eglbinding/egl/gl.h>
-#include <eglbinding/egl10/gl.h>
-#include <eglbinding/egl11/gl.h>
-#include <eglbinding/egl12/gl.h>
-#include <eglbinding/egl13/gl.h>
-#include <eglbinding/egl14/gl.h>
-#include <eglbinding/egl15/gl.h>
+#include <eglbinding/egl/egl.h>
+#include <eglbinding/egl10/egl.h>
+#include <eglbinding/egl11/egl.h>
+#include <eglbinding/egl12/egl.h>
+#include <eglbinding/egl13/egl.h>
+#include <eglbinding/egl14/egl.h>
+#include <eglbinding/egl15/egl.h>
 
 
 TEST(AllVersions, Compilation)
