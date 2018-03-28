@@ -128,7 +128,7 @@ namespace eglbinding
 {
 
 
-class AbstractVersion;
+class Version;
 
 
 template <typename T>
@@ -163,7 +163,7 @@ EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<
 *  @brief
 *    The operator to allow Versions to be printed onto a std::ostream
 */
-EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AbstractVersion & version);
+EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Version & version);
 
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AbstractValue * value);
 

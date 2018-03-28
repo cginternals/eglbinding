@@ -9,7 +9,7 @@ namespace eglbinding
 {
 
 
-class State : public AbstractState
+class EGLBINDING_API State : public AbstractState
 {
 public:
     State() = default;

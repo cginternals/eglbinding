@@ -5,7 +5,7 @@
 #include <bitset>
 #include <sstream>
 
-#include <eglbinding/AbstractVersion.h>
+#include <eglbinding/Version.h>
 #include <eglbinding-aux/Meta.h>
 
 #include "types_to_string_private.h"
@@ -176,7 +176,7 @@ std::ostream & operator<<(std::ostream & stream, const Value<egl::EGLBoolean> & 
 }
 
 
-std::ostream & operator<<(std::ostream & stream, const AbstractVersion & version)
+std::ostream & operator<<(std::ostream & stream, const Version & version)
 {
     stream << version.toString();
 
