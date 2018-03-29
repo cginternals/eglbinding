@@ -187,441 +187,394 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
 {
     if (typeid(*value) == typeid(AbstractValue))
     {
-        stream << reinterpret_cast<const void*>(value);
+        return stream << reinterpret_cast<const void*>(value);
     }
 
 
-    else if (typeid(*value) == typeid(Value<egl::EGLextension>))
+    if (typeid(*value) == typeid(Value<egl::EGLextension>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLextension>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLextension>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLextension *>))
+    if (typeid(*value) == typeid(Value<egl::EGLextension *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLextension *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLextension *>*>(value);
     }
 
 
     // Omit egl::EGLbitfield
 
-
-    else if (typeid(*value) == typeid(Value<egl::AHardwareBuffer *>))
-    {
-        stream << *reinterpret_cast<const Value<egl::AHardwareBuffer *>*>(value);
-    }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLBoolean>))
+    if (typeid(*value) == typeid(Value<egl::AHardwareBuffer *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLBoolean>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::AHardwareBuffer *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLBoolean *>))
+    if (typeid(*value) == typeid(Value<egl::EGLBoolean>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLBoolean *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLBoolean>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLenum>))
+    if (typeid(*value) == typeid(Value<egl::EGLBoolean *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLenum>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLBoolean *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLenum *>))
+    if (typeid(*value) == typeid(Value<egl::EGLenum>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLenum *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLenum>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLAttribKHR>))
+    if (typeid(*value) == typeid(Value<egl::EGLenum *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLAttribKHR>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLenum *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLAttribKHR *>))
+    if (typeid(*value) == typeid(Value<egl::EGLAttribKHR>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLAttribKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLAttribKHR>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLAttrib>))
+    if (typeid(*value) == typeid(Value<egl::EGLAttribKHR *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLAttrib>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLAttribKHR *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLAttrib *>))
+    if (typeid(*value) == typeid(Value<egl::EGLAttrib>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLAttrib *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLAttrib>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLClientBuffer>))
+    if (typeid(*value) == typeid(Value<egl::EGLAttrib *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLClientBuffer>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLAttrib *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLClientBuffer *>))
+    if (typeid(*value) == typeid(Value<egl::EGLClientBuffer>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLClientBuffer *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLClientBuffer>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLConfig>))
+    if (typeid(*value) == typeid(Value<egl::EGLClientBuffer *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLConfig>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLClientBuffer *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLConfig *>))
+    if (typeid(*value) == typeid(Value<egl::EGLConfig>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLConfig *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLConfig>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLContext>))
+    if (typeid(*value) == typeid(Value<egl::EGLConfig *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLContext>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLConfig *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLContext *>))
+    if (typeid(*value) == typeid(Value<egl::EGLContext>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLContext *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLContext>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLDeviceEXT>))
+    if (typeid(*value) == typeid(Value<egl::EGLContext *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLDeviceEXT>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLContext *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLDeviceEXT *>))
+    if (typeid(*value) == typeid(Value<egl::EGLDeviceEXT>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLDeviceEXT *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLDeviceEXT>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLDisplay>))
+    if (typeid(*value) == typeid(Value<egl::EGLDeviceEXT *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLDisplay>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLDeviceEXT *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLDisplay *>))
+    if (typeid(*value) == typeid(Value<egl::EGLDisplay>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLDisplay *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLDisplay>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLImage>))
+    if (typeid(*value) == typeid(Value<egl::EGLDisplay *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLImage>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLDisplay *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLImage *>))
+    if (typeid(*value) == typeid(Value<egl::EGLImage>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLImage *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLImage>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLImageKHR>))
+    if (typeid(*value) == typeid(Value<egl::EGLImage *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLImageKHR>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLImage *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLImageKHR *>))
+    if (typeid(*value) == typeid(Value<egl::EGLImageKHR>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLImageKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLImageKHR>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLLabelKHR>))
+    if (typeid(*value) == typeid(Value<egl::EGLImageKHR *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLLabelKHR>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLImageKHR *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLLabelKHR *>))
+    if (typeid(*value) == typeid(Value<egl::EGLLabelKHR>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLLabelKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLLabelKHR>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLObjectKHR>))
+    if (typeid(*value) == typeid(Value<egl::EGLLabelKHR *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLObjectKHR>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLLabelKHR *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLObjectKHR *>))
+    if (typeid(*value) == typeid(Value<egl::EGLObjectKHR>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLObjectKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLObjectKHR>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLOutputLayerEXT>))
+    if (typeid(*value) == typeid(Value<egl::EGLObjectKHR *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLOutputLayerEXT>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLObjectKHR *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLOutputLayerEXT *>))
+    if (typeid(*value) == typeid(Value<egl::EGLOutputLayerEXT>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLOutputLayerEXT *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLOutputLayerEXT>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLOutputPortEXT>))
+    if (typeid(*value) == typeid(Value<egl::EGLOutputLayerEXT *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLOutputPortEXT>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLOutputLayerEXT *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLOutputPortEXT *>))
+    if (typeid(*value) == typeid(Value<egl::EGLOutputPortEXT>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLOutputPortEXT *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLOutputPortEXT>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLStreamKHR>))
+    if (typeid(*value) == typeid(Value<egl::EGLOutputPortEXT *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLStreamKHR>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLOutputPortEXT *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLStreamKHR *>))
+    if (typeid(*value) == typeid(Value<egl::EGLStreamKHR>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLStreamKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLStreamKHR>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLSurface>))
+    if (typeid(*value) == typeid(Value<egl::EGLStreamKHR *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSurface>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLStreamKHR *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLSurface *>))
+    if (typeid(*value) == typeid(Value<egl::EGLSurface>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSurface *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSurface>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLSync>))
+    if (typeid(*value) == typeid(Value<egl::EGLSurface *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSync>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSurface *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLSync *>))
+    if (typeid(*value) == typeid(Value<egl::EGLSync>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSync *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSync>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLSyncKHR>))
+    if (typeid(*value) == typeid(Value<egl::EGLSync *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSyncKHR>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSync *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLSyncKHR *>))
+    if (typeid(*value) == typeid(Value<egl::EGLSyncKHR>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSyncKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSyncKHR>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLSyncNV>))
+    if (typeid(*value) == typeid(Value<egl::EGLSyncKHR *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSyncNV>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSyncKHR *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLSyncNV *>))
+    if (typeid(*value) == typeid(Value<egl::EGLSyncNV>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSyncNV *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSyncNV>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::__eglMustCastToProperFunctionPointerType>))
+    if (typeid(*value) == typeid(Value<egl::EGLSyncNV *>))
     {
-        stream << *reinterpret_cast<const Value<egl::__eglMustCastToProperFunctionPointerType>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSyncNV *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::__eglMustCastToProperFunctionPointerType *>))
+    if (typeid(*value) == typeid(Value<egl::__eglMustCastToProperFunctionPointerType>))
     {
-        stream << *reinterpret_cast<const Value<egl::__eglMustCastToProperFunctionPointerType *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::__eglMustCastToProperFunctionPointerType>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLTimeKHR>))
+    if (typeid(*value) == typeid(Value<egl::__eglMustCastToProperFunctionPointerType *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLTimeKHR>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::__eglMustCastToProperFunctionPointerType *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLTimeKHR *>))
+    if (typeid(*value) == typeid(Value<egl::EGLTimeKHR>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLTimeKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLTimeKHR>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLTime>))
+    if (typeid(*value) == typeid(Value<egl::EGLTimeKHR *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLTime>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLTimeKHR *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLTime *>))
+    if (typeid(*value) == typeid(Value<egl::EGLTime>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLTime *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLTime>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLTimeNV>))
+    if (typeid(*value) == typeid(Value<egl::EGLTime *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLTimeNV>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLTime *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLTimeNV *>))
+    if (typeid(*value) == typeid(Value<egl::EGLTimeNV>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLTimeNV *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLTimeNV>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLuint64NV>))
+    if (typeid(*value) == typeid(Value<egl::EGLTimeNV *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLuint64NV>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLTimeNV *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLuint64NV *>))
+    if (typeid(*value) == typeid(Value<egl::EGLuint64NV>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLuint64NV *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLuint64NV>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLuint64KHR>))
+    if (typeid(*value) == typeid(Value<egl::EGLuint64NV *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLuint64KHR>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLuint64NV *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLuint64KHR *>))
+    if (typeid(*value) == typeid(Value<egl::EGLuint64KHR>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLuint64KHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLuint64KHR>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLnsecsANDROID>))
+    if (typeid(*value) == typeid(Value<egl::EGLuint64KHR *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLnsecsANDROID>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLuint64KHR *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLnsecsANDROID *>))
+    if (typeid(*value) == typeid(Value<egl::EGLnsecsANDROID>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLnsecsANDROID *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLnsecsANDROID>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLNativeFileDescriptorKHR>))
+    if (typeid(*value) == typeid(Value<egl::EGLnsecsANDROID *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLNativeFileDescriptorKHR>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLnsecsANDROID *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLNativeFileDescriptorKHR *>))
+    if (typeid(*value) == typeid(Value<egl::EGLNativeFileDescriptorKHR>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLNativeFileDescriptorKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLNativeFileDescriptorKHR>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLsizeiANDROID>))
+    if (typeid(*value) == typeid(Value<egl::EGLNativeFileDescriptorKHR *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLsizeiANDROID>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLNativeFileDescriptorKHR *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLsizeiANDROID *>))
+    if (typeid(*value) == typeid(Value<egl::EGLsizeiANDROID>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLsizeiANDROID *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLsizeiANDROID>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLSetBlobFuncANDROID>))
+    if (typeid(*value) == typeid(Value<egl::EGLsizeiANDROID *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSetBlobFuncANDROID>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLsizeiANDROID *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLSetBlobFuncANDROID *>))
+    if (typeid(*value) == typeid(Value<egl::EGLSetBlobFuncANDROID>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSetBlobFuncANDROID *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSetBlobFuncANDROID>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLGetBlobFuncANDROID>))
+    if (typeid(*value) == typeid(Value<egl::EGLSetBlobFuncANDROID *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLGetBlobFuncANDROID>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSetBlobFuncANDROID *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLGetBlobFuncANDROID *>))
+    if (typeid(*value) == typeid(Value<egl::EGLGetBlobFuncANDROID>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLGetBlobFuncANDROID *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLGetBlobFuncANDROID>*>(value);
     }
-
-
-    else if (typeid(*value) == typeid(Value<egl::EGLClientPixmapHI *>))
+    if (typeid(*value) == typeid(Value<egl::EGLGetBlobFuncANDROID *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLClientPixmapHI *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLGetBlobFuncANDROID *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLDEBUGPROCKHR>))
+    if (typeid(*value) == typeid(Value<egl::EGLClientPixmapHI *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLDEBUGPROCKHR>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLClientPixmapHI *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLDEBUGPROCKHR *>))
+    if (typeid(*value) == typeid(Value<egl::EGLDEBUGPROCKHR>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLDEBUGPROCKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLDEBUGPROCKHR>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLContextFlagMask>))
+    if (typeid(*value) == typeid(Value<egl::EGLDEBUGPROCKHR *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLContextFlagMask>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLDEBUGPROCKHR *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLContextFlagMask *>))
+    if (typeid(*value) == typeid(Value<egl::EGLContextFlagMask>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLContextFlagMask *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLContextFlagMask>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLContextProfileMask>))
+    if (typeid(*value) == typeid(Value<egl::EGLContextFlagMask *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLContextProfileMask>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLContextFlagMask *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLContextProfileMask *>))
+    if (typeid(*value) == typeid(Value<egl::EGLContextProfileMask>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLContextProfileMask *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLContextProfileMask>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLDRMBufferUseMESAMask>))
+    if (typeid(*value) == typeid(Value<egl::EGLContextProfileMask *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLDRMBufferUseMESAMask>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLContextProfileMask *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLDRMBufferUseMESAMask *>))
+    if (typeid(*value) == typeid(Value<egl::EGLDRMBufferUseMESAMask>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLDRMBufferUseMESAMask *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLDRMBufferUseMESAMask>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLLockUsageHintKHRMask>))
+    if (typeid(*value) == typeid(Value<egl::EGLDRMBufferUseMESAMask *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLLockUsageHintKHRMask>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLDRMBufferUseMESAMask *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLLockUsageHintKHRMask *>))
+    if (typeid(*value) == typeid(Value<egl::EGLLockUsageHintKHRMask>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLLockUsageHintKHRMask *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLLockUsageHintKHRMask>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLNativeBufferUsageFlags>))
+    if (typeid(*value) == typeid(Value<egl::EGLLockUsageHintKHRMask *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLNativeBufferUsageFlags>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLLockUsageHintKHRMask *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLNativeBufferUsageFlags *>))
+    if (typeid(*value) == typeid(Value<egl::EGLNativeBufferUsageFlags>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLNativeBufferUsageFlags *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLNativeBufferUsageFlags>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLRenderableTypeMask>))
+    if (typeid(*value) == typeid(Value<egl::EGLNativeBufferUsageFlags *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLRenderableTypeMask>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLNativeBufferUsageFlags *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLRenderableTypeMask *>))
+    if (typeid(*value) == typeid(Value<egl::EGLRenderableTypeMask>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLRenderableTypeMask *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLRenderableTypeMask>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLSurfaceTypeMask>))
+    if (typeid(*value) == typeid(Value<egl::EGLRenderableTypeMask *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSurfaceTypeMask>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLRenderableTypeMask *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLSurfaceTypeMask *>))
+    if (typeid(*value) == typeid(Value<egl::EGLSurfaceTypeMask>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSurfaceTypeMask *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSurfaceTypeMask>*>(value);
     }
-
-    else if (typeid(*value) == typeid(Value<egl::EGLSyncFlagsKHR>))
+    if (typeid(*value) == typeid(Value<egl::EGLSurfaceTypeMask *>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSyncFlagsKHR>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSurfaceTypeMask *>*>(value);
     }
 
-    else if (typeid(*value) == typeid(Value<egl::EGLSyncFlagsKHR *>))
+    if (typeid(*value) == typeid(Value<egl::EGLSyncFlagsKHR>))
     {
-        stream << *reinterpret_cast<const Value<egl::EGLSyncFlagsKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSyncFlagsKHR>*>(value);
     }
-
-    else // expect an AbstractValue with a pointer in first member
+    if (typeid(*value) == typeid(Value<egl::EGLSyncFlagsKHR *>))
     {
-        stream << *reinterpret_cast<const Value<void *>*>(value);
+        return stream << *reinterpret_cast<const Value<egl::EGLSyncFlagsKHR *>*>(value);
     }
 
-    return stream;
+    // expect an AbstractValue with a pointer in first member
+    return stream << *reinterpret_cast<const Value<void *>*>(value);
 }
 
 

@@ -30,7 +30,7 @@ namespace eglbinding
 *  }
 *  \endcode
 */
-class EGLBINDING_API Version
+class EGLBINDING_TEMPLATE_API Version
 {
 public:
     /**
@@ -111,7 +111,7 @@ public:
     *  @return
     *    The version as string, "-.-" iff the string is invalid
     */
-    EGLBINDING_API inline std::string toString() const;
+    inline std::string toString() const;
 
     /**
     *  @brief
