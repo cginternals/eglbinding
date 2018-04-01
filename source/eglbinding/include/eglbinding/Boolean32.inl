@@ -100,3 +100,20 @@ EGLBINDING_CONSTEXPR bool Boolean32::operator!=(const Boolean32 & other) const
 
 
 } // namespace eglbinding
+
+
+namespace std
+{
+
+
+template<>
+struct hash<eglbinding::Boolean32>
+{
+    hash<int>::result_type operator()(const eglbinding::Boolean32 & boolean) const
+    {
+        return hash<eglbinding::Boolean32::underlying_type>()(static_cast<eglbinding::Boolean32::underlying_type>(boolean));
+    }
+};
+
+
+} // namespace std

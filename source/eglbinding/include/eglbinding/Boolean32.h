@@ -2,7 +2,7 @@
 #pragma once
 
 
-#include <utility>
+#include <functional>
 
 #include <eglbinding/eglbinding_api.h>
 #include <eglbinding/eglbinding_features.h>
@@ -49,20 +49,3 @@ public:
 
 
 #include <eglbinding/Boolean32.inl>
-
-
-namespace std
-{
-
-
-template<>
-struct hash<eglbinding::Boolean32>
-{
-    hash<int>::result_type operator()(const eglbinding::Boolean32 & boolean) const
-    {
-        return hash<eglbinding::Boolean32::underlying_type>()(static_cast<eglbinding::Boolean32::underlying_type>(boolean));
-    }
-};
-
-
-} // namespace std
