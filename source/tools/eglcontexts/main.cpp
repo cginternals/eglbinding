@@ -111,6 +111,11 @@ bool testContext(EGLDisplay eglDpy, EGLConfig config, EGLenum api, EGLint & majo
             return false;
         }
     }
+    else if (api == egl::EGL_OPENVG_API)
+    {
+        majorVersion = -1;
+        minorVersion = -1;
+    }
 
     eglDestroyContext(eglDpy, context);
 
@@ -121,6 +126,8 @@ bool testContext(EGLDisplay eglDpy, EGLConfig config, EGLenum api, EGLint & majo
 int main(int argc, char * argv[])
 {
     eglbinding::initialize(getProcAddress);
+
+    const auto supportedExtensions = eglbinding::aux::ContextInfo::extensions();
 
     static const EGLint configAttribs[] = {
         static_cast<EGLint>(EGL_SURFACE_TYPE), static_cast<EGLint>(EGL_PBUFFER_BIT),
@@ -154,7 +161,8 @@ int main(int argc, char * argv[])
         std::clog << "Initialize EGL " << vmajor << "." << vminor << std::endl;
     }
 
-    std::clog << "APIs: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_CLIENT_APIS)) << std::endl;
+    const auto apiString = eglQueryString(eglDpy, static_cast<EGLint>(EGL_CLIENT_APIS));
+    std::clog << "APIs: " << (strlen(apiString) > 0 ? apiString : "unspecified") << std::endl;
     std::clog << "Extensions: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_EXTENSIONS)) << std::endl;
     std::clog << "Vendor: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_VENDOR)) << std::endl;
     std::clog << "Version: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_VERSION)) << std::endl;
@@ -246,6 +254,84 @@ int main(int argc, char * argv[])
                 std::cout << "Failed" << std::endl;
             }
         }
+    }
+
+    std::clog << std::endl;
+
+    for (const auto & description : {
+         ContextDescription{ EGL_OPENVG_API, { 0, 0 } },
+         ContextDescription{ EGL_OPENVG_API, { 1, 0 } },
+         ContextDescription{ EGL_OPENVG_API, { 1, 1 } },
+         ContextDescription{ EGL_OPENVG_API, { 2, 0 } },
+    })
+    {
+        auto majorVersion = description.second.first;
+        auto minorVersion = description.second.second;
+
+        std::cout << "OpenVG    " << majorVersion << "." << minorVersion << " ";
+
+        if (testContext(eglDpy, eglCfgs[0], description.first, majorVersion, minorVersion))
+        {
+            std::cout << "Success" << std::endl;
+        }
+        else
+        {
+            if (majorVersion > 0)
+            {
+                std::cout << "Fallback to " << majorVersion << "." << minorVersion << std::endl;
+            }
+            else
+            {
+                std::cout << "Failed" << std::endl;
+            }
+        }
+    }
+
+    std::clog << std::endl;
+
+    std::clog << "Enumerating Devices: ";
+
+    std::array<EGLDeviceEXT, 255> devices;
+
+    EGLint numDevices = 0;
+
+    if (eglQueryDevicesEXT(255, devices.data(), &numDevices))
+    {
+        std::clog << numDevices << " available" << std::endl;
+
+        for (auto i = 0; i < numDevices; ++i)
+        {
+            const auto & device = devices[i];
+
+            std::clog << std::endl << "Device " << (i+1) << std::endl;
+
+            EGLAttrib attribValue;
+            auto stringValue = eglQueryDeviceStringEXT(device, static_cast<EGLint>(EGL_EXTENSIONS));
+            if (stringValue)
+            {
+                std::clog << "Extensions: " << stringValue << std::endl;
+            }
+
+            stringValue = eglQueryDeviceStringEXT(device, static_cast<EGLint>(EGL_DRM_DEVICE_FILE_EXT));
+            if (stringValue)
+            {
+                std::clog << "Direct Device File: " << stringValue << std::endl;
+            }
+
+            if (eglQueryDeviceAttribEXT(device, static_cast<EGLint>(EGL_CUDA_DEVICE_NV), &attribValue))
+            {
+                std::clog << "Cuda Device ID: " << attribValue << std::endl;
+            }
+
+            if (eglQueryDeviceAttribEXT(device, static_cast<EGLint>(EGL_OPENWF_DEVICE_ID_EXT), &attribValue))
+            {
+                std::clog << "OpenWF Device ID: " << attribValue << std::endl;
+            }
+        }
+    }
+    else
+    {
+        std::clog << "unsupported" << std::endl;
     }
 
     eglTerminate(eglDpy);
