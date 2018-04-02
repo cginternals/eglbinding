@@ -67,7 +67,6 @@ target_include_directories(${target}
 target_link_libraries(${target}
     PRIVATE
     ${DEFAULT_LIBRARIES}
-    glfw
     ${META_PROJECT_NAME}::eglbinding
     ${META_PROJECT_NAME}::eglbinding-aux
     gmock-dev
