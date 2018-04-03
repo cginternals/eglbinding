@@ -123,6 +123,71 @@ bool testContext(EGLDisplay eglDpy, EGLConfig config, EGLenum api, EGLint & majo
 }
 
 
+void outputConfigs(EGLDisplay display)
+{
+    EGLint numConfigs;
+    std::array<EGLConfig, 128> eglCfgs;
+
+    eglGetConfigs(display, eglCfgs.data(), eglCfgs.size(), &numConfigs);
+
+    std::clog << std::endl << numConfigs << " framebuffer configurations available" <<  std::endl;
+
+    for (int i = 0; i < numConfigs; ++i)
+    {
+        const auto & config = eglCfgs[i];
+
+        std::clog << "Config " << (i+1) << ":";
+
+        EGLint red;
+        EGLint green;
+        EGLint blue;
+        EGLint alpha;
+        EGLint depth;
+        EGLint stencil;
+        EGLint luminance;
+        EGLint multisamples;
+
+        eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_RED_SIZE), &red);
+        eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_GREEN_SIZE), &green);
+        eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_BLUE_SIZE), &blue);
+        eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_ALPHA_SIZE), &alpha);
+        eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_DEPTH_SIZE), &depth);
+        eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_STENCIL_SIZE), &stencil);
+        eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_LUMINANCE_SIZE), &luminance);
+        eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_SAMPLE_BUFFERS), &multisamples);
+
+        std::clog << " R" << red << " G" << green << " B" << blue << " A" << alpha << " D" << depth << " S" << stencil << " L" << luminance << " M" << multisamples;
+
+        EGLint apis;
+        if (eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_SURFACE_TYPE), &apis))
+        {
+            if (apis & static_cast<EGLint>(EGL_OPENGL_BIT))
+            {
+                std::clog << " OpenGL";
+            }
+
+            if (apis & static_cast<EGLint>(EGL_OPENGL_ES2_BIT))
+            {
+                std::clog << " OpenGL ES 2";
+            }
+
+            if (apis & static_cast<EGLint>(EGL_OPENGL_ES2_BIT))
+            {
+                std::clog << " OpenGL ES 3";
+            }
+        }
+
+        EGLint nativeSurface;
+        if (eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_NATIVE_RENDERABLE), &nativeSurface))
+        {
+            std::clog << " (native surface)";
+        }
+
+        std::clog << std::endl;
+    }
+}
+
+
 int main(int argc, char * argv[])
 {
     eglbinding::initialize(getProcAddress);
@@ -167,13 +232,13 @@ int main(int argc, char * argv[])
     std::clog << "Vendor: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_VENDOR)) << std::endl;
     std::clog << "Version: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_VERSION)) << std::endl;
 
+    outputConfigs(eglDpy);
+
     // 2. Select an appropriate configuration
     EGLint numConfigs;
     std::array<EGLConfig, 128> eglCfgs;
 
     eglChooseConfig(eglDpy, configAttribs, eglCfgs.data(), eglCfgs.size(), &numConfigs);
-
-    std::clog << std::endl << numConfigs << " framebuffer configurations available" <<  std::endl;
 
     std::clog << std::endl << "Testing Contexts" << std::endl << std::endl;
 
@@ -305,6 +370,8 @@ int main(int argc, char * argv[])
 
             std::clog << std::endl << "Device " << (i+1) << std::endl;
 
+            const auto deviceDisplay = eglGetPlatformDisplayEXT(EGL_PLATFORM_DEVICE_EXT, device, nullptr);
+
             EGLAttrib attribValue;
             auto stringValue = eglQueryDeviceStringEXT(device, static_cast<EGLint>(EGL_EXTENSIONS));
             if (stringValue)
@@ -326,6 +393,17 @@ int main(int argc, char * argv[])
             if (eglQueryDeviceAttribEXT(device, static_cast<EGLint>(EGL_OPENWF_DEVICE_ID_EXT), &attribValue))
             {
                 std::clog << "OpenWF Device ID: " << attribValue << std::endl;
+            }
+
+            if (eglInitialize(deviceDisplay, nullptr, nullptr))
+            {
+                outputConfigs(deviceDisplay);
+
+                eglTerminate(deviceDisplay);
+            }
+            else
+            {
+                std::clog << "Could not initialize device display" << std::endl;
             }
         }
     }
