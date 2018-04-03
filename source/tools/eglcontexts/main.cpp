@@ -136,8 +136,6 @@ void outputConfigs(EGLDisplay display)
     {
         const auto & config = eglCfgs[i];
 
-        std::clog << "Config " << (i+1) << ":";
-
         EGLint red;
         EGLint green;
         EGLint blue;
@@ -146,6 +144,7 @@ void outputConfigs(EGLDisplay display)
         EGLint stencil;
         EGLint luminance;
         EGLint multisamples;
+        EGLint multisamplingBuffers;
 
         eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_RED_SIZE), &red);
         eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_GREEN_SIZE), &green);
@@ -154,33 +153,60 @@ void outputConfigs(EGLDisplay display)
         eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_DEPTH_SIZE), &depth);
         eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_STENCIL_SIZE), &stencil);
         eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_LUMINANCE_SIZE), &luminance);
-        eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_SAMPLE_BUFFERS), &multisamples);
+        eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_SAMPLES), &multisamples);
+        eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_SAMPLE_BUFFERS), &multisamplingBuffers);
 
-        std::clog << " R" << red << " G" << green << " B" << blue << " A" << alpha << " D" << depth << " S" << stencil << " L" << luminance << " M" << multisamples;
+        std::clog << "Config " << (i+1) << ":";
+        std::clog << " R" << red << " G" << green << " B" << blue << " A" << alpha << " D" << depth << " S" << stencil << " L" << luminance;
+        std::clog << " M" << multisamples << ":" << multisamplingBuffers;
+
+        EGLint surfaceAttribs;
+        if (eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_SURFACE_TYPE), &surfaceAttribs))
+        {
+            if (surfaceAttribs & static_cast<EGLint>(EGL_PBUFFER_BIT))
+            {
+                std::clog << " Pixelbuffer";
+            }
+
+            if (surfaceAttribs & static_cast<EGLint>(EGL_PIXMAP_BIT))
+            {
+                std::clog << " Pixmap";
+            }
+
+            if (surfaceAttribs & static_cast<EGLint>(EGL_WINDOW_BIT))
+            {
+                std::clog << " Window";
+            }
+        }
 
         EGLint apis;
-        if (eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_SURFACE_TYPE), &apis))
+        if (eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_CONFORMANT), &apis))
         {
             if (apis & static_cast<EGLint>(EGL_OPENGL_BIT))
             {
-                std::clog << " OpenGL";
+                std::clog << " GL";
             }
 
             if (apis & static_cast<EGLint>(EGL_OPENGL_ES2_BIT))
             {
-                std::clog << " OpenGL ES 2";
+                std::clog << " ES2";
             }
 
             if (apis & static_cast<EGLint>(EGL_OPENGL_ES2_BIT))
             {
-                std::clog << " OpenGL ES 3";
+                std::clog << " ES3";
+            }
+
+            if (apis & static_cast<EGLint>(EGL_OPENVG_BIT))
+            {
+                std::clog << " VG";
             }
         }
 
         EGLint nativeSurface;
         if (eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_NATIVE_RENDERABLE), &nativeSurface))
         {
-            std::clog << " (native surface)";
+            std::clog << (nativeSurface ? " (native)" : " (virtual)");
         }
 
         std::clog << std::endl;
