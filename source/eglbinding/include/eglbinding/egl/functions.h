@@ -78,7 +78,7 @@ EGLBINDING_API EGLContext eglGetCurrentContext();
 EGLBINDING_API EGLDisplay eglGetCurrentDisplay();
 EGLBINDING_API EGLSurface eglGetCurrentSurface(EGLint readdraw);
 EGLBINDING_API EGLDisplay eglGetDisplay(EGLNativeDisplayType display_id);
-EGLBINDING_API EGLint eglGetError();
+EGLBINDING_API EGLenum eglGetError();
 EGLBINDING_API EGLBoolean eglGetFrameTimestampSupportedANDROID(EGLDisplay dpy, EGLSurface surface, EGLint timestamp);
 EGLBINDING_API EGLBoolean eglGetFrameTimestampsANDROID(EGLDisplay dpy, EGLSurface surface, EGLuint64KHR frameId, EGLint numTimestamps, const EGLint * timestamps, EGLnsecsANDROID * values);
 EGLBINDING_API EGLClientBuffer eglGetNativeClientBufferANDROID(const AHardwareBuffer * buffer);

@@ -17,7 +17,7 @@ Function<EGLContext> Binding::GetCurrentContext("eglGetCurrentContext");
 Function<EGLDisplay> Binding::GetCurrentDisplay("eglGetCurrentDisplay");
 Function<EGLSurface, EGLint> Binding::GetCurrentSurface("eglGetCurrentSurface");
 Function<EGLDisplay, EGLNativeDisplayType> Binding::GetDisplay("eglGetDisplay");
-Function<EGLint> Binding::GetError("eglGetError");
+Function<EGLenum> Binding::GetError("eglGetError");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint> Binding::GetFrameTimestampSupportedANDROID("eglGetFrameTimestampSupportedANDROID");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLuint64KHR, EGLint, const EGLint *, EGLnsecsANDROID *> Binding::GetFrameTimestampsANDROID("eglGetFrameTimestampsANDROID");
 Function<EGLClientBuffer, const AHardwareBuffer *> Binding::GetNativeClientBufferANDROID("eglGetNativeClientBufferANDROID");

@@ -51,7 +51,7 @@ EGLDisplay eglGetDisplay(EGLNativeDisplayType display_id)
     return Binding::GetDisplay(display_id);
 }
 
-EGLint eglGetError()
+EGLenum eglGetError()
 {
     return Binding::GetError();
 }

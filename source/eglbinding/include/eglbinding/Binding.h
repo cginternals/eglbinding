@@ -334,7 +334,7 @@ public:
     static Function<egl::EGLDisplay> GetCurrentDisplay; ///< Wrapper for eglGetCurrentDisplay
     static Function<egl::EGLSurface, egl::EGLint> GetCurrentSurface; ///< Wrapper for eglGetCurrentSurface
     static Function<egl::EGLDisplay, egl::EGLNativeDisplayType> GetDisplay; ///< Wrapper for eglGetDisplay
-    static Function<egl::EGLint> GetError; ///< Wrapper for eglGetError
+    static Function<egl::EGLenum> GetError; ///< Wrapper for eglGetError
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, egl::EGLint> GetFrameTimestampSupportedANDROID; ///< Wrapper for eglGetFrameTimestampSupportedANDROID
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, egl::EGLuint64KHR, egl::EGLint, const egl::EGLint *, egl::EGLnsecsANDROID *> GetFrameTimestampsANDROID; ///< Wrapper for eglGetFrameTimestampsANDROID
     static Function<egl::EGLClientBuffer, const egl::AHardwareBuffer *> GetNativeClientBufferANDROID; ///< Wrapper for eglGetNativeClientBufferANDROID
