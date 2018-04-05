@@ -70,7 +70,7 @@ target_include_directories(${target}
 target_link_libraries(${target}
     PRIVATE
     ${DEFAULT_LIBRARIES}
-    EGL::EGL
+    EGL::EGLlib
     KHR::KHR
     ${META_PROJECT_NAME}::eglbinding
     ${META_PROJECT_NAME}::eglbinding-aux
