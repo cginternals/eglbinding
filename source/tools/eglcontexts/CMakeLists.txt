@@ -4,6 +4,7 @@
 # 
 
 find_package(EGL REQUIRED)
+find_package(KHR REQUIRED)
 find_package(glbinding REQUIRED)
 find_package(glesbinding REQUIRED)
 
@@ -24,8 +25,6 @@ message(STATUS "Tool ${target}")
 
 set(sources
     main.cpp
-    getProcAddress.h
-    getProcAddress.cpp
 )
 
 
@@ -72,6 +71,7 @@ target_link_libraries(${target}
     PRIVATE
     ${DEFAULT_LIBRARIES}
     EGL::EGL
+    KHR::KHR
     ${META_PROJECT_NAME}::eglbinding
     ${META_PROJECT_NAME}::eglbinding-aux
     glbinding::glbinding

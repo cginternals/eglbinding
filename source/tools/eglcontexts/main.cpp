@@ -14,6 +14,7 @@
 #include <eglbinding/eglbinding.h>
 
 #include <eglbinding/egl/egl.h>
+#include <eglbinding/eglGetProcAddress.h>
 
 #include <eglbinding-aux/ValidVersions.h>
 #include <eglbinding-aux/types_to_string.h>
@@ -27,10 +28,6 @@
 
 #include <glesbinding/glesbinding.h>
 #include <glesbinding-aux/ContextInfo.h>
-
-// Local
-
-#include "getProcAddress.h"
 
 
 using namespace egl;
@@ -81,7 +78,7 @@ bool testContext(EGLDisplay eglDpy, EGLConfig config, EGLenum api, EGLint & majo
 
     if (api == egl::EGL_OPENGL_API)
     {
-        glbinding::initialize(getProcAddress, false);
+        glbinding::initialize(::eglGetProcAddress, false);
 
         const auto glVersion = glbinding::aux::ContextInfo::version();
 
@@ -97,7 +94,7 @@ bool testContext(EGLDisplay eglDpy, EGLConfig config, EGLenum api, EGLint & majo
     }
     else if (api == egl::EGL_OPENGL_ES_API)
     {
-        glesbinding::initialize(getProcAddress, false);
+        glesbinding::initialize(::eglGetProcAddress, false);
 
         const auto glesVersion = glesbinding::aux::ContextInfo::version();
 
@@ -216,7 +213,7 @@ void outputConfigs(EGLDisplay display)
 
 int main(int argc, char * argv[])
 {
-    eglbinding::initialize(getProcAddress);
+    eglbinding::initialize(::eglGetProcAddress);
 
     const auto supportedExtensions = eglbinding::aux::ContextInfo::extensions();
 
