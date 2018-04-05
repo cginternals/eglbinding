@@ -127,7 +127,7 @@ void outputConfigs(EGLDisplay display)
 
     eglGetConfigs(display, eglCfgs.data(), eglCfgs.size(), &numConfigs);
 
-    std::clog << std::endl << numConfigs << " framebuffer configurations available" <<  std::endl;
+    std::cout << std::endl << numConfigs << " framebuffer configurations available" <<  std::endl;
 
     for (int i = 0; i < numConfigs; ++i)
     {
@@ -153,26 +153,26 @@ void outputConfigs(EGLDisplay display)
         eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_SAMPLES), &multisamples);
         eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_SAMPLE_BUFFERS), &multisamplingBuffers);
 
-        std::clog << "Config " << (i+1) << ":";
-        std::clog << " R" << red << " G" << green << " B" << blue << " A" << alpha << " D" << depth << " S" << stencil << " L" << luminance;
-        std::clog << " M" << multisamples << ":" << multisamplingBuffers;
+        std::cout << "Config " << (i+1) << ":";
+        std::cout << " R" << red << " G" << green << " B" << blue << " A" << alpha << " D" << depth << " S" << stencil << " L" << luminance;
+        std::cout << " M" << multisamples << ":" << multisamplingBuffers;
 
         EGLint surfaceAttribs;
         if (eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_SURFACE_TYPE), &surfaceAttribs))
         {
             if (surfaceAttribs & static_cast<EGLint>(EGL_PBUFFER_BIT))
             {
-                std::clog << " Pixelbuffer";
+                std::cout << " Pixelbuffer";
             }
 
             if (surfaceAttribs & static_cast<EGLint>(EGL_PIXMAP_BIT))
             {
-                std::clog << " Pixmap";
+                std::cout << " Pixmap";
             }
 
             if (surfaceAttribs & static_cast<EGLint>(EGL_WINDOW_BIT))
             {
-                std::clog << " Window";
+                std::cout << " Window";
             }
         }
 
@@ -181,32 +181,32 @@ void outputConfigs(EGLDisplay display)
         {
             if (apis & static_cast<EGLint>(EGL_OPENGL_BIT))
             {
-                std::clog << " GL";
+                std::cout << " GL";
             }
 
             if (apis & static_cast<EGLint>(EGL_OPENGL_ES2_BIT))
             {
-                std::clog << " ES2";
+                std::cout << " ES2";
             }
 
             if (apis & static_cast<EGLint>(EGL_OPENGL_ES2_BIT))
             {
-                std::clog << " ES3";
+                std::cout << " ES3";
             }
 
             if (apis & static_cast<EGLint>(EGL_OPENVG_BIT))
             {
-                std::clog << " VG";
+                std::cout << " VG";
             }
         }
 
         EGLint nativeSurface;
         if (eglGetConfigAttrib(display, config, static_cast<EGLint>(EGL_NATIVE_RENDERABLE), &nativeSurface))
         {
-            std::clog << (nativeSurface ? " (native)" : " (virtual)");
+            std::cout << (nativeSurface ? " (native)" : " (virtual)");
         }
 
-        std::clog << std::endl;
+        std::cout << std::endl;
     }
 }
 
@@ -215,7 +215,7 @@ int main(int argc, char * argv[])
 {
     eglbinding::initialize(::eglGetProcAddress);
 
-    const auto supportedExtensions = eglbinding::aux::ContextInfo::extensions();
+    //const auto supportedExtensions = eglbinding::aux::ContextInfo::extensions();
 
     static const EGLint configAttribs[] = {
         static_cast<EGLint>(EGL_SURFACE_TYPE), static_cast<EGLint>(EGL_PBUFFER_BIT),
@@ -235,7 +235,7 @@ int main(int argc, char * argv[])
     }
     else
     {
-        std::clog << "Load display " << eglDpy << std::endl;
+        std::cout << "Load display " << eglDpy << std::endl;
     }
 
     EGLint vmajor, vminor;
@@ -246,24 +246,24 @@ int main(int argc, char * argv[])
     }
     else
     {
-        std::clog << "Initialize EGL " << vmajor << "." << vminor << std::endl;
+        std::cout << "Initialize EGL " << vmajor << "." << vminor << std::endl;
     }
 
     const auto apiString = eglQueryString(eglDpy, static_cast<EGLint>(EGL_CLIENT_APIS));
-    std::clog << "APIs: " << (strlen(apiString) > 0 ? apiString : "unspecified") << std::endl;
-    std::clog << "Extensions: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_EXTENSIONS)) << std::endl;
-    std::clog << "Vendor: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_VENDOR)) << std::endl;
-    std::clog << "Version: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_VERSION)) << std::endl;
+    std::cout << "APIs: " << (strlen(apiString) > 0 ? apiString : "unspecified") << std::endl;
+    std::cout << "Extensions: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_EXTENSIONS)) << std::endl;
+    std::cout << "Vendor: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_VENDOR)) << std::endl;
+    std::cout << "Version: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_VERSION)) << std::endl;
 
     outputConfigs(eglDpy);
 
     // 2. Select an appropriate configuration
-    EGLint numConfigs;
-    std::array<EGLConfig, 128> eglCfgs;
+    EGLint numConfigs = 1;
+    EGLConfig eglCfg;
 
-    eglChooseConfig(eglDpy, configAttribs, eglCfgs.data(), eglCfgs.size(), &numConfigs);
+    eglChooseConfig(eglDpy, configAttribs, &eglCfg, numConfigs, &numConfigs);
 
-    std::clog << std::endl << "Testing Contexts" << std::endl << std::endl;
+    std::cout << std::endl << "Testing Contexts" << std::endl << std::endl;
 
     using ContextDescription = std::pair<EGLenum, std::pair<EGLint, EGLint>>;
 
@@ -292,7 +292,7 @@ int main(int argc, char * argv[])
 
         std::cout << "OpenGL    " << majorVersion << "." << minorVersion << " ";
 
-        if (testContext(eglDpy, eglCfgs[0], description.first, majorVersion, minorVersion))
+        if (testContext(eglDpy, eglCfg, description.first, majorVersion, minorVersion))
         {
             std::cout << "Success" << std::endl;
         }
@@ -309,7 +309,7 @@ int main(int argc, char * argv[])
         }
     }
 
-    std::clog << std::endl;
+    std::cout << std::endl;
 
     for (const auto & description : {
          ContextDescription{ EGL_OPENGL_ES_API, { 0, 0 } },
@@ -327,7 +327,7 @@ int main(int argc, char * argv[])
 
         std::cout << "OpenGL ES " << majorVersion << "." << minorVersion << " ";
 
-        if (testContext(eglDpy, eglCfgs[0], description.first, majorVersion, minorVersion))
+        if (testContext(eglDpy, eglCfg, description.first, majorVersion, minorVersion))
         {
             std::cout << "Success" << std::endl;
         }
@@ -344,7 +344,7 @@ int main(int argc, char * argv[])
         }
     }
 
-    std::clog << std::endl;
+    std::cout << std::endl;
 
     for (const auto & description : {
          ContextDescription{ EGL_OPENVG_API, { 0, 0 } },
@@ -358,7 +358,7 @@ int main(int argc, char * argv[])
 
         std::cout << "OpenVG    " << majorVersion << "." << minorVersion << " ";
 
-        if (testContext(eglDpy, eglCfgs[0], description.first, majorVersion, minorVersion))
+        if (testContext(eglDpy, eglCfg, description.first, majorVersion, minorVersion))
         {
             std::cout << "Success" << std::endl;
         }
@@ -375,9 +375,9 @@ int main(int argc, char * argv[])
         }
     }
 
-    std::clog << std::endl;
+    std::cout << std::endl;
 
-    std::clog << "Enumerating Devices: ";
+    std::cout << "Enumerating Devices: ";
 
     std::array<EGLDeviceEXT, 255> devices;
 
@@ -385,13 +385,13 @@ int main(int argc, char * argv[])
 
     if (eglQueryDevicesEXT(255, devices.data(), &numDevices))
     {
-        std::clog << numDevices << " available" << std::endl;
+        std::cout << numDevices << " available" << std::endl;
 
         for (auto i = 0; i < numDevices; ++i)
         {
             const auto & device = devices[i];
 
-            std::clog << std::endl << "Device " << (i+1) << std::endl;
+            std::cout << std::endl << "Device " << (i+1) << std::endl;
 
             const auto deviceDisplay = eglGetPlatformDisplayEXT(EGL_PLATFORM_DEVICE_EXT, device, nullptr);
 
@@ -399,23 +399,23 @@ int main(int argc, char * argv[])
             auto stringValue = eglQueryDeviceStringEXT(device, static_cast<EGLint>(EGL_EXTENSIONS));
             if (stringValue)
             {
-                std::clog << "Extensions: " << stringValue << std::endl;
+                std::cout << "Extensions: " << stringValue << std::endl;
             }
 
             stringValue = eglQueryDeviceStringEXT(device, static_cast<EGLint>(EGL_DRM_DEVICE_FILE_EXT));
             if (stringValue)
             {
-                std::clog << "Direct Device File: " << stringValue << std::endl;
+                std::cout << "Direct Device File: " << stringValue << std::endl;
             }
 
             if (eglQueryDeviceAttribEXT(device, static_cast<EGLint>(EGL_CUDA_DEVICE_NV), &attribValue))
             {
-                std::clog << "Cuda Device ID: " << attribValue << std::endl;
+                std::cout << "Cuda Device ID: " << attribValue << std::endl;
             }
 
             if (eglQueryDeviceAttribEXT(device, static_cast<EGLint>(EGL_OPENWF_DEVICE_ID_EXT), &attribValue))
             {
-                std::clog << "OpenWF Device ID: " << attribValue << std::endl;
+                std::cout << "OpenWF Device ID: " << attribValue << std::endl;
             }
 
             if (eglInitialize(deviceDisplay, nullptr, nullptr))
@@ -426,13 +426,13 @@ int main(int argc, char * argv[])
             }
             else
             {
-                std::clog << "Could not initialize device display" << std::endl;
+                std::cout << "Could not initialize device display" << std::endl;
             }
         }
     }
     else
     {
-        std::clog << "unsupported" << std::endl;
+        std::cout << "unsupported" << std::endl;
     }
 
     eglTerminate(eglDpy);
