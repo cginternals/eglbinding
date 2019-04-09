@@ -4,6 +4,8 @@
 #include <array>
 #include <set>
 #include <cstring>
+#include <string>
+#include <sstream>
 
 // EGL
 
@@ -117,6 +119,32 @@ bool testContext(EGLDisplay eglDpy, EGLConfig config, EGLenum api, EGLint & majo
     eglDestroyContext(eglDpy, context);
 
     return true;
+}
+
+
+void outputExtensionsByVendor(const std::string & extensionsString)
+{
+    std::map<std::string, std::vector<std::string>> extensionsByVendor;
+    std::istringstream stream(extensionsString);
+
+    std::string currentExtension;
+    while (std::getline(stream, currentExtension, ' '))
+    {
+        const auto vendorEnd = currentExtension.find("_", 4); // Search first underscore after "EGL_"
+        extensionsByVendor[currentExtension.substr(0, vendorEnd)].push_back(currentExtension);
+    }
+
+    for (const auto & pair : extensionsByVendor)
+    {
+        const auto & vendor = pair.first;
+        const auto & extensions = pair.second;
+
+        std::cout << "    " << vendor << std::endl;
+        for (const auto & extension : extensions)
+        {
+            std::cout << "        " << extension << std::endl;
+        }
+    }
 }
 
 
@@ -250,10 +278,13 @@ int main(int argc, char * argv[])
     }
 
     const auto apiString = eglQueryString(eglDpy, static_cast<EGLint>(EGL_CLIENT_APIS));
+    const auto extensionsString = eglQueryString(eglDpy, static_cast<EGLint>(EGL_EXTENSIONS));
     std::cout << "APIs: " << (strlen(apiString) > 0 ? apiString : "unspecified") << std::endl;
-    std::cout << "Extensions: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_EXTENSIONS)) << std::endl;
     std::cout << "Vendor: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_VENDOR)) << std::endl;
     std::cout << "Version: " << eglQueryString(eglDpy, static_cast<EGLint>(EGL_VERSION)) << std::endl;
+
+    std::cout << "Extensions:" << std::endl;
+    outputExtensionsByVendor(extensionsString);
 
     outputConfigs(eglDpy);
 
