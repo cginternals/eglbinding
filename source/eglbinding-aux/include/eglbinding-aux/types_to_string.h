@@ -131,9 +131,17 @@ namespace eglbinding
 class Version;
 
 
+/**
+*  @brief
+*    Generic ostream operator for the Value template
+*/
 template <typename T>
 EGLBINDING_AUX_TEMPLATE_API std::ostream & operator<<(std::ostream & stream, const Value<T> & value);
 
+/**
+*  @brief
+*    Generic ostream operator for the Value template with pointer types
+*/
 template <typename T>
 EGLBINDING_AUX_TEMPLATE_API std::ostream & operator<<(std::ostream & stream, const Value<T *> & value);
 
@@ -144,7 +152,7 @@ EGLBINDING_AUX_TEMPLATE_API std::ostream & operator<<(std::ostream & stream, con
 template <>
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<egl::EGLenum> & value);
 
-/**
+/* <- ToDo: Add back second * when implementing this function again
 *  @brief
 *    A specialized ostream operator for the gl::GLbitfield Value template
 */
@@ -165,6 +173,10 @@ EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<
 */
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Version & version);
 
+/**
+*  @brief
+*    The operator to allow AbstractValues to be printed onto a std::ostream
+*/
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AbstractValue * value);
 
 

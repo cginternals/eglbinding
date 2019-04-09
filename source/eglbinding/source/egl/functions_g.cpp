@@ -51,7 +51,17 @@ EGLDisplay eglGetDisplay(EGLNativeDisplayType display_id)
     return Binding::GetDisplay(display_id);
 }
 
-EGLenum eglGetError()
+char * eglGetDisplayDriverConfig(EGLDisplay dpy)
+{
+    return Binding::GetDisplayDriverConfig(dpy);
+}
+
+const char * eglGetDisplayDriverName(EGLDisplay dpy)
+{
+    return Binding::GetDisplayDriverName(dpy);
+}
+
+EGLint eglGetError()
 {
     return Binding::GetError();
 }

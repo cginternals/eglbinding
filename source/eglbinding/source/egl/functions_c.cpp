@@ -16,6 +16,11 @@ EGLBoolean eglChooseConfig(EGLDisplay dpy, const EGLint * attrib_list, EGLConfig
     return Binding::ChooseConfig(dpy, attrib_list, configs, config_size, num_config);
 }
 
+EGLBoolean eglClientSignalSyncEXT(EGLDisplay dpy, EGLSync sync, const EGLAttrib * attrib_list)
+{
+    return Binding::ClientSignalSyncEXT(dpy, sync, attrib_list);
+}
+
 EGLint eglClientWaitSync(EGLDisplay dpy, EGLSync sync, EGLint flags, EGLTime timeout)
 {
     return Binding::ClientWaitSync(dpy, sync, flags, timeout);

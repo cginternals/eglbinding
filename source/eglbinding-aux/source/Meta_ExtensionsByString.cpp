@@ -15,6 +15,7 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_0{};
 
 const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_A =
 {
+    { "EGL_ANDROID_GLES_layers", EGLextension::EGL_ANDROID_GLES_layers },
     { "EGL_ANDROID_blob_cache", EGLextension::EGL_ANDROID_blob_cache },
     { "EGL_ANDROID_create_native_client_buffer", EGLextension::EGL_ANDROID_create_native_client_buffer },
     { "EGL_ANDROID_framebuffer_target", EGLextension::EGL_ANDROID_framebuffer_target },
@@ -45,6 +46,7 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_E =
     { "EGL_EXT_bind_to_front", EGLextension::EGL_EXT_bind_to_front },
     { "EGL_EXT_buffer_age", EGLextension::EGL_EXT_buffer_age },
     { "EGL_EXT_client_extensions", EGLextension::EGL_EXT_client_extensions },
+    { "EGL_EXT_client_sync", EGLextension::EGL_EXT_client_sync },
     { "EGL_EXT_compositor", EGLextension::EGL_EXT_compositor },
     { "EGL_EXT_create_context_robustness", EGLextension::EGL_EXT_create_context_robustness },
     { "EGL_EXT_device_base", EGLextension::EGL_EXT_device_base },
@@ -56,6 +58,7 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_E =
     { "EGL_EXT_gl_colorspace_bt2020_pq", EGLextension::EGL_EXT_gl_colorspace_bt2020_pq },
     { "EGL_EXT_gl_colorspace_display_p3", EGLextension::EGL_EXT_gl_colorspace_display_p3 },
     { "EGL_EXT_gl_colorspace_display_p3_linear", EGLextension::EGL_EXT_gl_colorspace_display_p3_linear },
+    { "EGL_EXT_gl_colorspace_display_p3_passthrough", EGLextension::EGL_EXT_gl_colorspace_display_p3_passthrough },
     { "EGL_EXT_gl_colorspace_scrgb", EGLextension::EGL_EXT_gl_colorspace_scrgb },
     { "EGL_EXT_gl_colorspace_scrgb_linear", EGLextension::EGL_EXT_gl_colorspace_scrgb_linear },
     { "EGL_EXT_image_dma_buf_import", EGLextension::EGL_EXT_image_dma_buf_import },
@@ -77,6 +80,7 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_E =
     { "EGL_EXT_surface_CTA861_3_metadata", EGLextension::EGL_EXT_surface_CTA861_3_metadata },
     { "EGL_EXT_surface_SMPTE2086_metadata", EGLextension::EGL_EXT_surface_SMPTE2086_metadata },
     { "EGL_EXT_swap_buffers_with_damage", EGLextension::EGL_EXT_swap_buffers_with_damage },
+    { "EGL_EXT_sync_reuse", EGLextension::EGL_EXT_sync_reuse },
     { "EGL_EXT_yuv_surface", EGLextension::EGL_EXT_yuv_surface }
 };
 
@@ -150,7 +154,8 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_M =
     { "EGL_MESA_drm_image", EGLextension::EGL_MESA_drm_image },
     { "EGL_MESA_image_dma_buf_export", EGLextension::EGL_MESA_image_dma_buf_export },
     { "EGL_MESA_platform_gbm", EGLextension::EGL_MESA_platform_gbm },
-    { "EGL_MESA_platform_surfaceless", EGLextension::EGL_MESA_platform_surfaceless }
+    { "EGL_MESA_platform_surfaceless", EGLextension::EGL_MESA_platform_surfaceless },
+    { "EGL_MESA_query_driver", EGLextension::EGL_MESA_query_driver }
 };
 
 const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_N =
@@ -168,6 +173,7 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_N =
     { "EGL_NV_native_query", EGLextension::EGL_NV_native_query },
     { "EGL_NV_post_convert_rounding", EGLextension::EGL_NV_post_convert_rounding },
     { "EGL_NV_post_sub_buffer", EGLextension::EGL_NV_post_sub_buffer },
+    { "EGL_NV_quadruple_buffer", EGLextension::EGL_NV_quadruple_buffer },
     { "EGL_NV_robustness_video_memory_purge", EGLextension::EGL_NV_robustness_video_memory_purge },
     { "EGL_NV_stream_consumer_gltexture_yuv", EGLextension::EGL_NV_stream_consumer_gltexture_yuv },
     { "EGL_NV_stream_cross_display", EGLextension::EGL_NV_stream_cross_display },
@@ -177,6 +183,7 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_N =
     { "EGL_NV_stream_cross_system", EGLextension::EGL_NV_stream_cross_system },
     { "EGL_NV_stream_fifo_next", EGLextension::EGL_NV_stream_fifo_next },
     { "EGL_NV_stream_fifo_synchronous", EGLextension::EGL_NV_stream_fifo_synchronous },
+    { "EGL_NV_stream_flush", EGLextension::EGL_NV_stream_flush },
     { "EGL_NV_stream_frame_limits", EGLextension::EGL_NV_stream_frame_limits },
     { "EGL_NV_stream_metadata", EGLextension::EGL_NV_stream_metadata },
     { "EGL_NV_stream_remote", EGLextension::EGL_NV_stream_remote },
@@ -186,7 +193,8 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_N =
     { "EGL_NV_stream_socket_unix", EGLextension::EGL_NV_stream_socket_unix },
     { "EGL_NV_stream_sync", EGLextension::EGL_NV_stream_sync },
     { "EGL_NV_sync", EGLextension::EGL_NV_sync },
-    { "EGL_NV_system_time", EGLextension::EGL_NV_system_time }
+    { "EGL_NV_system_time", EGLextension::EGL_NV_system_time },
+    { "EGL_NV_triple_buffer", EGLextension::EGL_NV_triple_buffer }
 };
 
 const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_O{};

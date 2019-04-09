@@ -16,6 +16,11 @@ EGLBoolean eglUnlockSurfaceKHR(EGLDisplay dpy, EGLSurface surface)
     return Binding::UnlockSurfaceKHR(dpy, surface);
 }
 
+EGLBoolean eglUnsignalSyncEXT(EGLDisplay dpy, EGLSync sync, const EGLAttrib * attrib_list)
+{
+    return Binding::UnsignalSyncEXT(dpy, sync, attrib_list);
+}
+
 
 
 

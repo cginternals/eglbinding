@@ -93,7 +93,7 @@ namespace std
 template<>
 struct hash<egl::EGLextension>
 {
-    hash<std::underlying_type<egl::EGLextension>::type>::result_type operator()(const egl::EGLextension & t) const
+    std::size_t operator()(const egl::EGLextension & t) const
     {
         return hash<std::underlying_type<egl::EGLextension>::type>()(static_cast<std::underlying_type<egl::EGLextension>::type>(t));
     }
@@ -110,7 +110,7 @@ namespace std
 template<>
 struct hash<egl::EGLenum>
 {
-    hash<std::underlying_type<egl::EGLenum>::type>::result_type operator()(const egl::EGLenum & t) const
+    std::size_t operator()(const egl::EGLenum & t) const
     {
         return hash<std::underlying_type<egl::EGLenum>::type>()(static_cast<std::underlying_type<egl::EGLenum>::type>(t));
     }
@@ -148,7 +148,7 @@ namespace std
 template<>
 struct hash<egl::EGLContextFlagMask>
 {
-    hash<std::underlying_type<egl::EGLContextFlagMask>::type>::result_type operator()(const egl::EGLContextFlagMask & t) const
+    std::size_t operator()(const egl::EGLContextFlagMask & t) const
     {
         return hash<std::underlying_type<egl::EGLContextFlagMask>::type>()(static_cast<std::underlying_type<egl::EGLContextFlagMask>::type>(t));
     }
@@ -210,7 +210,7 @@ namespace std
 template<>
 struct hash<egl::EGLContextProfileMask>
 {
-    hash<std::underlying_type<egl::EGLContextProfileMask>::type>::result_type operator()(const egl::EGLContextProfileMask & t) const
+    std::size_t operator()(const egl::EGLContextProfileMask & t) const
     {
         return hash<std::underlying_type<egl::EGLContextProfileMask>::type>()(static_cast<std::underlying_type<egl::EGLContextProfileMask>::type>(t));
     }
@@ -272,7 +272,7 @@ namespace std
 template<>
 struct hash<egl::EGLDRMBufferUseMESAMask>
 {
-    hash<std::underlying_type<egl::EGLDRMBufferUseMESAMask>::type>::result_type operator()(const egl::EGLDRMBufferUseMESAMask & t) const
+    std::size_t operator()(const egl::EGLDRMBufferUseMESAMask & t) const
     {
         return hash<std::underlying_type<egl::EGLDRMBufferUseMESAMask>::type>()(static_cast<std::underlying_type<egl::EGLDRMBufferUseMESAMask>::type>(t));
     }
@@ -334,7 +334,7 @@ namespace std
 template<>
 struct hash<egl::EGLLockUsageHintKHRMask>
 {
-    hash<std::underlying_type<egl::EGLLockUsageHintKHRMask>::type>::result_type operator()(const egl::EGLLockUsageHintKHRMask & t) const
+    std::size_t operator()(const egl::EGLLockUsageHintKHRMask & t) const
     {
         return hash<std::underlying_type<egl::EGLLockUsageHintKHRMask>::type>()(static_cast<std::underlying_type<egl::EGLLockUsageHintKHRMask>::type>(t));
     }
@@ -396,7 +396,7 @@ namespace std
 template<>
 struct hash<egl::EGLNativeBufferUsageFlags>
 {
-    hash<std::underlying_type<egl::EGLNativeBufferUsageFlags>::type>::result_type operator()(const egl::EGLNativeBufferUsageFlags & t) const
+    std::size_t operator()(const egl::EGLNativeBufferUsageFlags & t) const
     {
         return hash<std::underlying_type<egl::EGLNativeBufferUsageFlags>::type>()(static_cast<std::underlying_type<egl::EGLNativeBufferUsageFlags>::type>(t));
     }
@@ -458,7 +458,7 @@ namespace std
 template<>
 struct hash<egl::EGLRenderableTypeMask>
 {
-    hash<std::underlying_type<egl::EGLRenderableTypeMask>::type>::result_type operator()(const egl::EGLRenderableTypeMask & t) const
+    std::size_t operator()(const egl::EGLRenderableTypeMask & t) const
     {
         return hash<std::underlying_type<egl::EGLRenderableTypeMask>::type>()(static_cast<std::underlying_type<egl::EGLRenderableTypeMask>::type>(t));
     }
@@ -520,7 +520,7 @@ namespace std
 template<>
 struct hash<egl::EGLSurfaceTypeMask>
 {
-    hash<std::underlying_type<egl::EGLSurfaceTypeMask>::type>::result_type operator()(const egl::EGLSurfaceTypeMask & t) const
+    std::size_t operator()(const egl::EGLSurfaceTypeMask & t) const
     {
         return hash<std::underlying_type<egl::EGLSurfaceTypeMask>::type>()(static_cast<std::underlying_type<egl::EGLSurfaceTypeMask>::type>(t));
     }
@@ -582,7 +582,7 @@ namespace std
 template<>
 struct hash<egl::EGLSyncFlagsKHR>
 {
-    hash<std::underlying_type<egl::EGLSyncFlagsKHR>::type>::result_type operator()(const egl::EGLSyncFlagsKHR & t) const
+    std::size_t operator()(const egl::EGLSyncFlagsKHR & t) const
     {
         return hash<std::underlying_type<egl::EGLSyncFlagsKHR>::type>()(static_cast<std::underlying_type<egl::EGLSyncFlagsKHR>::type>(t));
     }

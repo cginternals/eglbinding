@@ -23,6 +23,7 @@ Function<EGLBoolean, EGLDisplay, EGLStreamKHR> Binding::StreamConsumerGLTextureE
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR, EGLOutputLayerEXT> Binding::StreamConsumerOutputEXT("eglStreamConsumerOutputEXT");
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR, const EGLAttrib *> Binding::StreamConsumerReleaseAttribKHR("eglStreamConsumerReleaseAttribKHR");
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR> Binding::StreamConsumerReleaseKHR("eglStreamConsumerReleaseKHR");
+Function<EGLBoolean, EGLDisplay, EGLStreamKHR> Binding::StreamFlushNV("eglStreamFlushNV");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, EGLint> Binding::SurfaceAttrib("eglSurfaceAttrib");
 Function<EGLBoolean, EGLDisplay, EGLSurface> Binding::SwapBuffers("eglSwapBuffers");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, const EGLint *> Binding::SwapBuffersRegion2NOK("eglSwapBuffersRegion2NOK");

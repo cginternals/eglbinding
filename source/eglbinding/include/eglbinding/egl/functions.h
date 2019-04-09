@@ -18,6 +18,7 @@ EGLBINDING_API EGLBoolean eglBindAPI(EGLenum api);
 EGLBINDING_API EGLBoolean eglBindTexImage(EGLDisplay dpy, EGLSurface surface, EGLint buffer);
 
 EGLBINDING_API EGLBoolean eglChooseConfig(EGLDisplay dpy, const EGLint * attrib_list, EGLConfig * configs, EGLint config_size, EGLint * num_config);
+EGLBINDING_API EGLBoolean eglClientSignalSyncEXT(EGLDisplay dpy, EGLSync sync, const EGLAttrib * attrib_list);
 EGLBINDING_API EGLint eglClientWaitSync(EGLDisplay dpy, EGLSync sync, EGLint flags, EGLTime timeout);
 EGLBINDING_API EGLint eglClientWaitSyncKHR(EGLDisplay dpy, EGLSyncKHR sync, EGLint flags, EGLTimeKHR timeout);
 EGLBINDING_API EGLint eglClientWaitSyncNV(EGLSyncNV sync, EGLint flags, EGLTimeNV timeout);
@@ -78,7 +79,9 @@ EGLBINDING_API EGLContext eglGetCurrentContext();
 EGLBINDING_API EGLDisplay eglGetCurrentDisplay();
 EGLBINDING_API EGLSurface eglGetCurrentSurface(EGLint readdraw);
 EGLBINDING_API EGLDisplay eglGetDisplay(EGLNativeDisplayType display_id);
-EGLBINDING_API EGLenum eglGetError();
+EGLBINDING_API char * eglGetDisplayDriverConfig(EGLDisplay dpy);
+EGLBINDING_API const char * eglGetDisplayDriverName(EGLDisplay dpy);
+EGLBINDING_API EGLint eglGetError();
 EGLBINDING_API EGLBoolean eglGetFrameTimestampSupportedANDROID(EGLDisplay dpy, EGLSurface surface, EGLint timestamp);
 EGLBINDING_API EGLBoolean eglGetFrameTimestampsANDROID(EGLDisplay dpy, EGLSurface surface, EGLuint64KHR frameId, EGLint numTimestamps, const EGLint * timestamps, EGLnsecsANDROID * values);
 EGLBINDING_API EGLClientBuffer eglGetNativeClientBufferANDROID(const AHardwareBuffer * buffer);
@@ -158,6 +161,7 @@ EGLBINDING_API EGLBoolean eglStreamConsumerGLTextureExternalKHR(EGLDisplay dpy, 
 EGLBINDING_API EGLBoolean eglStreamConsumerOutputEXT(EGLDisplay dpy, EGLStreamKHR stream, EGLOutputLayerEXT layer);
 EGLBINDING_API EGLBoolean eglStreamConsumerReleaseAttribKHR(EGLDisplay dpy, EGLStreamKHR stream, const EGLAttrib * attrib_list);
 EGLBINDING_API EGLBoolean eglStreamConsumerReleaseKHR(EGLDisplay dpy, EGLStreamKHR stream);
+EGLBINDING_API EGLBoolean eglStreamFlushNV(EGLDisplay dpy, EGLStreamKHR stream);
 EGLBINDING_API EGLBoolean eglSurfaceAttrib(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLint value);
 EGLBINDING_API EGLBoolean eglSwapBuffers(EGLDisplay dpy, EGLSurface surface);
 EGLBINDING_API EGLBoolean eglSwapBuffersRegion2NOK(EGLDisplay dpy, EGLSurface surface, EGLint numRects, const EGLint * rects);
@@ -169,6 +173,7 @@ EGLBINDING_API EGLBoolean eglSwapInterval(EGLDisplay dpy, EGLint interval);
 EGLBINDING_API EGLBoolean eglTerminate(EGLDisplay dpy);
 
 EGLBINDING_API EGLBoolean eglUnlockSurfaceKHR(EGLDisplay dpy, EGLSurface surface);
+EGLBINDING_API EGLBoolean eglUnsignalSyncEXT(EGLDisplay dpy, EGLSync sync, const EGLAttrib * attrib_list);
 
 
 EGLBINDING_API EGLBoolean eglWaitClient();

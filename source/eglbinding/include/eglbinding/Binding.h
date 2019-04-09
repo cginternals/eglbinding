@@ -61,7 +61,7 @@ public:
     */
     using FunctionLogCallback = std::function<void(FunctionCall *)>;
     
-    using array_t = std::array<AbstractFunction *, 141>; ///< The type of the build-in functions collection
+    using array_t = std::array<AbstractFunction *, 146>; ///< The type of the build-in functions collection
 
 
 public:
@@ -278,6 +278,7 @@ public:
     static Function<egl::EGLBoolean, egl::EGLenum> BindAPI; ///< Wrapper for eglBindAPI
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, egl::EGLint> BindTexImage; ///< Wrapper for eglBindTexImage
     static Function<egl::EGLBoolean, egl::EGLDisplay, const egl::EGLint *, egl::EGLConfig *, egl::EGLint, egl::EGLint *> ChooseConfig; ///< Wrapper for eglChooseConfig
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSync, const egl::EGLAttrib *> ClientSignalSyncEXT; ///< Wrapper for eglClientSignalSyncEXT
     static Function<egl::EGLint, egl::EGLDisplay, egl::EGLSync, egl::EGLint, egl::EGLTime> ClientWaitSync; ///< Wrapper for eglClientWaitSync
     static Function<egl::EGLint, egl::EGLDisplay, egl::EGLSyncKHR, egl::EGLint, egl::EGLTimeKHR> ClientWaitSyncKHR; ///< Wrapper for eglClientWaitSyncKHR
     static Function<egl::EGLint, egl::EGLSyncNV, egl::EGLint, egl::EGLTimeNV> ClientWaitSyncNV; ///< Wrapper for eglClientWaitSyncNV
@@ -334,7 +335,9 @@ public:
     static Function<egl::EGLDisplay> GetCurrentDisplay; ///< Wrapper for eglGetCurrentDisplay
     static Function<egl::EGLSurface, egl::EGLint> GetCurrentSurface; ///< Wrapper for eglGetCurrentSurface
     static Function<egl::EGLDisplay, egl::EGLNativeDisplayType> GetDisplay; ///< Wrapper for eglGetDisplay
-    static Function<egl::EGLenum> GetError; ///< Wrapper for eglGetError
+    static Function<char *, egl::EGLDisplay> GetDisplayDriverConfig; ///< Wrapper for eglGetDisplayDriverConfig
+    static Function<const char *, egl::EGLDisplay> GetDisplayDriverName; ///< Wrapper for eglGetDisplayDriverName
+    static Function<egl::EGLint> GetError; ///< Wrapper for eglGetError
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, egl::EGLint> GetFrameTimestampSupportedANDROID; ///< Wrapper for eglGetFrameTimestampSupportedANDROID
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, egl::EGLuint64KHR, egl::EGLint, const egl::EGLint *, egl::EGLnsecsANDROID *> GetFrameTimestampsANDROID; ///< Wrapper for eglGetFrameTimestampsANDROID
     static Function<egl::EGLClientBuffer, const egl::AHardwareBuffer *> GetNativeClientBufferANDROID; ///< Wrapper for eglGetNativeClientBufferANDROID
@@ -402,6 +405,7 @@ public:
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, egl::EGLOutputLayerEXT> StreamConsumerOutputEXT; ///< Wrapper for eglStreamConsumerOutputEXT
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, const egl::EGLAttrib *> StreamConsumerReleaseAttribKHR; ///< Wrapper for eglStreamConsumerReleaseAttribKHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR> StreamConsumerReleaseKHR; ///< Wrapper for eglStreamConsumerReleaseKHR
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR> StreamFlushNV; ///< Wrapper for eglStreamFlushNV
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, egl::EGLint, egl::EGLint> SurfaceAttrib; ///< Wrapper for eglSurfaceAttrib
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface> SwapBuffers; ///< Wrapper for eglSwapBuffers
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, egl::EGLint, const egl::EGLint *> SwapBuffersRegion2NOK; ///< Wrapper for eglSwapBuffersRegion2NOK
@@ -411,6 +415,7 @@ public:
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLint> SwapInterval; ///< Wrapper for eglSwapInterval
     static Function<egl::EGLBoolean, egl::EGLDisplay> Terminate; ///< Wrapper for eglTerminate
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface> UnlockSurfaceKHR; ///< Wrapper for eglUnlockSurfaceKHR
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSync, const egl::EGLAttrib *> UnsignalSyncEXT; ///< Wrapper for eglUnsignalSyncEXT
     static Function<egl::EGLBoolean> WaitClient; ///< Wrapper for eglWaitClient
     static Function<egl::EGLBoolean> WaitGL; ///< Wrapper for eglWaitGL
     static Function<egl::EGLBoolean, egl::EGLint> WaitNative; ///< Wrapper for eglWaitNative

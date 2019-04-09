@@ -81,6 +81,11 @@ EGLBoolean eglStreamConsumerReleaseKHR(EGLDisplay dpy, EGLStreamKHR stream)
     return Binding::StreamConsumerReleaseKHR(dpy, stream);
 }
 
+EGLBoolean eglStreamFlushNV(EGLDisplay dpy, EGLStreamKHR stream)
+{
+    return Binding::StreamFlushNV(dpy, stream);
+}
+
 EGLBoolean eglSurfaceAttrib(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLint value)
 {
     return Binding::SurfaceAttrib(dpy, surface, attribute, value);

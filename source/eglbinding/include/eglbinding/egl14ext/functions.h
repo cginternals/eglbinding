@@ -10,6 +10,7 @@ namespace egl14ext
 {
 
 
+using egl::eglClientSignalSyncEXT;
 using egl::eglClientWaitSync;
 using egl::eglClientWaitSyncKHR;
 using egl::eglClientWaitSyncNV;
@@ -52,6 +53,8 @@ using egl::eglExportDRMImageMESA;
 using egl::eglFenceNV;
 using egl::eglGetCompositorTimingANDROID;
 using egl::eglGetCompositorTimingSupportedANDROID;
+using egl::eglGetDisplayDriverConfig;
+using egl::eglGetDisplayDriverName;
 using egl::eglGetFrameTimestampSupportedANDROID;
 using egl::eglGetFrameTimestampsANDROID;
 using egl::eglGetNativeClientBufferANDROID;
@@ -110,11 +113,13 @@ using egl::eglStreamConsumerGLTextureExternalKHR;
 using egl::eglStreamConsumerOutputEXT;
 using egl::eglStreamConsumerReleaseAttribKHR;
 using egl::eglStreamConsumerReleaseKHR;
+using egl::eglStreamFlushNV;
 using egl::eglSwapBuffersRegion2NOK;
 using egl::eglSwapBuffersRegionNOK;
 using egl::eglSwapBuffersWithDamageEXT;
 using egl::eglSwapBuffersWithDamageKHR;
 using egl::eglUnlockSurfaceKHR;
+using egl::eglUnsignalSyncEXT;
 using egl::eglWaitSync;
 using egl::eglWaitSyncKHR;
 

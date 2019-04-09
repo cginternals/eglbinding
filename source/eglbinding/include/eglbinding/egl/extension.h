@@ -12,6 +12,7 @@ namespace egl
 enum class EGLextension : int // EGLextension is not a type introduced by EGL API so far
 {
     UNKNOWN = -1,
+    EGL_ANDROID_GLES_layers,
     EGL_ANDROID_blob_cache,
     EGL_ANDROID_create_native_client_buffer,
     EGL_ANDROID_framebuffer_target,
@@ -32,6 +33,7 @@ enum class EGLextension : int // EGLextension is not a type introduced by EGL AP
     EGL_EXT_bind_to_front,
     EGL_EXT_buffer_age,
     EGL_EXT_client_extensions,
+    EGL_EXT_client_sync,
     EGL_EXT_compositor,
     EGL_EXT_create_context_robustness,
     EGL_EXT_device_base,
@@ -43,6 +45,7 @@ enum class EGLextension : int // EGLextension is not a type introduced by EGL AP
     EGL_EXT_gl_colorspace_bt2020_pq,
     EGL_EXT_gl_colorspace_display_p3,
     EGL_EXT_gl_colorspace_display_p3_linear,
+    EGL_EXT_gl_colorspace_display_p3_passthrough,
     EGL_EXT_gl_colorspace_scrgb,
     EGL_EXT_gl_colorspace_scrgb_linear,
     EGL_EXT_image_dma_buf_import,
@@ -64,6 +67,7 @@ enum class EGLextension : int // EGLextension is not a type introduced by EGL AP
     EGL_EXT_surface_CTA861_3_metadata,
     EGL_EXT_surface_SMPTE2086_metadata,
     EGL_EXT_swap_buffers_with_damage,
+    EGL_EXT_sync_reuse,
     EGL_EXT_yuv_surface,
     EGL_HI_clientpixmap,
     EGL_HI_colorformats,
@@ -114,6 +118,7 @@ enum class EGLextension : int // EGLextension is not a type introduced by EGL AP
     EGL_MESA_image_dma_buf_export,
     EGL_MESA_platform_gbm,
     EGL_MESA_platform_surfaceless,
+    EGL_MESA_query_driver,
     EGL_NOK_swap_region,
     EGL_NOK_swap_region2,
     EGL_NOK_texture_from_pixmap,
@@ -127,6 +132,7 @@ enum class EGLextension : int // EGLextension is not a type introduced by EGL AP
     EGL_NV_native_query,
     EGL_NV_post_convert_rounding,
     EGL_NV_post_sub_buffer,
+    EGL_NV_quadruple_buffer,
     EGL_NV_robustness_video_memory_purge,
     EGL_NV_stream_consumer_gltexture_yuv,
     EGL_NV_stream_cross_display,
@@ -136,6 +142,7 @@ enum class EGLextension : int // EGLextension is not a type introduced by EGL AP
     EGL_NV_stream_cross_system,
     EGL_NV_stream_fifo_next,
     EGL_NV_stream_fifo_synchronous,
+    EGL_NV_stream_flush,
     EGL_NV_stream_frame_limits,
     EGL_NV_stream_metadata,
     EGL_NV_stream_remote,
@@ -146,6 +153,7 @@ enum class EGLextension : int // EGLextension is not a type introduced by EGL AP
     EGL_NV_stream_sync,
     EGL_NV_sync,
     EGL_NV_system_time,
+    EGL_NV_triple_buffer,
     EGL_TIZEN_image_native_buffer,
     EGL_TIZEN_image_native_surface
 };

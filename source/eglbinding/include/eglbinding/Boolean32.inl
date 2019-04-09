@@ -109,7 +109,7 @@ namespace std
 template<>
 struct hash<eglbinding::Boolean32>
 {
-    hash<int>::result_type operator()(const eglbinding::Boolean32 & boolean) const
+    std::size_t operator()(const eglbinding::Boolean32 & boolean) const
     {
         return hash<eglbinding::Boolean32::underlying_type>()(static_cast<eglbinding::Boolean32::underlying_type>(boolean));
     }

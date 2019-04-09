@@ -10,6 +10,7 @@ namespace eglbinding
 
 
 Function<EGLBoolean, EGLDisplay, const EGLint *, EGLConfig *, EGLint, EGLint *> Binding::ChooseConfig("eglChooseConfig");
+Function<EGLBoolean, EGLDisplay, EGLSync, const EGLAttrib *> Binding::ClientSignalSyncEXT("eglClientSignalSyncEXT");
 Function<EGLint, EGLDisplay, EGLSync, EGLint, EGLTime> Binding::ClientWaitSync("eglClientWaitSync");
 Function<EGLint, EGLDisplay, EGLSyncKHR, EGLint, EGLTimeKHR> Binding::ClientWaitSyncKHR("eglClientWaitSyncKHR");
 Function<EGLint, EGLSyncNV, EGLint, EGLTimeNV> Binding::ClientWaitSyncNV("eglClientWaitSyncNV");

@@ -186,6 +186,7 @@ const std::unordered_map<std::string, EGLenum> Meta_EnumsByString_D =
     { "EGL_DRM_CONNECTOR_EXT", EGLenum::EGL_DRM_CONNECTOR_EXT },
     { "EGL_DRM_CRTC_EXT", EGLenum::EGL_DRM_CRTC_EXT },
     { "EGL_DRM_DEVICE_FILE_EXT", EGLenum::EGL_DRM_DEVICE_FILE_EXT },
+    { "EGL_DRM_MASTER_FD_EXT", EGLenum::EGL_DRM_MASTER_FD_EXT },
     { "EGL_DRM_PLANE_EXT", EGLenum::EGL_DRM_PLANE_EXT }
 };
 
@@ -218,6 +219,7 @@ const std::unordered_map<std::string, EGLenum> Meta_EnumsByString_G =
     { "EGL_GL_COLORSPACE_DEFAULT_EXT", EGLenum::EGL_GL_COLORSPACE_DEFAULT_EXT },
     { "EGL_GL_COLORSPACE_DISPLAY_P3_EXT", EGLenum::EGL_GL_COLORSPACE_DISPLAY_P3_EXT },
     { "EGL_GL_COLORSPACE_DISPLAY_P3_LINEAR_EXT", EGLenum::EGL_GL_COLORSPACE_DISPLAY_P3_LINEAR_EXT },
+    { "EGL_GL_COLORSPACE_DISPLAY_P3_PASSTHROUGH_EXT", EGLenum::EGL_GL_COLORSPACE_DISPLAY_P3_PASSTHROUGH_EXT },
     { "EGL_GL_COLORSPACE_KHR", EGLenum::EGL_GL_COLORSPACE_KHR },
     { "EGL_GL_COLORSPACE_LINEAR", EGLenum::EGL_GL_COLORSPACE_LINEAR },
     { "EGL_GL_COLORSPACE_LINEAR_KHR", EGLenum::EGL_GL_COLORSPACE_LINEAR_KHR },
@@ -396,7 +398,10 @@ const std::unordered_map<std::string, EGLenum> Meta_EnumsByString_P =
     { "EGL_PROTECTED_CONTENT_EXT", EGLenum::EGL_PROTECTED_CONTENT_EXT }
 };
 
-const std::unordered_map<std::string, EGLenum> Meta_EnumsByString_Q{};
+const std::unordered_map<std::string, EGLenum> Meta_EnumsByString_Q =
+{
+    { "EGL_QUADRUPLE_BUFFER_NV", EGLenum::EGL_QUADRUPLE_BUFFER_NV }
+};
 
 const std::unordered_map<std::string, EGLenum> Meta_EnumsByString_R =
 {
@@ -469,6 +474,8 @@ const std::unordered_map<std::string, EGLenum> Meta_EnumsByString_S =
     { "EGL_SURFACE_TYPE", EGLenum::EGL_SURFACE_TYPE },
     { "EGL_SWAP_BEHAVIOR", EGLenum::EGL_SWAP_BEHAVIOR },
     { "EGL_SWAP_INTERVAL_EXT", EGLenum::EGL_SWAP_INTERVAL_EXT },
+    { "EGL_SYNC_CLIENT_EXT", EGLenum::EGL_SYNC_CLIENT_EXT },
+    { "EGL_SYNC_CLIENT_SIGNAL_EXT", EGLenum::EGL_SYNC_CLIENT_SIGNAL_EXT },
     { "EGL_SYNC_CL_EVENT", EGLenum::EGL_SYNC_CL_EVENT },
     { "EGL_SYNC_CL_EVENT_COMPLETE", EGLenum::EGL_SYNC_CL_EVENT_COMPLETE },
     { "EGL_SYNC_CL_EVENT_COMPLETE_KHR", EGLenum::EGL_SYNC_CL_EVENT_COMPLETE_KHR },
@@ -516,7 +523,8 @@ const std::unordered_map<std::string, EGLenum> Meta_EnumsByString_T =
     { "EGL_TRANSPARENT_GREEN_VALUE", EGLenum::EGL_TRANSPARENT_GREEN_VALUE },
     { "EGL_TRANSPARENT_RED_VALUE", EGLenum::EGL_TRANSPARENT_RED_VALUE },
     { "EGL_TRANSPARENT_RGB", EGLenum::EGL_TRANSPARENT_RGB },
-    { "EGL_TRANSPARENT_TYPE", EGLenum::EGL_TRANSPARENT_TYPE }
+    { "EGL_TRANSPARENT_TYPE", EGLenum::EGL_TRANSPARENT_TYPE },
+    { "EGL_TRIPLE_BUFFER_NV", EGLenum::EGL_TRIPLE_BUFFER_NV }
 };
 
 const std::unordered_map<std::string, EGLenum> Meta_EnumsByString_U =
