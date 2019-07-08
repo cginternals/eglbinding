@@ -145,6 +145,7 @@ enum class EGLextension : int // EGLextension is not a type introduced by EGL AP
     EGL_NV_stream_flush,
     EGL_NV_stream_frame_limits,
     EGL_NV_stream_metadata,
+    EGL_NV_stream_origin,
     EGL_NV_stream_remote,
     EGL_NV_stream_reset,
     EGL_NV_stream_socket,

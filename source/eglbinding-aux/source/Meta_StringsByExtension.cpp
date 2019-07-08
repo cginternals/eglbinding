@@ -146,6 +146,7 @@ const std::unordered_map<EGLextension, std::string> Meta_StringsByExtension =
     { EGLextension::EGL_NV_stream_flush, "EGL_NV_stream_flush" },
     { EGLextension::EGL_NV_stream_frame_limits, "EGL_NV_stream_frame_limits" },
     { EGLextension::EGL_NV_stream_metadata, "EGL_NV_stream_metadata" },
+    { EGLextension::EGL_NV_stream_origin, "EGL_NV_stream_origin" },
     { EGLextension::EGL_NV_stream_remote, "EGL_NV_stream_remote" },
     { EGLextension::EGL_NV_stream_reset, "EGL_NV_stream_reset" },
     { EGLextension::EGL_NV_stream_socket, "EGL_NV_stream_socket" },
