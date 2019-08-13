@@ -12,6 +12,17 @@ namespace egl14
 
 
 // import bitfields to namespace
+using egl::EGL_MULTISAMPLE_RESOLVE_BOX_BIT;
+using egl::EGL_OPENGL_BIT;
+using egl::EGL_OPENGL_ES2_BIT;
+using egl::EGL_OPENGL_ES_BIT;
+using egl::EGL_OPENVG_BIT;
+using egl::EGL_PBUFFER_BIT;
+using egl::EGL_PIXMAP_BIT;
+using egl::EGL_SWAP_BEHAVIOR_PRESERVED_BIT;
+using egl::EGL_VG_ALPHA_FORMAT_PRE_BIT;
+using egl::EGL_VG_COLORSPACE_LINEAR_BIT;
+using egl::EGL_WINDOW_BIT;
 
 
 } // namespace egl14

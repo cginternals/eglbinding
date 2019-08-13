@@ -33,6 +33,13 @@ extern const std::unordered_map<egl::EGLextension, std::string> Meta_StringsByEx
 extern const std::unordered_map<egl::EGLextension, std::set<std::string>> Meta_FunctionStringsByExtension;
 extern const std::map<Version, std::set<std::string>> Meta_FunctionStringsByVersion;
 
+extern const std::unordered_map<egl::EGLContextFlagMask, std::string> Meta_StringsByEGLContextFlagMask;
+extern const std::unordered_map<egl::EGLContextProfileMask, std::string> Meta_StringsByEGLContextProfileMask;
+extern const std::unordered_map<egl::EGLDRMBufferUseMESAMask, std::string> Meta_StringsByEGLDRMBufferUseMESAMask;
+extern const std::unordered_map<egl::EGLLockUsageHintKHRMask, std::string> Meta_StringsByEGLLockUsageHintKHRMask;
+extern const std::unordered_map<egl::EGLRenderableTypeMask, std::string> Meta_StringsByEGLRenderableTypeMask;
+extern const std::unordered_map<egl::EGLSurfaceTypeMask, std::string> Meta_StringsByEGLSurfaceTypeMask;
+extern const std::unordered_map<egl::EGLSyncFlagsKHR, std::string> Meta_StringsByEGLSyncFlagsKHR;
 extern const std::unordered_map<egl::UnusedMask, std::string> Meta_StringsByUnusedMask;
 
 extern const std::array<std::unordered_map<std::string, egl::EGLbitfield>, 27> Meta_BitfieldsByStringMaps;

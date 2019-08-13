@@ -46,8 +46,6 @@ using egl::EGL_NATIVE_VISUAL_TYPE;
 using egl::EGL_NON_CONFORMANT_CONFIG;
 using egl::EGL_NONE;
 using egl::EGL_NOT_INITIALIZED;
-using egl::EGL_PBUFFER_BIT;
-using egl::EGL_PIXMAP_BIT;
 using egl::EGL_READ;
 using egl::EGL_RED_SIZE;
 using egl::EGL_SAMPLE_BUFFERS;
@@ -64,7 +62,6 @@ using egl::EGL_TRANSPARENT_TYPE;
 using egl::EGL_VENDOR;
 using egl::EGL_VERSION;
 using egl::EGL_WIDTH;
-using egl::EGL_WINDOW_BIT;
 
 
 } // namespace egl10

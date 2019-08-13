@@ -56,6 +56,7 @@ set(headers
     ${include_path}/egl/extension.h
     ${include_path}/egl/functions.h
     ${include_path}/egl/types.h
+    ${include_path}/egl/types.inl
     ${include_path}/egl/values.h
     
     ${include_path}/eglbinding.h

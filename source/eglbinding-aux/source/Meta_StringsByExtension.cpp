@@ -141,7 +141,6 @@ const std::unordered_map<EGLextension, std::string> Meta_StringsByExtension =
     { EGLextension::EGL_NV_stream_cross_partition, "EGL_NV_stream_cross_partition" },
     { EGLextension::EGL_NV_stream_cross_process, "EGL_NV_stream_cross_process" },
     { EGLextension::EGL_NV_stream_cross_system, "EGL_NV_stream_cross_system" },
-    { EGLextension::EGL_NV_stream_dma, "EGL_NV_stream_dma" },
     { EGLextension::EGL_NV_stream_fifo_next, "EGL_NV_stream_fifo_next" },
     { EGLextension::EGL_NV_stream_fifo_synchronous, "EGL_NV_stream_fifo_synchronous" },
     { EGLextension::EGL_NV_stream_flush, "EGL_NV_stream_flush" },

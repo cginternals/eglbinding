@@ -73,15 +73,10 @@ using egl::EGL_NO_TEXTURE;
 using egl::EGL_NON_CONFORMANT_CONFIG;
 using egl::EGL_NONE;
 using egl::EGL_NOT_INITIALIZED;
-using egl::EGL_OPENGL_ES2_BIT;
 using egl::EGL_OPENGL_ES_API;
-using egl::EGL_OPENGL_ES_BIT;
 using egl::EGL_OPENVG_API;
-using egl::EGL_OPENVG_BIT;
 using egl::EGL_OPENVG_IMAGE;
-using egl::EGL_PBUFFER_BIT;
 using egl::EGL_PIXEL_ASPECT_RATIO;
-using egl::EGL_PIXMAP_BIT;
 using egl::EGL_READ;
 using egl::EGL_RED_SIZE;
 using egl::EGL_RENDER_BUFFER;
@@ -111,13 +106,10 @@ using egl::EGL_VERTICAL_RESOLUTION;
 using egl::EGL_VG_ALPHA_FORMAT;
 using egl::EGL_VG_ALPHA_FORMAT_NONPRE;
 using egl::EGL_VG_ALPHA_FORMAT_PRE;
-using egl::EGL_VG_ALPHA_FORMAT_PRE_BIT;
 using egl::EGL_VG_COLORSPACE;
 using egl::EGL_VG_COLORSPACE_LINEAR;
-using egl::EGL_VG_COLORSPACE_LINEAR_BIT;
 using egl::EGL_VG_COLORSPACE_sRGB;
 using egl::EGL_WIDTH;
-using egl::EGL_WINDOW_BIT;
 
 
 } // namespace egl13

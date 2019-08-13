@@ -16,7 +16,7 @@
 #include <eglbinding/eglbinding.h>
 
 #include <eglbinding/egl/egl.h>
-#include <eglbinding/eglGetProcAddress.h>
+#include <eglbinding/getProcAddress.h>
 
 #include <eglbinding-aux/ValidVersions.h>
 #include <eglbinding-aux/types_to_string.h>
@@ -80,7 +80,7 @@ bool testContext(EGLDisplay eglDpy, EGLConfig config, EGLenum api, EGLint & majo
 
     if (api == egl::EGL_OPENGL_API)
     {
-        glbinding::initialize(::eglGetProcAddress, false);
+        glbinding::initialize(eglbinding::getProcAddress, false);
 
         const auto glVersion = glbinding::aux::ContextInfo::version();
 
@@ -96,7 +96,7 @@ bool testContext(EGLDisplay eglDpy, EGLConfig config, EGLenum api, EGLint & majo
     }
     else if (api == egl::EGL_OPENGL_ES_API)
     {
-        glesbinding::initialize(::eglGetProcAddress, false);
+        glesbinding::initialize(eglbinding::getProcAddress, false);
 
         const auto glesVersion = glesbinding::aux::ContextInfo::version();
 
@@ -254,7 +254,7 @@ int main(int argc, char * argv[])
         static_cast<EGLint>(EGL_NONE)
     };
 
-    EGLDisplay eglDpy = eglGetDisplay(static_cast<EGLint>(EGL_DEFAULT_DISPLAY));
+    EGLDisplay eglDpy = eglGetDisplay(EGL_DEFAULT_DISPLAY);
 
     if (eglDpy == nullptr)
     {

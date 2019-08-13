@@ -262,6 +262,90 @@ public:
     *  @return
     *    The string representation of the value
     */
+    static const std::string & getString(egl::EGLContextFlagMask eglbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] glbitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
+    static const std::string & getString(egl::EGLContextProfileMask eglbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] glbitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
+    static const std::string & getString(egl::EGLDRMBufferUseMESAMask eglbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] glbitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
+    static const std::string & getString(egl::EGLLockUsageHintKHRMask eglbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] glbitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
+    static const std::string & getString(egl::EGLRenderableTypeMask eglbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] glbitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
+    static const std::string & getString(egl::EGLSurfaceTypeMask eglbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] glbitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
+    static const std::string & getString(egl::EGLSyncFlagsKHR eglbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] glbitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
     static const std::string & getString(egl::UnusedMask eglbitfield);
 
 

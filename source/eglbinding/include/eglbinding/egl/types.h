@@ -25,7 +25,6 @@
 namespace egl
 {
 
-using EGLbitfield = unsigned int;
 
 enum class EGLextension : int;
 enum class EGLenum : unsigned int;
@@ -65,7 +64,17 @@ struct EGLClientPixmapHI {
     EGLint iStride;
 };
 using EGLDEBUGPROCKHR = void (EGL_APIENTRY *)(EGLenum error,const char *command,EGLint messageType,EGLLabelKHR threadLabel,EGLLabelKHR objectLabel,const char* message);
+enum class EGLSurfaceTypeMask : unsigned int;
+enum class EGLRenderableTypeMask : unsigned int;
+enum class EGLLockUsageHintKHRMask : unsigned int;
+enum class EGLSyncFlagsKHR : unsigned int;
+enum class EGLDRMBufferUseMESAMask : unsigned int;
+enum class EGLContextFlagMask : unsigned int;
+enum class EGLContextProfileMask : unsigned int;
+using EGLuint = unsigned int;
+using EGLbitfield = EGLuint;
 enum class UnusedMask : unsigned int;
+
 
 } // namespace egl
 

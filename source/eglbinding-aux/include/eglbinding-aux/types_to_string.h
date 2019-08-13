@@ -19,6 +19,13 @@ namespace egl
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLBoolean & value);
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLenum & value);
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLextension & value);
+EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLContextFlagMask & value);
+EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLContextProfileMask & value);
+EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLDRMBufferUseMESAMask & value);
+EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLLockUsageHintKHRMask & value);
+EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLRenderableTypeMask & value);
+EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLSurfaceTypeMask & value);
+EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLSyncFlagsKHR & value);
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const UnusedMask & value);
 
 
@@ -67,19 +74,7 @@ EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<
 template <>
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<egl::EGLBoolean> & value);
 
-/**
-*  @brief
-*    A specialized ostream operator for the gl::GLubyte * Value template
-*/
-template <>
-EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<egl::GLubyte *> & value);
 
-/**
-*  @brief
-*    A specialized ostream operator for the gl::GLchar * Value template
-*/
-template <>
-EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<egl::GLchar *> & value);
 
 /**
 *  @brief
