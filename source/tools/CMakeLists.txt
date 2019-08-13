@@ -7,3 +7,4 @@ endif()
 
 # Tools
 add_subdirectory("eglcontexts")
+add_subdirectory("graphics-api-test")
