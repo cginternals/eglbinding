@@ -3,6 +3,9 @@
 # External dependencies
 # 
 
+find_package(EGL REQUIRED)
+find_package(KHR REQUIRED)
+
 # find_package(OpenGL REQUIRED)
 
 set(ADDITIONAL_LIBRARIES)
@@ -246,6 +249,8 @@ target_link_libraries(${target}
 
     PUBLIC
     ${DEFAULT_LIBRARIES}
+    EGL::EGLlib
+    KHR::KHR
 
     INTERFACE
 )

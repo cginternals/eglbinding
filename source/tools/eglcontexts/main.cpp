@@ -80,7 +80,7 @@ bool testContext(EGLDisplay eglDpy, EGLConfig config, EGLenum api, EGLint & majo
 
     if (api == egl::EGL_OPENGL_API)
     {
-        glbinding::initialize(eglbinding::getProcAddress, false);
+        glbinding::initialize(egl::eglGetProcAddress, false);
 
         const auto glVersion = glbinding::aux::ContextInfo::version();
 
@@ -96,7 +96,7 @@ bool testContext(EGLDisplay eglDpy, EGLConfig config, EGLenum api, EGLint & majo
     }
     else if (api == egl::EGL_OPENGL_ES_API)
     {
-        glesbinding::initialize(eglbinding::getProcAddress, false);
+        glesbinding::initialize(egl::eglGetProcAddress, false);
 
         const auto glesVersion = glesbinding::aux::ContextInfo::version();
 
@@ -241,7 +241,7 @@ void outputConfigs(EGLDisplay display)
 
 int main(int argc, char * argv[])
 {
-    eglbinding::initialize(::eglGetProcAddress);
+    eglbinding::initialize(eglbinding::getProcAddress);
 
     //const auto supportedExtensions = eglbinding::aux::ContextInfo::extensions();
 
