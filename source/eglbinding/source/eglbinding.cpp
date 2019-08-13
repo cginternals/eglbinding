@@ -30,6 +30,11 @@ void resolveFunctions()
     Binding::resolveFunctions();
 }
 
+void addContextSwitchCallback(ContextSwitchCallback callback)
+{
+    Binding::addContextSwitchCallback(callback);
+}
+
 void setCallbackMask(CallbackMask mask)
 {
     Binding::setCallbackMask(mask);
@@ -98,6 +103,31 @@ FunctionLogCallback logCallback()
 void setLogCallback(FunctionLogCallback callback)
 {
     Binding::setLogCallback(callback);
+}
+
+void initialize(ContextHandle context, eglbinding::GetProcAddress functionPointerResolver, bool useContext, bool resolveFunctions)
+{
+    Binding::initialize(context, functionPointerResolver, useContext, resolveFunctions);
+}
+
+void useCurrentContext()
+{
+    Binding::useCurrentContext();
+}
+
+void useContext(ContextHandle context)
+{
+    Binding::useContext(context);
+}
+
+void releaseCurrentContext()
+{
+    Binding::releaseCurrentContext();
+}
+
+void releaseContext(ContextHandle context)
+{
+    Binding::releaseContext(context);
 }
 
 

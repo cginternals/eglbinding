@@ -9,8 +9,6 @@ namespace eglbinding
 {
 
 
-Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, const EGLint *, EGLnsecsANDROID *> Binding::GetCompositorTimingANDROID("eglGetCompositorTimingANDROID");
-Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint> Binding::GetCompositorTimingSupportedANDROID("eglGetCompositorTimingSupportedANDROID");
 Function<EGLBoolean, EGLDisplay, EGLConfig, EGLint, EGLint *> Binding::GetConfigAttrib("eglGetConfigAttrib");
 Function<EGLBoolean, EGLDisplay, EGLConfig *, EGLint, EGLint *> Binding::GetConfigs("eglGetConfigs");
 Function<EGLContext> Binding::GetCurrentContext("eglGetCurrentContext");
@@ -20,10 +18,6 @@ Function<EGLDisplay, EGLNativeDisplayType> Binding::GetDisplay("eglGetDisplay");
 Function<char *, EGLDisplay> Binding::GetDisplayDriverConfig("eglGetDisplayDriverConfig");
 Function<const char *, EGLDisplay> Binding::GetDisplayDriverName("eglGetDisplayDriverName");
 Function<EGLint> Binding::GetError("eglGetError");
-Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint> Binding::GetFrameTimestampSupportedANDROID("eglGetFrameTimestampSupportedANDROID");
-Function<EGLBoolean, EGLDisplay, EGLSurface, EGLuint64KHR, EGLint, const EGLint *, EGLnsecsANDROID *> Binding::GetFrameTimestampsANDROID("eglGetFrameTimestampsANDROID");
-Function<EGLClientBuffer, const AHardwareBuffer *> Binding::GetNativeClientBufferANDROID("eglGetNativeClientBufferANDROID");
-Function<EGLBoolean, EGLDisplay, EGLSurface, EGLuint64KHR *> Binding::GetNextFrameIdANDROID("eglGetNextFrameIdANDROID");
 Function<EGLBoolean, EGLDisplay, const EGLAttrib *, EGLOutputLayerEXT *, EGLint, EGLint *> Binding::GetOutputLayersEXT("eglGetOutputLayersEXT");
 Function<EGLBoolean, EGLDisplay, const EGLAttrib *, EGLOutputPortEXT *, EGLint, EGLint *> Binding::GetOutputPortsEXT("eglGetOutputPortsEXT");
 Function<EGLDisplay, EGLenum, void *, const EGLAttrib *> Binding::GetPlatformDisplay("eglGetPlatformDisplay");
@@ -35,7 +29,6 @@ Function<EGLBoolean, EGLDisplay, EGLSyncKHR, EGLint, EGLint *> Binding::GetSyncA
 Function<EGLBoolean, EGLSyncNV, EGLint, EGLint *> Binding::GetSyncAttribNV("eglGetSyncAttribNV");
 Function<EGLuint64NV> Binding::GetSystemTimeFrequencyNV("eglGetSystemTimeFrequencyNV");
 Function<EGLuint64NV> Binding::GetSystemTimeNV("eglGetSystemTimeNV");
-
 
 
 } // namespace eglbinding

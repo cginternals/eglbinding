@@ -6,7 +6,7 @@ namespace eglbinding
 {
 
 
-using ContextHandle = long long int; ///< Type for storing OpenGL context handles
+using ContextHandle = long long int; ///< Type for storing context handles
 
 
 } // namespace eglbinding

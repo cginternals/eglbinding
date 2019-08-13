@@ -15,13 +15,13 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_0{};
 
 const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_A =
 {
-    { "EGL_ANDROID_GLES_layers", EGLextension::EGL_ANDROID_GLES_layers },
     { "EGL_ANDROID_blob_cache", EGLextension::EGL_ANDROID_blob_cache },
     { "EGL_ANDROID_create_native_client_buffer", EGLextension::EGL_ANDROID_create_native_client_buffer },
     { "EGL_ANDROID_framebuffer_target", EGLextension::EGL_ANDROID_framebuffer_target },
     { "EGL_ANDROID_front_buffer_auto_refresh", EGLextension::EGL_ANDROID_front_buffer_auto_refresh },
     { "EGL_ANDROID_get_frame_timestamps", EGLextension::EGL_ANDROID_get_frame_timestamps },
     { "EGL_ANDROID_get_native_client_buffer", EGLextension::EGL_ANDROID_get_native_client_buffer },
+    { "EGL_ANDROID_GLES_layers", EGLextension::EGL_ANDROID_GLES_layers },
     { "EGL_ANDROID_image_native_buffer", EGLextension::EGL_ANDROID_image_native_buffer },
     { "EGL_ANDROID_native_fence_sync", EGLextension::EGL_ANDROID_native_fence_sync },
     { "EGL_ANDROID_presentation_time", EGLextension::EGL_ANDROID_presentation_time },
@@ -181,6 +181,7 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_N =
     { "EGL_NV_stream_cross_partition", EGLextension::EGL_NV_stream_cross_partition },
     { "EGL_NV_stream_cross_process", EGLextension::EGL_NV_stream_cross_process },
     { "EGL_NV_stream_cross_system", EGLextension::EGL_NV_stream_cross_system },
+    { "EGL_NV_stream_dma", EGLextension::EGL_NV_stream_dma },
     { "EGL_NV_stream_fifo_next", EGLextension::EGL_NV_stream_fifo_next },
     { "EGL_NV_stream_fifo_synchronous", EGLextension::EGL_NV_stream_fifo_synchronous },
     { "EGL_NV_stream_flush", EGLextension::EGL_NV_stream_flush },

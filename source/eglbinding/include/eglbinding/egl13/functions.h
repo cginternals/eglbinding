@@ -9,7 +9,7 @@
 namespace egl13
 {
 
-
+// import functions
 using egl::eglBindAPI;
 using egl::eglBindTexImage;
 using egl::eglChooseConfig;
@@ -43,6 +43,5 @@ using egl::eglTerminate;
 using egl::eglWaitClient;
 using egl::eglWaitGL;
 using egl::eglWaitNative;
-
 
 } // namespace egl13

@@ -12,5 +12,4 @@ namespace eglbinding
 Function<EGLBoolean, EGLDisplay> Binding::Terminate("eglTerminate");
 
 
-
 } // namespace eglbinding

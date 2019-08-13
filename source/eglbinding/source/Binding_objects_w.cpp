@@ -16,5 +16,4 @@ Function<EGLBoolean, EGLDisplay, EGLSync, EGLint> Binding::WaitSync("eglWaitSync
 Function<EGLint, EGLDisplay, EGLSyncKHR, EGLint> Binding::WaitSyncKHR("eglWaitSyncKHR");
 
 
-
 } // namespace eglbinding

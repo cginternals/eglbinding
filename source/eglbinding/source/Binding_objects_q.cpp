@@ -13,8 +13,8 @@ Function<EGLenum> Binding::QueryAPI("eglQueryAPI");
 Function<EGLBoolean, EGLDisplay, EGLContext, EGLint, EGLint *> Binding::QueryContext("eglQueryContext");
 Function<EGLBoolean, EGLint, EGLAttrib *> Binding::QueryDebugKHR("eglQueryDebugKHR");
 Function<EGLBoolean, EGLDeviceEXT, EGLint, EGLAttrib *> Binding::QueryDeviceAttribEXT("eglQueryDeviceAttribEXT");
-Function<const char *, EGLDeviceEXT, EGLint> Binding::QueryDeviceStringEXT("eglQueryDeviceStringEXT");
 Function<EGLBoolean, EGLint, EGLDeviceEXT *, EGLint *> Binding::QueryDevicesEXT("eglQueryDevicesEXT");
+Function<const char *, EGLDeviceEXT, EGLint> Binding::QueryDeviceStringEXT("eglQueryDeviceStringEXT");
 Function<EGLBoolean, EGLDisplay, EGLint, EGLAttrib *> Binding::QueryDisplayAttribEXT("eglQueryDisplayAttribEXT");
 Function<EGLBoolean, EGLDisplay, EGLint, EGLAttrib *> Binding::QueryDisplayAttribKHR("eglQueryDisplayAttribKHR");
 Function<EGLBoolean, EGLDisplay, EGLint, EGLAttrib *> Binding::QueryDisplayAttribNV("eglQueryDisplayAttribNV");
@@ -36,7 +36,6 @@ Function<const char *, EGLDisplay, EGLint> Binding::QueryString("eglQueryString"
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, EGLint *> Binding::QuerySurface("eglQuerySurface");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, EGLAttribKHR *> Binding::QuerySurface64KHR("eglQuerySurface64KHR");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, void **> Binding::QuerySurfacePointerANGLE("eglQuerySurfacePointerANGLE");
-
 
 
 } // namespace eglbinding

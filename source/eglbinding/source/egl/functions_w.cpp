@@ -4,39 +4,34 @@
 #include <eglbinding/egl/functions.h>
 
 
-using namespace eglbinding;
-
-
 namespace egl
 {
 
 
 EGLBoolean eglWaitClient()
 {
-    return Binding::WaitClient();
+    return eglbinding::Binding::WaitClient();
 }
 
 EGLBoolean eglWaitGL()
 {
-    return Binding::WaitGL();
+    return eglbinding::Binding::WaitGL();
 }
 
 EGLBoolean eglWaitNative(EGLint engine)
 {
-    return Binding::WaitNative(engine);
+    return eglbinding::Binding::WaitNative(engine);
 }
 
 EGLBoolean eglWaitSync(EGLDisplay dpy, EGLSync sync, EGLint flags)
 {
-    return Binding::WaitSync(dpy, sync, flags);
+    return eglbinding::Binding::WaitSync(dpy, sync, flags);
 }
 
 EGLint eglWaitSyncKHR(EGLDisplay dpy, EGLSyncKHR sync, EGLint flags)
 {
-    return Binding::WaitSyncKHR(dpy, sync, flags);
+    return eglbinding::Binding::WaitSyncKHR(dpy, sync, flags);
 }
-
-
 
 
 } // namespace egl

@@ -12,5 +12,4 @@ namespace eglbinding
 Function<EGLBoolean, EGLSyncNV> Binding::FenceNV("eglFenceNV");
 
 
-
 } // namespace eglbinding

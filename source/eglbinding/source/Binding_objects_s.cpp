@@ -9,7 +9,6 @@ namespace eglbinding
 {
 
 
-Function<void, EGLDisplay, EGLSetBlobFuncANDROID, EGLGetBlobFuncANDROID> Binding::SetBlobCacheFuncsANDROID("eglSetBlobCacheFuncsANDROID");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint *, EGLint> Binding::SetDamageRegionKHR("eglSetDamageRegionKHR");
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR, EGLenum, EGLAttrib> Binding::SetStreamAttribKHR("eglSetStreamAttribKHR");
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR, EGLint, EGLint, EGLint, const void *> Binding::SetStreamMetadataNV("eglSetStreamMetadataNV");
@@ -31,7 +30,6 @@ Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, const EGLint *> Binding::Sw
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint *, EGLint> Binding::SwapBuffersWithDamageEXT("eglSwapBuffersWithDamageEXT");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint *, EGLint> Binding::SwapBuffersWithDamageKHR("eglSwapBuffersWithDamageKHR");
 Function<EGLBoolean, EGLDisplay, EGLint> Binding::SwapInterval("eglSwapInterval");
-
 
 
 } // namespace eglbinding

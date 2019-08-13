@@ -13,5 +13,4 @@ Function<EGLBoolean, EGLDisplay, EGLSurface> Binding::UnlockSurfaceKHR("eglUnloc
 Function<EGLBoolean, EGLDisplay, EGLSync, const EGLAttrib *> Binding::UnsignalSyncEXT("eglUnsignalSyncEXT");
 
 
-
 } // namespace eglbinding

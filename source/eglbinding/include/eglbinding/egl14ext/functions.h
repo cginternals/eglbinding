@@ -9,7 +9,7 @@
 namespace egl14ext
 {
 
-
+// import functions
 using egl::eglClientSignalSyncEXT;
 using egl::eglClientWaitSync;
 using egl::eglClientWaitSyncKHR;
@@ -25,7 +25,6 @@ using egl::eglCreateDRMImageMESA;
 using egl::eglCreateFenceSyncNV;
 using egl::eglCreateImage;
 using egl::eglCreateImageKHR;
-using egl::eglCreateNativeClientBufferANDROID;
 using egl::eglCreatePixmapSurfaceHI;
 using egl::eglCreatePlatformPixmapSurface;
 using egl::eglCreatePlatformPixmapSurfaceEXT;
@@ -46,19 +45,12 @@ using egl::eglDestroyStreamKHR;
 using egl::eglDestroySync;
 using egl::eglDestroySyncKHR;
 using egl::eglDestroySyncNV;
-using egl::eglDupNativeFenceFDANDROID;
 using egl::eglExportDMABUFImageMESA;
 using egl::eglExportDMABUFImageQueryMESA;
 using egl::eglExportDRMImageMESA;
 using egl::eglFenceNV;
-using egl::eglGetCompositorTimingANDROID;
-using egl::eglGetCompositorTimingSupportedANDROID;
 using egl::eglGetDisplayDriverConfig;
 using egl::eglGetDisplayDriverName;
-using egl::eglGetFrameTimestampSupportedANDROID;
-using egl::eglGetFrameTimestampsANDROID;
-using egl::eglGetNativeClientBufferANDROID;
-using egl::eglGetNextFrameIdANDROID;
 using egl::eglGetOutputLayersEXT;
 using egl::eglGetOutputPortsEXT;
 using egl::eglGetPlatformDisplay;
@@ -74,11 +66,10 @@ using egl::eglLockSurfaceKHR;
 using egl::eglOutputLayerAttribEXT;
 using egl::eglOutputPortAttribEXT;
 using egl::eglPostSubBufferNV;
-using egl::eglPresentationTimeANDROID;
 using egl::eglQueryDebugKHR;
 using egl::eglQueryDeviceAttribEXT;
-using egl::eglQueryDeviceStringEXT;
 using egl::eglQueryDevicesEXT;
+using egl::eglQueryDeviceStringEXT;
 using egl::eglQueryDisplayAttribEXT;
 using egl::eglQueryDisplayAttribKHR;
 using egl::eglQueryDisplayAttribNV;
@@ -99,7 +90,6 @@ using egl::eglQueryStreamu64KHR;
 using egl::eglQuerySurface64KHR;
 using egl::eglQuerySurfacePointerANGLE;
 using egl::eglResetStreamNV;
-using egl::eglSetBlobCacheFuncsANDROID;
 using egl::eglSetDamageRegionKHR;
 using egl::eglSetStreamAttribKHR;
 using egl::eglSetStreamMetadataNV;
@@ -122,6 +112,5 @@ using egl::eglUnlockSurfaceKHR;
 using egl::eglUnsignalSyncEXT;
 using egl::eglWaitSync;
 using egl::eglWaitSyncKHR;
-
 
 } // namespace egl14ext

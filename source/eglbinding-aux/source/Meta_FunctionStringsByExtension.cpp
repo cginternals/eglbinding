@@ -15,14 +15,14 @@ const std::unordered_map<EGLextension, std::set<std::string>> Meta_FunctionStrin
 {
     { EGLextension::EGL_ANDROID_blob_cache, { "eglSetBlobCacheFuncsANDROID" } },
     { EGLextension::EGL_ANDROID_create_native_client_buffer, { "eglCreateNativeClientBufferANDROID" } },
-    { EGLextension::EGL_ANDROID_get_frame_timestamps, { "eglGetCompositorTimingANDROID", "eglGetCompositorTimingSupportedANDROID", "eglGetFrameTimestampSupportedANDROID", "eglGetFrameTimestampsANDROID", "eglGetNextFrameIdANDROID" } },
+    { EGLextension::EGL_ANDROID_get_frame_timestamps, { "eglGetCompositorTimingANDROID", "eglGetCompositorTimingSupportedANDROID", "eglGetFrameTimestampsANDROID", "eglGetFrameTimestampSupportedANDROID", "eglGetNextFrameIdANDROID" } },
     { EGLextension::EGL_ANDROID_get_native_client_buffer, { "eglGetNativeClientBufferANDROID" } },
     { EGLextension::EGL_ANDROID_native_fence_sync, { "eglDupNativeFenceFDANDROID" } },
     { EGLextension::EGL_ANDROID_presentation_time, { "eglPresentationTimeANDROID" } },
     { EGLextension::EGL_ANGLE_query_surface_pointer, { "eglQuerySurfacePointerANGLE" } },
     { EGLextension::EGL_EXT_client_sync, { "eglClientSignalSyncEXT" } },
     { EGLextension::EGL_EXT_compositor, { "eglCompositorBindTexWindowEXT", "eglCompositorSetContextAttributesEXT", "eglCompositorSetContextListEXT", "eglCompositorSetSizeEXT", "eglCompositorSetWindowAttributesEXT", "eglCompositorSetWindowListEXT", "eglCompositorSwapPolicyEXT" } },
-    { EGLextension::EGL_EXT_device_base, { "eglQueryDeviceAttribEXT", "eglQueryDeviceStringEXT", "eglQueryDevicesEXT", "eglQueryDisplayAttribEXT" } },
+    { EGLextension::EGL_EXT_device_base, { "eglQueryDeviceAttribEXT", "eglQueryDevicesEXT", "eglQueryDeviceStringEXT", "eglQueryDisplayAttribEXT" } },
     { EGLextension::EGL_EXT_device_enumeration, { "eglQueryDevicesEXT" } },
     { EGLextension::EGL_EXT_device_query, { "eglQueryDeviceAttribEXT", "eglQueryDeviceStringEXT", "eglQueryDisplayAttribEXT" } },
     { EGLextension::EGL_EXT_image_dma_buf_import_modifiers, { "eglQueryDmaBufFormatsEXT", "eglQueryDmaBufModifiersEXT" } },
@@ -64,7 +64,6 @@ const std::unordered_map<EGLextension, std::set<std::string>> Meta_FunctionStrin
     { EGLextension::EGL_NV_stream_sync, { "eglCreateStreamSyncNV" } },
     { EGLextension::EGL_NV_sync, { "eglClientWaitSyncNV", "eglCreateFenceSyncNV", "eglDestroySyncNV", "eglFenceNV", "eglGetSyncAttribNV", "eglSignalSyncNV" } },
     { EGLextension::EGL_NV_system_time, { "eglGetSystemTimeFrequencyNV", "eglGetSystemTimeNV" } },
-
 };
 
 

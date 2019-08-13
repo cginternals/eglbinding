@@ -12,11 +12,10 @@ namespace eglbinding { namespace aux
 
 
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_0{};
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_A{};
-
-const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_B{};
-
+const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_B =
+{
+};
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_C =
 {
     { "eglClientSignalSyncEXT", { EGLextension::EGL_EXT_client_sync } },
@@ -32,7 +31,6 @@ const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByF
     { "eglCreateDRMImageMESA", { EGLextension::EGL_MESA_drm_image } },
     { "eglCreateFenceSyncNV", { EGLextension::EGL_NV_sync } },
     { "eglCreateImageKHR", { EGLextension::EGL_KHR_image, EGLextension::EGL_KHR_image_base } },
-    { "eglCreateNativeClientBufferANDROID", { EGLextension::EGL_ANDROID_create_native_client_buffer } },
     { "eglCreatePixmapSurfaceHI", { EGLextension::EGL_HI_clientpixmap } },
     { "eglCreatePlatformPixmapSurfaceEXT", { EGLextension::EGL_EXT_platform_base } },
     { "eglCreatePlatformWindowSurfaceEXT", { EGLextension::EGL_EXT_platform_base } },
@@ -42,41 +40,30 @@ const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByF
     { "eglCreateStreamProducerSurfaceKHR", { EGLextension::EGL_KHR_stream_producer_eglsurface } },
     { "eglCreateStreamSyncNV", { EGLextension::EGL_NV_stream_sync } },
     { "eglCreateSync64KHR", { EGLextension::EGL_KHR_cl_event2 } },
-    { "eglCreateSyncKHR", { EGLextension::EGL_KHR_fence_sync, EGLextension::EGL_KHR_reusable_sync } }
+    { "eglCreateSyncKHR", { EGLextension::EGL_KHR_fence_sync, EGLextension::EGL_KHR_reusable_sync } },
 };
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_D =
 {
     { "eglDebugMessageControlKHR", { EGLextension::EGL_KHR_debug } },
     { "eglDestroyImageKHR", { EGLextension::EGL_KHR_image, EGLextension::EGL_KHR_image_base } },
     { "eglDestroyStreamKHR", { EGLextension::EGL_KHR_stream } },
     { "eglDestroySyncKHR", { EGLextension::EGL_KHR_fence_sync, EGLextension::EGL_KHR_reusable_sync } },
-    { "eglDestroySyncNV", { EGLextension::EGL_NV_sync } },
-    { "eglDupNativeFenceFDANDROID", { EGLextension::EGL_ANDROID_native_fence_sync } }
+    { "eglDestroySyncNV", { EGLextension::EGL_NV_sync } }
 };
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_E =
 {
     { "eglExportDMABUFImageMESA", { EGLextension::EGL_MESA_image_dma_buf_export } },
     { "eglExportDMABUFImageQueryMESA", { EGLextension::EGL_MESA_image_dma_buf_export } },
     { "eglExportDRMImageMESA", { EGLextension::EGL_MESA_drm_image } }
 };
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_F =
 {
     { "eglFenceNV", { EGLextension::EGL_NV_sync } }
 };
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_G =
 {
-    { "eglGetCompositorTimingANDROID", { EGLextension::EGL_ANDROID_get_frame_timestamps } },
-    { "eglGetCompositorTimingSupportedANDROID", { EGLextension::EGL_ANDROID_get_frame_timestamps } },
     { "eglGetDisplayDriverConfig", { EGLextension::EGL_MESA_query_driver } },
     { "eglGetDisplayDriverName", { EGLextension::EGL_MESA_query_driver } },
-    { "eglGetFrameTimestampSupportedANDROID", { EGLextension::EGL_ANDROID_get_frame_timestamps } },
-    { "eglGetFrameTimestampsANDROID", { EGLextension::EGL_ANDROID_get_frame_timestamps } },
-    { "eglGetNativeClientBufferANDROID", { EGLextension::EGL_ANDROID_get_native_client_buffer } },
-    { "eglGetNextFrameIdANDROID", { EGLextension::EGL_ANDROID_get_frame_timestamps } },
     { "eglGetOutputLayersEXT", { EGLextension::EGL_EXT_output_base } },
     { "eglGetOutputPortsEXT", { EGLextension::EGL_EXT_output_base } },
     { "eglGetPlatformDisplayEXT", { EGLextension::EGL_EXT_platform_base } },
@@ -86,37 +73,30 @@ const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByF
     { "eglGetSystemTimeFrequencyNV", { EGLextension::EGL_NV_system_time } },
     { "eglGetSystemTimeNV", { EGLextension::EGL_NV_system_time } }
 };
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_H{};
-
-const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_I{};
-
+const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_I =
+{
+};
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_J{};
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_K{};
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_L =
 {
     { "eglLabelObjectKHR", { EGLextension::EGL_KHR_debug } },
     { "eglLockSurfaceKHR", { EGLextension::EGL_KHR_lock_surface, EGLextension::EGL_KHR_lock_surface3 } }
 };
-
-const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_M{};
-
+const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_M =
+{
+};
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_N{};
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_O =
 {
     { "eglOutputLayerAttribEXT", { EGLextension::EGL_EXT_output_base } },
     { "eglOutputPortAttribEXT", { EGLextension::EGL_EXT_output_base } }
 };
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_P =
 {
-    { "eglPostSubBufferNV", { EGLextension::EGL_NV_post_sub_buffer } },
-    { "eglPresentationTimeANDROID", { EGLextension::EGL_ANDROID_presentation_time } }
+    { "eglPostSubBufferNV", { EGLextension::EGL_NV_post_sub_buffer } }
 };
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_Q =
 {
     { "eglQueryDebugKHR", { EGLextension::EGL_KHR_debug } },
@@ -143,15 +123,12 @@ const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByF
     { "eglQuerySurface64KHR", { EGLextension::EGL_KHR_lock_surface3 } },
     { "eglQuerySurfacePointerANGLE", { EGLextension::EGL_ANGLE_query_surface_pointer } }
 };
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_R =
 {
     { "eglResetStreamNV", { EGLextension::EGL_NV_stream_reset } }
 };
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_S =
 {
-    { "eglSetBlobCacheFuncsANDROID", { EGLextension::EGL_ANDROID_blob_cache } },
     { "eglSetDamageRegionKHR", { EGLextension::EGL_KHR_partial_update } },
     { "eglSetStreamAttribKHR", { EGLextension::EGL_KHR_stream_attrib } },
     { "eglSetStreamMetadataNV", { EGLextension::EGL_NV_stream_metadata } },
@@ -169,28 +146,23 @@ const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByF
     { "eglSwapBuffersRegion2NOK", { EGLextension::EGL_NOK_swap_region2 } },
     { "eglSwapBuffersRegionNOK", { EGLextension::EGL_NOK_swap_region } },
     { "eglSwapBuffersWithDamageEXT", { EGLextension::EGL_EXT_swap_buffers_with_damage } },
-    { "eglSwapBuffersWithDamageKHR", { EGLextension::EGL_KHR_swap_buffers_with_damage } }
+    { "eglSwapBuffersWithDamageKHR", { EGLextension::EGL_KHR_swap_buffers_with_damage } },
 };
-
-const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_T{};
-
+const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_T =
+{
+};
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_U =
 {
     { "eglUnlockSurfaceKHR", { EGLextension::EGL_KHR_lock_surface, EGLextension::EGL_KHR_lock_surface3 } },
     { "eglUnsignalSyncEXT", { EGLextension::EGL_EXT_sync_reuse } }
 };
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_V{};
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_W =
 {
     { "eglWaitSyncKHR", { EGLextension::EGL_KHR_wait_sync } }
 };
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_X{};
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_Y{};
-
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_Z{};
 
 const std::array<std::unordered_map<std::string, std::set<egl::EGLextension>>, 27> Meta_ExtensionsByFunctionStringMaps =

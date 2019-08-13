@@ -9,7 +9,7 @@
 namespace egl10
 {
 
-
+// import functions
 using egl::eglChooseConfig;
 using egl::eglCopyBuffers;
 using egl::eglCreateContext;
@@ -34,6 +34,5 @@ using egl::eglSwapBuffers;
 using egl::eglTerminate;
 using egl::eglWaitGL;
 using egl::eglWaitNative;
-
 
 } // namespace egl10

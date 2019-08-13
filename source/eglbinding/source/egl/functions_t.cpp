@@ -4,19 +4,14 @@
 #include <eglbinding/egl/functions.h>
 
 
-using namespace eglbinding;
-
-
 namespace egl
 {
 
 
 EGLBoolean eglTerminate(EGLDisplay dpy)
 {
-    return Binding::Terminate(dpy);
+    return eglbinding::Binding::Terminate(dpy);
 }
-
-
 
 
 } // namespace egl

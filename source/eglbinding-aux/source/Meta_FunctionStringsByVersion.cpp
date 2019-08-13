@@ -4,6 +4,9 @@
 #include <eglbinding/Version.h>
 
 
+using namespace egl;
+
+
 namespace eglbinding { namespace aux
 {
 

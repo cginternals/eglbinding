@@ -2,7 +2,7 @@
 #pragma once
 
 
-namespace eglbinding 
+namespace eglbinding
 {
 
 

@@ -13,5 +13,4 @@ Function<EGLint, EGLDisplay, EGLenum, EGLObjectKHR, EGLLabelKHR> Binding::LabelO
 Function<EGLBoolean, EGLDisplay, EGLSurface, const EGLint *> Binding::LockSurfaceKHR("eglLockSurfaceKHR");
 
 
-
 } // namespace eglbinding

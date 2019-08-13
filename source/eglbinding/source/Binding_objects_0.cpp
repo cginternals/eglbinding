@@ -11,5 +11,4 @@ namespace eglbinding
 
 
 
-
 } // namespace eglbinding

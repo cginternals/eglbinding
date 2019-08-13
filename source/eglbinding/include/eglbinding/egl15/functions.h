@@ -9,7 +9,7 @@
 namespace egl15
 {
 
-
+// import functions
 using egl::eglBindAPI;
 using egl::eglBindTexImage;
 using egl::eglChooseConfig;
@@ -54,6 +54,5 @@ using egl::eglWaitClient;
 using egl::eglWaitGL;
 using egl::eglWaitNative;
 using egl::eglWaitSync;
-
 
 } // namespace egl15

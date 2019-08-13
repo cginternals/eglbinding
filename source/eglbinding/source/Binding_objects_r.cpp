@@ -14,5 +14,4 @@ Function<EGLBoolean> Binding::ReleaseThread("eglReleaseThread");
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR> Binding::ResetStreamNV("eglResetStreamNV");
 
 
-
 } // namespace eglbinding

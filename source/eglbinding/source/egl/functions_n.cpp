@@ -4,13 +4,8 @@
 #include <eglbinding/egl/functions.h>
 
 
-using namespace eglbinding;
-
-
 namespace egl
 {
-
-
 
 
 

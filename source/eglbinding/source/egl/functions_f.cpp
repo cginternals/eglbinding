@@ -4,19 +4,14 @@
 #include <eglbinding/egl/functions.h>
 
 
-using namespace eglbinding;
-
-
 namespace egl
 {
 
 
 EGLBoolean eglFenceNV(EGLSyncNV sync)
 {
-    return Binding::FenceNV(sync);
+    return eglbinding::Binding::FenceNV(sync);
 }
-
-
 
 
 } // namespace egl

@@ -9,7 +9,7 @@
 namespace egl11ext
 {
 
-
+// import functions
 using egl::eglBindAPI;
 using egl::eglClientSignalSyncEXT;
 using egl::eglClientWaitSync;
@@ -26,7 +26,6 @@ using egl::eglCreateDRMImageMESA;
 using egl::eglCreateFenceSyncNV;
 using egl::eglCreateImage;
 using egl::eglCreateImageKHR;
-using egl::eglCreateNativeClientBufferANDROID;
 using egl::eglCreatePbufferFromClientBuffer;
 using egl::eglCreatePixmapSurfaceHI;
 using egl::eglCreatePlatformPixmapSurface;
@@ -48,20 +47,13 @@ using egl::eglDestroyStreamKHR;
 using egl::eglDestroySync;
 using egl::eglDestroySyncKHR;
 using egl::eglDestroySyncNV;
-using egl::eglDupNativeFenceFDANDROID;
 using egl::eglExportDMABUFImageMESA;
 using egl::eglExportDMABUFImageQueryMESA;
 using egl::eglExportDRMImageMESA;
 using egl::eglFenceNV;
-using egl::eglGetCompositorTimingANDROID;
-using egl::eglGetCompositorTimingSupportedANDROID;
 using egl::eglGetCurrentContext;
 using egl::eglGetDisplayDriverConfig;
 using egl::eglGetDisplayDriverName;
-using egl::eglGetFrameTimestampSupportedANDROID;
-using egl::eglGetFrameTimestampsANDROID;
-using egl::eglGetNativeClientBufferANDROID;
-using egl::eglGetNextFrameIdANDROID;
 using egl::eglGetOutputLayersEXT;
 using egl::eglGetOutputPortsEXT;
 using egl::eglGetPlatformDisplay;
@@ -77,12 +69,11 @@ using egl::eglLockSurfaceKHR;
 using egl::eglOutputLayerAttribEXT;
 using egl::eglOutputPortAttribEXT;
 using egl::eglPostSubBufferNV;
-using egl::eglPresentationTimeANDROID;
 using egl::eglQueryAPI;
 using egl::eglQueryDebugKHR;
 using egl::eglQueryDeviceAttribEXT;
-using egl::eglQueryDeviceStringEXT;
 using egl::eglQueryDevicesEXT;
+using egl::eglQueryDeviceStringEXT;
 using egl::eglQueryDisplayAttribEXT;
 using egl::eglQueryDisplayAttribKHR;
 using egl::eglQueryDisplayAttribNV;
@@ -104,7 +95,6 @@ using egl::eglQuerySurface64KHR;
 using egl::eglQuerySurfacePointerANGLE;
 using egl::eglReleaseThread;
 using egl::eglResetStreamNV;
-using egl::eglSetBlobCacheFuncsANDROID;
 using egl::eglSetDamageRegionKHR;
 using egl::eglSetStreamAttribKHR;
 using egl::eglSetStreamMetadataNV;
@@ -128,6 +118,5 @@ using egl::eglUnsignalSyncEXT;
 using egl::eglWaitClient;
 using egl::eglWaitSync;
 using egl::eglWaitSyncKHR;
-
 
 } // namespace egl11ext

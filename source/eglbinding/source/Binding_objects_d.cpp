@@ -18,8 +18,6 @@ Function<EGLBoolean, EGLDisplay, EGLSurface> Binding::DestroySurface("eglDestroy
 Function<EGLBoolean, EGLDisplay, EGLSync> Binding::DestroySync("eglDestroySync");
 Function<EGLBoolean, EGLDisplay, EGLSyncKHR> Binding::DestroySyncKHR("eglDestroySyncKHR");
 Function<EGLBoolean, EGLSyncNV> Binding::DestroySyncNV("eglDestroySyncNV");
-Function<EGLint, EGLDisplay, EGLSyncKHR> Binding::DupNativeFenceFDANDROID("eglDupNativeFenceFDANDROID");
-
 
 
 } // namespace eglbinding

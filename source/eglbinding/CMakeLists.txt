@@ -59,13 +59,13 @@ set(headers
     ${include_path}/egl/values.h
     
     ${include_path}/eglbinding.h
+    ${include_path}/getProcAddress.h
 
     ${include_path}/AbstractFunction.h
     ${include_path}/CallbackMask.h
     ${include_path}/Function.h
     ${include_path}/FunctionCall.h
     ${include_path}/Binding.h
-    ${include_path}/ProcAddress.h
     ${include_path}/Value.h
     ${include_path}/Version.h
     ${include_path}/Version.inl
@@ -100,6 +100,8 @@ list(APPEND headers ${featured_includes})
 
 set(sources
     ${source_path}/eglbinding.cpp
+    ${source_path}/getProcAddress.cpp
+    ${source_path}/eglGetProcAddress.h
     
     ${source_path}/Binding.cpp
     ${source_path}/Binding_list.cpp

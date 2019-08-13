@@ -41,12 +41,10 @@ public:
 
     /**
     *  @brief
-    *    Returns the revision of the parsed gl.xml file
-    *
-    *  @deprecated
+    *    Returns the revision of the parsed egl.xml file
     *
     *  @return
-    *    The revision of the parsed gl.xml file
+    *    The revision of the parsed egl.xml file
     */
     static int eglRevision();
 
@@ -64,10 +62,10 @@ public:
     
     /**
     *  @brief
-    *    Returns the list of all bitfields known by the gl.xml
+    *    Returns the list of all bitfields known by the egl.xml
     *
     *  @return
-    *    The list of all bitfields known by the gl.xml
+    *    The list of all bitfields known by the egl.xml
     */
     static std::vector<egl::EGLbitfield> bitfields();
 
@@ -79,7 +77,7 @@ public:
     *    The enum to convert
     *
     *  @return
-    *    A string representation of the EGLenum symbol name
+    *    A string representation of the GLenum symbol name
     *
     *  @remark
     *    Beware, that some enums in the OpenGL API have different symbol names but identical enum values and that this function cannot differentiate between them
@@ -111,16 +109,16 @@ public:
     *  @brief
     *    Converts a EGLBoolean to a string
     *
-    *  @param[in] boolean
+    *  @param[in] eglboolean
     *    The boolean to convert
     *
     *  @return
     *    A string representation of the EGLBoolean symbol name
     *
     *  @remark
-    *    Can either be '`EGL_TRUE`' or '`EGL_FALSE`'
+    *    Can either be `EGL_TRUE` or `EGL_FALSE`
     */
-    static const std::string & getString(const egl::EGLBoolean & boolean);
+    static const std::string & getString(const egl::EGLBoolean & eglboolean);
     
     /**
     *  @brief
@@ -130,7 +128,7 @@ public:
     *    The string representation of the EGLBoolean
     *
     *  @return
-    *    The symbol identified through the boolean string, '`EGL_FALSE`' if failed
+    *    The symbol identified through the boolean string, `EGL_FALSE` if failed
     */
     static egl::EGLBoolean getBoolean(const std::string & boolean);
 
@@ -138,23 +136,23 @@ public:
     *  @brief
     *    Converts a EGLextension to its string representation
     *
-    *  @param[in] extension
+    *  @param[in] eglextension
     *    The extension to convert
     *
     *  @return
     *    The string representation of the extension
     */
-    static const std::string & getString(egl::EGLextension extension);
+    static const std::string & getString(egl::EGLextension eglextension);
     
     /**
     *  @brief
-    *    Converts a string to an extension
+    *    Converts a string to an EGLextension
     *
     *  @param[in] extension
     *    The string representation of the extension
     *
     *  @return
-    *    The symbol identified through the extension string, '`UNKNOWN`' if failed
+    *    The symbol identified through the extension string, 'UNKNOWN' if failed
     */
     static egl::EGLextension getExtension(const std::string & extension);
 
@@ -184,25 +182,25 @@ public:
 
     /**
     *  @brief
-    *    Returns the list of extensions that are requiring an OpenGL function
+    *    Returns the list of extensions that are requiring a function
     *
-    *  @param[in] eglfunction
+    *  @param[in] function
     *    The name of the function, including the 'egl' prefix
     *
     *  @return
-    *    The set of extensions that are requiring an OpenGL function
+    *    The set of extensions that are requiring a function
     */
     static const std::set<egl::EGLextension> extensions(const std::string & eglfunction);
 
     /**
     *  @brief
-    *    Returns the list of features that are requiring an OpenGL function
+    *    Returns the list of features that are requiring a function
     *
-    *  @param[in] eglfunction
+    *  @param[in] function
     *    The name of the function, including the 'egl' prefix
     *
     *  @return
-    *    The set of features that are requiring an OpenGL function
+    *    The set of features that are requiring a function
     */
     static const std::set<Version> versions(const std::string & eglfunction);
     
@@ -235,13 +233,13 @@ public:
 
     /**
     *  @brief
-    *    Returns the first OpenGL Version (Feature) that required the extension
+    *    Returns the first Version (Feature) that required the extension
     *
     *  @param[in] eglextension
     *    The extension
     *
     *  @return
-    *    The first EGL Version (Feature) that required the extension
+    *    The first Version (Feature) that required the extension
     */
     static const Version & version(egl::EGLextension eglextension);
     
@@ -258,103 +256,19 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] bitfield
+    *  @param[in] glbitfield
     *    The bitfield value
     *
     *  @return
     *    The string representation of the value
     */
-    static const std::string & getString(egl::EGLContextFlagMask bitfield);
-
-    /**
-    *  @brief
-    *    Convert bitfield to symbol name string representation
-    *
-    *  @param[in] bitfield
-    *    The bitfield value
-    *
-    *  @return
-    *    The string representation of the value
-    */
-    static const std::string & getString(egl::EGLContextProfileMask bitfield);
-
-    /**
-    *  @brief
-    *    Convert bitfield to symbol name string representation
-    *
-    *  @param[in] bitfield
-    *    The bitfield value
-    *
-    *  @return
-    *    The string representation of the value
-    */
-    static const std::string & getString(egl::EGLDRMBufferUseMESAMask bitfield);
-
-    /**
-    *  @brief
-    *    Convert bitfield to symbol name string representation
-    *
-    *  @param[in] bitfield
-    *    The bitfield value
-    *
-    *  @return
-    *    The string representation of the value
-    */
-    static const std::string & getString(egl::EGLLockUsageHintKHRMask bitfield);
-
-    /**
-    *  @brief
-    *    Convert bitfield to symbol name string representation
-    *
-    *  @param[in] bitfield
-    *    The bitfield value
-    *
-    *  @return
-    *    The string representation of the value
-    */
-    static const std::string & getString(egl::EGLNativeBufferUsageFlags bitfield);
-
-    /**
-    *  @brief
-    *    Convert bitfield to symbol name string representation
-    *
-    *  @param[in] bitfield
-    *    The bitfield value
-    *
-    *  @return
-    *    The string representation of the value
-    */
-    static const std::string & getString(egl::EGLRenderableTypeMask bitfield);
-
-    /**
-    *  @brief
-    *    Convert bitfield to symbol name string representation
-    *
-    *  @param[in] bitfield
-    *    The bitfield value
-    *
-    *  @return
-    *    The string representation of the value
-    */
-    static const std::string & getString(egl::EGLSurfaceTypeMask bitfield);
-
-    /**
-    *  @brief
-    *    Convert bitfield to symbol name string representation
-    *
-    *  @param[in] bitfield
-    *    The bitfield value
-    *
-    *  @return
-    *    The string representation of the value
-    */
-    static const std::string & getString(egl::EGLSyncFlagsKHR bitfield);
+    static const std::string & getString(egl::UnusedMask eglbitfield);
 
 
 private:
     /**
     *  @brief
-    *    Returns the bucket index of an OpenGL identifier used for the actual lookup into the compile-time maps
+    *    Returns the bucket index of an identifier used for the actual lookup into the compile-time maps
     *
     *  @param[in] identifier
     *    The identifier for the bucket lookup
@@ -363,7 +277,7 @@ private:
     *    The length of the prefix (e.g., 'egl' or 'EGL_') to omit to get the actual first character of the identifier
     *
     *  @return
-    *    The bucket index of an OpenGL identifier
+    *    The bucket index of an identifier
     */
     static size_t alphabeticalGroupIndex(const std::string & identifier, std::uint8_t prefixLength);
 };

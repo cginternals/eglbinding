@@ -9,7 +9,7 @@
 namespace egl11
 {
 
-
+// import functions
 using egl::eglBindTexImage;
 using egl::eglChooseConfig;
 using egl::eglCopyBuffers;
@@ -38,6 +38,5 @@ using egl::eglSwapInterval;
 using egl::eglTerminate;
 using egl::eglWaitGL;
 using egl::eglWaitNative;
-
 
 } // namespace egl11

@@ -14,5 +14,4 @@ Function<EGLBoolean, EGLDisplay, EGLImageKHR, int *, int *, EGLuint64KHR *> Bind
 Function<EGLBoolean, EGLDisplay, EGLImageKHR, EGLint *, EGLint *, EGLint *> Binding::ExportDRMImageMESA("eglExportDRMImageMESA");
 
 
-
 } // namespace eglbinding
