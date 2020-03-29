@@ -11,6 +11,10 @@ namespace egl15
 {
 
 
+// use enum type
+using egl::EGLenum;
+
+
 // import enums to namespace
 using egl::EGL_ALPHA_FORMAT;
 using egl::EGL_ALPHA_FORMAT_NONPRE;

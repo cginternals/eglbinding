@@ -11,6 +11,10 @@ namespace egl10
 {
 
 
+// use enum type
+using egl::EGLenum;
+
+
 // import enums to namespace
 using egl::EGL_ALPHA_SIZE;
 using egl::EGL_BAD_ACCESS;

@@ -64,7 +64,7 @@ public:
 
     using ContextSwitchCallback = std::function<void(ContextHandle)>;   ///< The signature of the context switch callback
     
-    using array_t = std::array<AbstractFunction *, 136>; ///< The type of the build-in functions collection
+    using array_t = std::array<AbstractFunction *, 140>; ///< The type of the build-in functions collection
 
 
 public:
@@ -447,6 +447,7 @@ public:
 public:
     static Function<egl::EGLBoolean, egl::EGLenum> BindAPI; ///< Wrapper for eglBindAPI
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint> BindTexImage; ///< Wrapper for eglBindTexImage
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::wl_display *> BindWaylandDisplayWL; ///< Wrapper for eglBindWaylandDisplayWL
     static Function<egl::EGLBoolean, egl::EGLDisplay, const egl::EGLint *, egl::EGLConfig *, EGLint, egl::EGLint *> ChooseConfig; ///< Wrapper for eglChooseConfig
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSync, const egl::EGLAttrib *> ClientSignalSyncEXT; ///< Wrapper for eglClientSignalSyncEXT
     static Function<EGLint, egl::EGLDisplay, egl::EGLSync, EGLint, egl::EGLTime> ClientWaitSync; ///< Wrapper for eglClientWaitSync
@@ -481,6 +482,7 @@ public:
     static Function<egl::EGLSync, egl::EGLDisplay, egl::EGLenum, const egl::EGLAttrib *> CreateSync; ///< Wrapper for eglCreateSync
     static Function<egl::EGLSyncKHR, egl::EGLDisplay, egl::EGLenum, const egl::EGLAttribKHR *> CreateSync64KHR; ///< Wrapper for eglCreateSync64KHR
     static Function<egl::EGLSyncKHR, egl::EGLDisplay, egl::EGLenum, const egl::EGLint *> CreateSyncKHR; ///< Wrapper for eglCreateSyncKHR
+    static Function<egl::wl_buffer *, egl::EGLDisplay, egl::EGLImageKHR> CreateWaylandBufferFromImageWL; ///< Wrapper for eglCreateWaylandBufferFromImageWL
     static Function<egl::EGLSurface, egl::EGLDisplay, egl::EGLConfig, EGLNativeWindowType, const egl::EGLint *> CreateWindowSurface; ///< Wrapper for eglCreateWindowSurface
     static Function<EGLint, egl::EGLDEBUGPROCKHR, const egl::EGLAttrib *> DebugMessageControlKHR; ///< Wrapper for eglDebugMessageControlKHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLContext> DestroyContext; ///< Wrapper for eglDestroyContext
@@ -549,6 +551,7 @@ public:
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint, egl::EGLint *> QuerySurface; ///< Wrapper for eglQuerySurface
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint, egl::EGLAttribKHR *> QuerySurface64KHR; ///< Wrapper for eglQuerySurface64KHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint, void **> QuerySurfacePointerANGLE; ///< Wrapper for eglQuerySurfacePointerANGLE
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::wl_resource *, EGLint, egl::EGLint *> QueryWaylandBufferWL; ///< Wrapper for eglQueryWaylandBufferWL
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint> ReleaseTexImage; ///< Wrapper for eglReleaseTexImage
     static Function<egl::EGLBoolean> ReleaseThread; ///< Wrapper for eglReleaseThread
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR> ResetStreamNV; ///< Wrapper for eglResetStreamNV
@@ -570,10 +573,11 @@ public:
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface> SwapBuffers; ///< Wrapper for eglSwapBuffers
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint, const egl::EGLint *> SwapBuffersRegion2NOK; ///< Wrapper for eglSwapBuffersRegion2NOK
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint, const egl::EGLint *> SwapBuffersRegionNOK; ///< Wrapper for eglSwapBuffersRegionNOK
-    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, egl::EGLint *, EGLint> SwapBuffersWithDamageEXT; ///< Wrapper for eglSwapBuffersWithDamageEXT
-    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, egl::EGLint *, EGLint> SwapBuffersWithDamageKHR; ///< Wrapper for eglSwapBuffersWithDamageKHR
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, const egl::EGLint *, EGLint> SwapBuffersWithDamageEXT; ///< Wrapper for eglSwapBuffersWithDamageEXT
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, const egl::EGLint *, EGLint> SwapBuffersWithDamageKHR; ///< Wrapper for eglSwapBuffersWithDamageKHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, EGLint> SwapInterval; ///< Wrapper for eglSwapInterval
     static Function<egl::EGLBoolean, egl::EGLDisplay> Terminate; ///< Wrapper for eglTerminate
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::wl_display *> UnbindWaylandDisplayWL; ///< Wrapper for eglUnbindWaylandDisplayWL
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface> UnlockSurfaceKHR; ///< Wrapper for eglUnlockSurfaceKHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSync, const egl::EGLAttrib *> UnsignalSyncEXT; ///< Wrapper for eglUnsignalSyncEXT
     static Function<egl::EGLBoolean> WaitClient; ///< Wrapper for eglWaitClient

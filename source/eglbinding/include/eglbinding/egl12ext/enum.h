@@ -11,6 +11,10 @@ namespace egl12ext
 {
 
 
+// use enum type
+using egl::EGLenum;
+
+
 // import enums to namespace
 using egl::EGL_ALREADY_SIGNALED_NV;
 using egl::EGL_AUTO_STEREO_NV;
@@ -38,6 +42,8 @@ using egl::EGL_COLOR_ARGB_HI;
 using egl::EGL_COLOR_COMPONENT_TYPE_EXT;
 using egl::EGL_COLOR_COMPONENT_TYPE_FIXED_EXT;
 using egl::EGL_COLOR_COMPONENT_TYPE_FLOAT_EXT;
+using egl::EGL_COLOR_COMPONENT_TYPE_INTEGER_ARM;
+using egl::EGL_COLOR_COMPONENT_TYPE_UNSIGNED_INTEGER_ARM;
 using egl::EGL_COLOR_FORMAT_HI;
 using egl::EGL_COLOR_RGB_HI;
 using egl::EGL_COLOR_RGBA_HI;
@@ -272,6 +278,8 @@ using egl::EGL_STREAM_CROSS_OBJECT_NV;
 using egl::EGL_STREAM_CROSS_PARTITION_NV;
 using egl::EGL_STREAM_CROSS_PROCESS_NV;
 using egl::EGL_STREAM_CROSS_SYSTEM_NV;
+using egl::EGL_STREAM_DMA_NV;
+using egl::EGL_STREAM_DMA_SERVER_NV;
 using egl::EGL_STREAM_ENDPOINT_NV;
 using egl::EGL_STREAM_FIFO_LENGTH_KHR;
 using egl::EGL_STREAM_FIFO_SYNCHRONOUS_NV;
@@ -325,6 +333,10 @@ using egl::EGL_SYNC_STATUS_NV;
 using egl::EGL_SYNC_TYPE;
 using egl::EGL_SYNC_TYPE_KHR;
 using egl::EGL_SYNC_TYPE_NV;
+using egl::EGL_TEXTURE_EXTERNAL_WL;
+using egl::EGL_TEXTURE_Y_U_V_WL;
+using egl::EGL_TEXTURE_Y_UV_WL;
+using egl::EGL_TEXTURE_Y_XUXV_WL;
 using egl::EGL_TIMEOUT_EXPIRED;
 using egl::EGL_TIMEOUT_EXPIRED_KHR;
 using egl::EGL_TIMEOUT_EXPIRED_NV;
@@ -342,6 +354,9 @@ using egl::EGL_VG_COLORSPACE;
 using egl::EGL_VG_COLORSPACE_LINEAR;
 using egl::EGL_VG_COLORSPACE_sRGB;
 using egl::EGL_VG_PARENT_IMAGE_KHR;
+using egl::EGL_WAYLAND_BUFFER_WL;
+using egl::EGL_WAYLAND_PLANE_WL;
+using egl::EGL_WAYLAND_Y_INVERTED_WL;
 using egl::EGL_X_AXIS_NV;
 using egl::EGL_Y_AXIS_NV;
 using egl::EGL_Y_INVERTED_NOK;

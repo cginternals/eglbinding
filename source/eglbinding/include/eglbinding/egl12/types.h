@@ -15,6 +15,7 @@ using egl::__eglMustCastToProperFunctionPointerType;
 using egl::EGLAttrib;
 using egl::EGLAttribKHR;
 using egl::EGLbitfield;
+using egl::EGLBoolean;
 using egl::EGLClientBuffer;
 using egl::EGLClientPixmapHI;
 using egl::EGLConfig;
@@ -54,6 +55,9 @@ using egl::EGLuint;
 using egl::EGLuint64KHR;
 using egl::EGLuint64NV;
 using egl::UnusedMask;
+using egl::wl_buffer;
+using egl::wl_display;
+using egl::wl_resource;
 
 
 } // namespace egl12

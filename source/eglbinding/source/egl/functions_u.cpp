@@ -8,6 +8,11 @@ namespace egl
 {
 
 
+EGLBoolean eglUnbindWaylandDisplayWL(EGLDisplay dpy, wl_display * display)
+{
+    return eglbinding::Binding::UnbindWaylandDisplayWL(dpy, display);
+}
+
 EGLBoolean eglUnlockSurfaceKHR(EGLDisplay dpy, EGLSurface surface)
 {
     return eglbinding::Binding::UnlockSurfaceKHR(dpy, surface);

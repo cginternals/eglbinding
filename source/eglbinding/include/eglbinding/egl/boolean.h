@@ -1,3 +1,4 @@
+
 #pragma once
 
 
@@ -14,12 +15,6 @@ namespace egl
 
 using EGLBoolean = eglbinding::Boolean32;
 
-
-} // namespace egl
-
-
-namespace egl
-{
 
 // import booleans to namespace
 

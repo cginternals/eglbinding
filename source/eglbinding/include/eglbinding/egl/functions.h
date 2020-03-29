@@ -14,6 +14,7 @@ namespace egl
 
 EGLBINDING_API EGLBoolean eglBindAPI(EGLenum api);
 EGLBINDING_API EGLBoolean eglBindTexImage(EGLDisplay dpy, EGLSurface surface, EGLint buffer);
+EGLBINDING_API EGLBoolean eglBindWaylandDisplayWL(EGLDisplay dpy, wl_display * display);
 EGLBINDING_API EGLBoolean eglChooseConfig(EGLDisplay dpy, const EGLint * attrib_list, EGLConfig * configs, EGLint config_size, EGLint * num_config);
 EGLBINDING_API EGLBoolean eglClientSignalSyncEXT(EGLDisplay dpy, EGLSync sync, const EGLAttrib * attrib_list);
 EGLBINDING_API EGLint eglClientWaitSync(EGLDisplay dpy, EGLSync sync, EGLint flags, EGLTime timeout);
@@ -48,6 +49,7 @@ EGLBINDING_API EGLSyncKHR eglCreateStreamSyncNV(EGLDisplay dpy, EGLStreamKHR str
 EGLBINDING_API EGLSync eglCreateSync(EGLDisplay dpy, EGLenum type, const EGLAttrib * attrib_list);
 EGLBINDING_API EGLSyncKHR eglCreateSync64KHR(EGLDisplay dpy, EGLenum type, const EGLAttribKHR * attrib_list);
 EGLBINDING_API EGLSyncKHR eglCreateSyncKHR(EGLDisplay dpy, EGLenum type, const EGLint * attrib_list);
+EGLBINDING_API wl_buffer * eglCreateWaylandBufferFromImageWL(EGLDisplay dpy, EGLImageKHR image);
 EGLBINDING_API EGLSurface eglCreateWindowSurface(EGLDisplay dpy, EGLConfig config, EGLNativeWindowType win, const EGLint * attrib_list);
 EGLBINDING_API EGLint eglDebugMessageControlKHR(EGLDEBUGPROCKHR callback, const EGLAttrib * attrib_list);
 EGLBINDING_API EGLBoolean eglDestroyContext(EGLDisplay dpy, EGLContext ctx);
@@ -116,6 +118,7 @@ EGLBINDING_API const char * eglQueryString(EGLDisplay dpy, EGLint name);
 EGLBINDING_API EGLBoolean eglQuerySurface(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLint * value);
 EGLBINDING_API EGLBoolean eglQuerySurface64KHR(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLAttribKHR * value);
 EGLBINDING_API EGLBoolean eglQuerySurfacePointerANGLE(EGLDisplay dpy, EGLSurface surface, EGLint attribute, void ** value);
+EGLBINDING_API EGLBoolean eglQueryWaylandBufferWL(EGLDisplay dpy, wl_resource * buffer, EGLint attribute, EGLint * value);
 EGLBINDING_API EGLBoolean eglReleaseTexImage(EGLDisplay dpy, EGLSurface surface, EGLint buffer);
 EGLBINDING_API EGLBoolean eglReleaseThread();
 EGLBINDING_API EGLBoolean eglResetStreamNV(EGLDisplay dpy, EGLStreamKHR stream);
@@ -137,10 +140,11 @@ EGLBINDING_API EGLBoolean eglSurfaceAttrib(EGLDisplay dpy, EGLSurface surface, E
 EGLBINDING_API EGLBoolean eglSwapBuffers(EGLDisplay dpy, EGLSurface surface);
 EGLBINDING_API EGLBoolean eglSwapBuffersRegion2NOK(EGLDisplay dpy, EGLSurface surface, EGLint numRects, const EGLint * rects);
 EGLBINDING_API EGLBoolean eglSwapBuffersRegionNOK(EGLDisplay dpy, EGLSurface surface, EGLint numRects, const EGLint * rects);
-EGLBINDING_API EGLBoolean eglSwapBuffersWithDamageEXT(EGLDisplay dpy, EGLSurface surface, EGLint * rects, EGLint n_rects);
-EGLBINDING_API EGLBoolean eglSwapBuffersWithDamageKHR(EGLDisplay dpy, EGLSurface surface, EGLint * rects, EGLint n_rects);
+EGLBINDING_API EGLBoolean eglSwapBuffersWithDamageEXT(EGLDisplay dpy, EGLSurface surface, const EGLint * rects, EGLint n_rects);
+EGLBINDING_API EGLBoolean eglSwapBuffersWithDamageKHR(EGLDisplay dpy, EGLSurface surface, const EGLint * rects, EGLint n_rects);
 EGLBINDING_API EGLBoolean eglSwapInterval(EGLDisplay dpy, EGLint interval);
 EGLBINDING_API EGLBoolean eglTerminate(EGLDisplay dpy);
+EGLBINDING_API EGLBoolean eglUnbindWaylandDisplayWL(EGLDisplay dpy, wl_display * display);
 EGLBINDING_API EGLBoolean eglUnlockSurfaceKHR(EGLDisplay dpy, EGLSurface surface);
 EGLBINDING_API EGLBoolean eglUnsignalSyncEXT(EGLDisplay dpy, EGLSync sync, const EGLAttrib * attrib_list);
 EGLBINDING_API EGLBoolean eglWaitClient();

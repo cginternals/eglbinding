@@ -10,6 +10,7 @@ namespace egl14ext
 {
 
 // import functions
+using egl::eglBindWaylandDisplayWL;
 using egl::eglClientSignalSyncEXT;
 using egl::eglClientWaitSync;
 using egl::eglClientWaitSyncKHR;
@@ -38,6 +39,7 @@ using egl::eglCreateStreamSyncNV;
 using egl::eglCreateSync;
 using egl::eglCreateSync64KHR;
 using egl::eglCreateSyncKHR;
+using egl::eglCreateWaylandBufferFromImageWL;
 using egl::eglDebugMessageControlKHR;
 using egl::eglDestroyImage;
 using egl::eglDestroyImageKHR;
@@ -89,6 +91,7 @@ using egl::eglQueryStreamTimeKHR;
 using egl::eglQueryStreamu64KHR;
 using egl::eglQuerySurface64KHR;
 using egl::eglQuerySurfacePointerANGLE;
+using egl::eglQueryWaylandBufferWL;
 using egl::eglResetStreamNV;
 using egl::eglSetDamageRegionKHR;
 using egl::eglSetStreamAttribKHR;
@@ -108,6 +111,7 @@ using egl::eglSwapBuffersRegion2NOK;
 using egl::eglSwapBuffersRegionNOK;
 using egl::eglSwapBuffersWithDamageEXT;
 using egl::eglSwapBuffersWithDamageKHR;
+using egl::eglUnbindWaylandDisplayWL;
 using egl::eglUnlockSurfaceKHR;
 using egl::eglUnsignalSyncEXT;
 using egl::eglWaitSync;

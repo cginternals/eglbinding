@@ -143,5 +143,10 @@ EGLBoolean eglQuerySurfacePointerANGLE(EGLDisplay dpy, EGLSurface surface, EGLin
     return eglbinding::Binding::QuerySurfacePointerANGLE(dpy, surface, attribute, value);
 }
 
+EGLBoolean eglQueryWaylandBufferWL(EGLDisplay dpy, wl_resource * buffer, EGLint attribute, EGLint * value)
+{
+    return eglbinding::Binding::QueryWaylandBufferWL(dpy, buffer, attribute, value);
+}
+
 
 } // namespace egl

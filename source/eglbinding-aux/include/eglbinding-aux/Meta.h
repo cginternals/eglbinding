@@ -82,7 +82,7 @@ public:
     *  @remark
     *    Beware, that some enums in the OpenGL API have different symbol names but identical enum values and that this function cannot differentiate between them
     */
-    static const std::string & getString(egl::EGLenum eglenum);
+    // static const std::string & getString(egl::EGLenum eglenum);
     
     /**
     *  @brief
@@ -256,7 +256,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -268,7 +268,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -280,7 +280,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -292,7 +292,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -304,7 +304,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -316,7 +316,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -328,7 +328,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -340,13 +340,26 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
     *    The string representation of the value
     */
     static const std::string & getString(egl::UnusedMask eglbitfield);
+
+
+    /**
+    *  @brief
+    *    Convert enum to symbol name string representation
+    *
+    *  @param[in] enum
+    *    The enum value
+    *
+    *  @return
+    *    The string representation of the value
+    */
+    static const std::string & getString(egl::EGLenum eglenum);
 
 
 private:

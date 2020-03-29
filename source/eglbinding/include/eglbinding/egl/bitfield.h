@@ -52,12 +52,12 @@ enum class EGLLockUsageHintKHRMask : unsigned int
 enum class EGLRenderableTypeMask : unsigned int
 {
     EGL_NONE_BIT                                     = 0x0, // Generic EGL_NONE_BIT
-    EGL_OPENGL_ES3_BIT                               = 0x00000040,
-    EGL_OPENGL_ES3_BIT_KHR                           = 0x00000040,
     EGL_OPENGL_ES_BIT                                = 0x0001,
     EGL_OPENVG_BIT                                   = 0x0002,
     EGL_OPENGL_ES2_BIT                               = 0x0004,
-    EGL_OPENGL_BIT                                   = 0x0008
+    EGL_OPENGL_BIT                                   = 0x0008,
+    EGL_OPENGL_ES3_BIT                               = 0x00000040,
+    EGL_OPENGL_ES3_BIT_KHR                           = 0x00000040
 };
 
 

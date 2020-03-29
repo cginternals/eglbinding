@@ -15,6 +15,7 @@ const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByF
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_A{};
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_B =
 {
+    { "eglBindWaylandDisplayWL", { EGLextension::EGL_WL_bind_wayland_display } }
 };
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_C =
 {
@@ -41,6 +42,7 @@ const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByF
     { "eglCreateStreamSyncNV", { EGLextension::EGL_NV_stream_sync } },
     { "eglCreateSync64KHR", { EGLextension::EGL_KHR_cl_event2 } },
     { "eglCreateSyncKHR", { EGLextension::EGL_KHR_fence_sync, EGLextension::EGL_KHR_reusable_sync } },
+    { "eglCreateWaylandBufferFromImageWL", { EGLextension::EGL_WL_create_wayland_buffer_from_image } },
 };
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_D =
 {
@@ -121,7 +123,8 @@ const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByF
     { "eglQueryStreamTimeKHR", { EGLextension::EGL_KHR_stream_fifo } },
     { "eglQueryStreamu64KHR", { EGLextension::EGL_KHR_stream } },
     { "eglQuerySurface64KHR", { EGLextension::EGL_KHR_lock_surface3 } },
-    { "eglQuerySurfacePointerANGLE", { EGLextension::EGL_ANGLE_query_surface_pointer } }
+    { "eglQuerySurfacePointerANGLE", { EGLextension::EGL_ANGLE_query_surface_pointer } },
+    { "eglQueryWaylandBufferWL", { EGLextension::EGL_WL_bind_wayland_display } }
 };
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_R =
 {
@@ -153,6 +156,7 @@ const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByF
 };
 const std::unordered_map<std::string, std::set<EGLextension>> Meta_ExtensionsByFunctionString_U =
 {
+    { "eglUnbindWaylandDisplayWL", { EGLextension::EGL_WL_bind_wayland_display } },
     { "eglUnlockSurfaceKHR", { EGLextension::EGL_KHR_lock_surface, EGLextension::EGL_KHR_lock_surface3 } },
     { "eglUnsignalSyncEXT", { EGLextension::EGL_EXT_sync_reuse } }
 };

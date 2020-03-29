@@ -28,7 +28,7 @@ extern const std::array<std::unordered_map<std::string, egl::EGLextension>, 27> 
 extern const std::unordered_map<egl::EGLextension, Version> Meta_ReqVersionsByExtension;
 
 extern const std::unordered_map<egl::EGLBoolean, std::string> Meta_StringsByBoolean;
-extern const std::unordered_map<egl::EGLenum, std::string> Meta_StringsByEnum;
+extern const std::multimap<egl::EGLenum, std::string> Meta_StringsByEnum;
 extern const std::unordered_map<egl::EGLextension, std::string> Meta_StringsByExtension;
 extern const std::unordered_map<egl::EGLextension, std::set<std::string>> Meta_FunctionStringsByExtension;
 extern const std::map<Version, std::set<std::string>> Meta_FunctionStringsByVersion;
@@ -41,6 +41,7 @@ extern const std::unordered_map<egl::EGLRenderableTypeMask, std::string> Meta_St
 extern const std::unordered_map<egl::EGLSurfaceTypeMask, std::string> Meta_StringsByEGLSurfaceTypeMask;
 extern const std::unordered_map<egl::EGLSyncFlagsKHR, std::string> Meta_StringsByEGLSyncFlagsKHR;
 extern const std::unordered_map<egl::UnusedMask, std::string> Meta_StringsByUnusedMask;
+
 
 extern const std::array<std::unordered_map<std::string, egl::EGLbitfield>, 27> Meta_BitfieldsByStringMaps;
 extern const std::unordered_map<std::string, egl::EGLBoolean> Meta_BooleansByString;

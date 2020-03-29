@@ -36,6 +36,7 @@ Function<const char *, EGLDisplay, EGLint> Binding::QueryString("eglQueryString"
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, EGLint *> Binding::QuerySurface("eglQuerySurface");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, EGLAttribKHR *> Binding::QuerySurface64KHR("eglQuerySurface64KHR");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, void **> Binding::QuerySurfacePointerANGLE("eglQuerySurfacePointerANGLE");
+Function<EGLBoolean, EGLDisplay, wl_resource *, EGLint, EGLint *> Binding::QueryWaylandBufferWL("eglQueryWaylandBufferWL");
 
 
 } // namespace eglbinding

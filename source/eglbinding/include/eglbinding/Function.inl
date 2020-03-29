@@ -10,7 +10,7 @@
 #include <eglbinding/FunctionCall.h>
 #include <eglbinding/CallbackMask.h>
 
-#include <eglbinding/Boolean8.h>
+#include <eglbinding/Boolean32.h>
 
 
 
@@ -32,11 +32,11 @@ struct BasicCallHelper
 
 
 template <typename... Arguments>
-struct BasicCallHelper<eglbinding::Boolean8, Arguments...>
+struct BasicCallHelper<eglbinding::Boolean32, Arguments...>
 {
-    inline static eglbinding::Boolean8 call(const eglbinding::Function<eglbinding::Boolean8, Arguments...> * function, Arguments&&... arguments)
+    inline static eglbinding::Boolean32 call(const eglbinding::Function<eglbinding::Boolean32, Arguments...> * function, Arguments&&... arguments)
     {
-        return reinterpret_cast<typename eglbinding::Function<eglbinding::Boolean8::underlying_type, Arguments...>::Signature>(function->address())(std::forward<Arguments>(arguments)...);
+        return reinterpret_cast<typename eglbinding::Function<eglbinding::Boolean32::underlying_type, Arguments...>::Signature>(function->address())(std::forward<Arguments>(arguments)...);
     }
 };
 

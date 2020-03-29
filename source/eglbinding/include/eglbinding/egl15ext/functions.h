@@ -10,6 +10,7 @@ namespace egl15ext
 {
 
 // import functions
+using egl::eglBindWaylandDisplayWL;
 using egl::eglClientSignalSyncEXT;
 using egl::eglClientWaitSyncKHR;
 using egl::eglClientWaitSyncNV;
@@ -33,6 +34,7 @@ using egl::eglCreateStreamProducerSurfaceKHR;
 using egl::eglCreateStreamSyncNV;
 using egl::eglCreateSync64KHR;
 using egl::eglCreateSyncKHR;
+using egl::eglCreateWaylandBufferFromImageWL;
 using egl::eglDebugMessageControlKHR;
 using egl::eglDestroyImageKHR;
 using egl::eglDestroyStreamKHR;
@@ -80,6 +82,7 @@ using egl::eglQueryStreamTimeKHR;
 using egl::eglQueryStreamu64KHR;
 using egl::eglQuerySurface64KHR;
 using egl::eglQuerySurfacePointerANGLE;
+using egl::eglQueryWaylandBufferWL;
 using egl::eglResetStreamNV;
 using egl::eglSetDamageRegionKHR;
 using egl::eglSetStreamAttribKHR;
@@ -99,6 +102,7 @@ using egl::eglSwapBuffersRegion2NOK;
 using egl::eglSwapBuffersRegionNOK;
 using egl::eglSwapBuffersWithDamageEXT;
 using egl::eglSwapBuffersWithDamageKHR;
+using egl::eglUnbindWaylandDisplayWL;
 using egl::eglUnlockSurfaceKHR;
 using egl::eglUnsignalSyncEXT;
 using egl::eglWaitSyncKHR;

@@ -31,6 +31,7 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_A =
     { "EGL_ANGLE_query_surface_pointer", EGLextension::EGL_ANGLE_query_surface_pointer },
     { "EGL_ANGLE_surface_d3d_texture_2d_share_handle", EGLextension::EGL_ANGLE_surface_d3d_texture_2d_share_handle },
     { "EGL_ANGLE_window_fixed_size", EGLextension::EGL_ANGLE_window_fixed_size },
+    { "EGL_ARM_image_format", EGLextension::EGL_ARM_image_format },
     { "EGL_ARM_implicit_external_sync", EGLextension::EGL_ARM_implicit_external_sync },
     { "EGL_ARM_pixmap_multisample_discard", EGLextension::EGL_ARM_pixmap_multisample_discard }
 };
@@ -181,6 +182,7 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_N =
     { "EGL_NV_stream_cross_partition", EGLextension::EGL_NV_stream_cross_partition },
     { "EGL_NV_stream_cross_process", EGLextension::EGL_NV_stream_cross_process },
     { "EGL_NV_stream_cross_system", EGLextension::EGL_NV_stream_cross_system },
+    { "EGL_NV_stream_dma", EGLextension::EGL_NV_stream_dma },
     { "EGL_NV_stream_fifo_next", EGLextension::EGL_NV_stream_fifo_next },
     { "EGL_NV_stream_fifo_synchronous", EGLextension::EGL_NV_stream_fifo_synchronous },
     { "EGL_NV_stream_flush", EGLextension::EGL_NV_stream_flush },
@@ -218,7 +220,11 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_U{};
 
 const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_V{};
 
-const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_W{};
+const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_W =
+{
+    { "EGL_WL_bind_wayland_display", EGLextension::EGL_WL_bind_wayland_display },
+    { "EGL_WL_create_wayland_buffer_from_image", EGLextension::EGL_WL_create_wayland_buffer_from_image }
+};
 
 const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_X{};
 

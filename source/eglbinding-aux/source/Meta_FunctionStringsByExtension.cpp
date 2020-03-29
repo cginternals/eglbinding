@@ -64,6 +64,8 @@ const std::unordered_map<EGLextension, std::set<std::string>> Meta_FunctionStrin
     { EGLextension::EGL_NV_stream_sync, { "eglCreateStreamSyncNV" } },
     { EGLextension::EGL_NV_sync, { "eglClientWaitSyncNV", "eglCreateFenceSyncNV", "eglDestroySyncNV", "eglFenceNV", "eglGetSyncAttribNV", "eglSignalSyncNV" } },
     { EGLextension::EGL_NV_system_time, { "eglGetSystemTimeFrequencyNV", "eglGetSystemTimeNV" } },
+    { EGLextension::EGL_WL_bind_wayland_display, { "eglBindWaylandDisplayWL", "eglQueryWaylandBufferWL", "eglUnbindWaylandDisplayWL" } },
+    { EGLextension::EGL_WL_create_wayland_buffer_from_image, { "eglCreateWaylandBufferFromImageWL" } }
 };
 
 

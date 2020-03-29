@@ -43,6 +43,7 @@ Function<EGLSyncKHR, EGLDisplay, EGLStreamKHR, EGLenum, const EGLint *> Binding:
 Function<EGLSync, EGLDisplay, EGLenum, const EGLAttrib *> Binding::CreateSync("eglCreateSync");
 Function<EGLSyncKHR, EGLDisplay, EGLenum, const EGLAttribKHR *> Binding::CreateSync64KHR("eglCreateSync64KHR");
 Function<EGLSyncKHR, EGLDisplay, EGLenum, const EGLint *> Binding::CreateSyncKHR("eglCreateSyncKHR");
+Function<wl_buffer *, EGLDisplay, EGLImageKHR> Binding::CreateWaylandBufferFromImageWL("eglCreateWaylandBufferFromImageWL");
 Function<EGLSurface, EGLDisplay, EGLConfig, EGLNativeWindowType, const EGLint *> Binding::CreateWindowSurface("eglCreateWindowSurface");
 
 

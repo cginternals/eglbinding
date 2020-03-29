@@ -11,6 +11,10 @@ namespace egl11
 {
 
 
+// use enum type
+using egl::EGLenum;
+
+
 // import enums to namespace
 using egl::EGL_ALPHA_SIZE;
 using egl::EGL_BACK_BUFFER;

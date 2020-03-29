@@ -98,12 +98,12 @@ EGLBoolean eglSwapBuffersRegionNOK(EGLDisplay dpy, EGLSurface surface, EGLint nu
     return eglbinding::Binding::SwapBuffersRegionNOK(dpy, surface, numRects, rects);
 }
 
-EGLBoolean eglSwapBuffersWithDamageEXT(EGLDisplay dpy, EGLSurface surface, EGLint * rects, EGLint n_rects)
+EGLBoolean eglSwapBuffersWithDamageEXT(EGLDisplay dpy, EGLSurface surface, const EGLint * rects, EGLint n_rects)
 {
     return eglbinding::Binding::SwapBuffersWithDamageEXT(dpy, surface, rects, n_rects);
 }
 
-EGLBoolean eglSwapBuffersWithDamageKHR(EGLDisplay dpy, EGLSurface surface, EGLint * rects, EGLint n_rects)
+EGLBoolean eglSwapBuffersWithDamageKHR(EGLDisplay dpy, EGLSurface surface, const EGLint * rects, EGLint n_rects)
 {
     return eglbinding::Binding::SwapBuffersWithDamageKHR(dpy, surface, rects, n_rects);
 }

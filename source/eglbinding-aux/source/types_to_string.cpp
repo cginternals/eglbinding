@@ -117,6 +117,15 @@ std::ostream & operator<<(std::ostream & stream, const Value<egl::EGLBoolean> & 
     return stream;
 }
 
+template <>
+std::ostream & operator<<(std::ostream & stream, const Value<const char *> & value)
+{
+    auto s = aux::wrapString(value.value());
+    stream.write(s.c_str(), static_cast<std::streamsize>(s.size()));
+
+    return stream;
+}
+
 
 
 std::ostream & operator<<(std::ostream & stream, const Version & version)
@@ -133,88 +142,58 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
         return stream << reinterpret_cast<const void*>(value);
     }
 
-    /*
-    if (typeid(*value) == typeid(Value<egl::__eglMustCastToProperFunctionPointerType>))
+    if (typeid(*value) == typeid(Value<char>))
     {
-        return stream << *reinterpret_cast<const Value<egl::__eglMustCastToProperFunctionPointerType>*>(value);
-    }
-    */
-    
-    if (typeid(*value) == typeid(Value<egl::__eglMustCastToProperFunctionPointerType *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::__eglMustCastToProperFunctionPointerType *>*>(value);
+        return stream << *reinterpret_cast<const Value<char>*>(value);
     }
 
-    
-    if (typeid(*value) == typeid(Value<egl::EGLAttrib>))
+    if (typeid(*value) == typeid(Value<double>))
     {
-        return stream << *reinterpret_cast<const Value<egl::EGLAttrib>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLAttrib *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLAttrib *>*>(value);
+        return stream << *reinterpret_cast<const Value<double>*>(value);
     }
 
-    
-    if (typeid(*value) == typeid(Value<egl::EGLAttribKHR>))
+    if (typeid(*value) == typeid(Value<float>))
     {
-        return stream << *reinterpret_cast<const Value<egl::EGLAttribKHR>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLAttribKHR *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLAttribKHR *>*>(value);
+        return stream << *reinterpret_cast<const Value<float>*>(value);
     }
 
-    
-    if (typeid(*value) == typeid(Value<egl::EGLbitfield>))
+    if (typeid(*value) == typeid(Value<int>))
     {
-        return stream << *reinterpret_cast<const Value<egl::EGLbitfield>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLbitfield *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLbitfield *>*>(value);
+        return stream << *reinterpret_cast<const Value<int>*>(value);
     }
 
-    
-    if (typeid(*value) == typeid(Value<egl::EGLClientBuffer>))
+    if (typeid(*value) == typeid(Value<long>))
     {
-        return stream << *reinterpret_cast<const Value<egl::EGLClientBuffer>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLClientBuffer *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLClientBuffer *>*>(value);
+        return stream << *reinterpret_cast<const Value<long>*>(value);
     }
 
-    
-    if (typeid(*value) == typeid(Value<egl::EGLConfig>))
+    if (typeid(*value) == typeid(Value<long long>))
     {
-        return stream << *reinterpret_cast<const Value<egl::EGLConfig>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLConfig *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLConfig *>*>(value);
+        return stream << *reinterpret_cast<const Value<long long>*>(value);
     }
 
-    
-    if (typeid(*value) == typeid(Value<egl::EGLContext>))
+    if (typeid(*value) == typeid(Value<unsigned char>))
     {
-        return stream << *reinterpret_cast<const Value<egl::EGLContext>*>(value);
+        return stream << *reinterpret_cast<const Value<unsigned char>*>(value);
     }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLContext *>))
+
+    if (typeid(*value) == typeid(Value<unsigned int>))
     {
-        return stream << *reinterpret_cast<const Value<egl::EGLContext *>*>(value);
+        return stream << *reinterpret_cast<const Value<unsigned int>*>(value);
+    }
+
+    if (typeid(*value) == typeid(Value<unsigned long>))
+    {
+        return stream << *reinterpret_cast<const Value<unsigned long>*>(value);
+    }
+
+    if (typeid(*value) == typeid(Value<unsigned long long>))
+    {
+        return stream << *reinterpret_cast<const Value<unsigned long long>*>(value);
+    }
+if (typeid(*value) == typeid(Value<const char *>))
+    {
+        return stream << *reinterpret_cast<const Value<const char *>*>(value);
     }
 
     
@@ -239,42 +218,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<egl::EGLContextProfileMask *>))
     {
         return stream << *reinterpret_cast<const Value<egl::EGLContextProfileMask *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLDEBUGPROCKHR>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLDEBUGPROCKHR>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLDEBUGPROCKHR *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLDEBUGPROCKHR *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLDeviceEXT>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLDeviceEXT>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLDeviceEXT *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLDeviceEXT *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLDisplay>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLDisplay>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLDisplay *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLDisplay *>*>(value);
     }
 
     
@@ -314,30 +257,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     }
 
     
-    if (typeid(*value) == typeid(Value<egl::EGLImage>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLImage>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLImage *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLImage *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLImageKHR>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLImageKHR>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLImageKHR *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLImageKHR *>*>(value);
-    }
-
-    
     if (typeid(*value) == typeid(Value<egl::EGLint>))
     {
         return stream << *reinterpret_cast<const Value<egl::EGLint>*>(value);
@@ -347,18 +266,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<egl::EGLint *>))
     {
         return stream << *reinterpret_cast<const Value<egl::EGLint *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLLabelKHR>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLLabelKHR>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLLabelKHR *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLLabelKHR *>*>(value);
     }
 
     
@@ -386,18 +293,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     }
 
     
-    if (typeid(*value) == typeid(Value<egl::EGLNativeFileDescriptorKHR>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLNativeFileDescriptorKHR>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLNativeFileDescriptorKHR *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLNativeFileDescriptorKHR *>*>(value);
-    }
-
-    
     if (typeid(*value) == typeid(Value<egl::EGLNativePixmapType>))
     {
         return stream << *reinterpret_cast<const Value<egl::EGLNativePixmapType>*>(value);
@@ -422,42 +317,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     }
 
     
-    if (typeid(*value) == typeid(Value<egl::EGLObjectKHR>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLObjectKHR>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLObjectKHR *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLObjectKHR *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLOutputLayerEXT>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLOutputLayerEXT>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLOutputLayerEXT *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLOutputLayerEXT *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLOutputPortEXT>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLOutputPortEXT>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLOutputPortEXT *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLOutputPortEXT *>*>(value);
-    }
-
-    
     if (typeid(*value) == typeid(Value<egl::EGLRenderableTypeMask>))
     {
         return stream << *reinterpret_cast<const Value<egl::EGLRenderableTypeMask>*>(value);
@@ -467,30 +326,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<egl::EGLRenderableTypeMask *>))
     {
         return stream << *reinterpret_cast<const Value<egl::EGLRenderableTypeMask *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLStreamKHR>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLStreamKHR>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLStreamKHR *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLStreamKHR *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLSurface>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLSurface>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLSurface *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLSurface *>*>(value);
     }
 
     
@@ -506,18 +341,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     }
 
     
-    if (typeid(*value) == typeid(Value<egl::EGLSync>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLSync>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLSync *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLSync *>*>(value);
-    }
-
-    
     if (typeid(*value) == typeid(Value<egl::EGLSyncFlagsKHR>))
     {
         return stream << *reinterpret_cast<const Value<egl::EGLSyncFlagsKHR>*>(value);
@@ -527,102 +350,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<egl::EGLSyncFlagsKHR *>))
     {
         return stream << *reinterpret_cast<const Value<egl::EGLSyncFlagsKHR *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLSyncKHR>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLSyncKHR>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLSyncKHR *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLSyncKHR *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLSyncNV>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLSyncNV>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLSyncNV *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLSyncNV *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLTime>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLTime>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLTime *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLTime *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLTimeKHR>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLTimeKHR>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLTimeKHR *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLTimeKHR *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLTimeNV>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLTimeNV>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLTimeNV *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLTimeNV *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLuint>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLuint>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLuint *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLuint *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLuint64KHR>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLuint64KHR>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLuint64KHR *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLuint64KHR *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<egl::EGLuint64NV>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLuint64NV>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<egl::EGLuint64NV *>))
-    {
-        return stream << *reinterpret_cast<const Value<egl::EGLuint64NV *>*>(value);
     }
 
     

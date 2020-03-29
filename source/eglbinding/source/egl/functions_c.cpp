@@ -178,6 +178,11 @@ EGLSyncKHR eglCreateSyncKHR(EGLDisplay dpy, EGLenum type, const EGLint * attrib_
     return eglbinding::Binding::CreateSyncKHR(dpy, type, attrib_list);
 }
 
+wl_buffer * eglCreateWaylandBufferFromImageWL(EGLDisplay dpy, EGLImageKHR image)
+{
+    return eglbinding::Binding::CreateWaylandBufferFromImageWL(dpy, image);
+}
+
 EGLSurface eglCreateWindowSurface(EGLDisplay dpy, EGLConfig config, EGLNativeWindowType win, const EGLint * attrib_list)
 {
     return eglbinding::Binding::CreateWindowSurface(dpy, config, win, attrib_list);
