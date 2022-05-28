@@ -1,5 +1,5 @@
-ARG BASE=cginternals/cpp-base:dev
-ARG GRAPHICS_DRIVER=nvidia-driver-470
+ARG BASE=cginternals/rendering-base
+ARG BASE_DEV=cginternals/rendering-base:dev
 ARG PROJECT_NAME=eglbinding
 ARG CPPLOCATE_DEPENDENCY=cginternals/cpplocate:latest
 ARG GLBINDING_DEPENDENCY=cginternals/glbinding:latest
@@ -15,21 +15,22 @@ FROM $GLESBINDING_DEPENDENCY AS glesbinding
 
 # BUILD
 
-FROM $BASE as build
+FROM $BASE_DEV as build
 
 ARG PROJECT_NAME
 ARG COMPILER_FLAGS="-j 4"
-ARG GRAPHICS_DRIVER
 
-RUN apt install -y --no-install-recommends $GRAPHICS_DRIVER
 RUN apt install -y --no-install-recommends libegl-dev
+RUN apt install -y qt5-default
 
 COPY --from=cpplocate $WORKSPACE/cpplocate $WORKSPACE/cpplocate
 COPY --from=glbinding $WORKSPACE/glbinding $WORKSPACE/glbinding
 COPY --from=glesbinding $WORKSPACE/glesbinding $WORKSPACE/glesbinding
 
+ENV cpplocate_DIR="$WORKSPACE/cpplocate"
 ENV glbinding_DIR="$WORKSPACE/glbinding"
 ENV glesbinding_DIR="$WORKSPACE/glesbinding"
+ENV eglbinding_DIR="$WORKSPACE/$PROJECT_NAME"
 
 WORKDIR $WORKSPACE/$PROJECT_NAME
 
@@ -65,6 +66,8 @@ RUN cmake --build build --target install
 FROM $BASE AS deploy
 
 ARG PROJECT_NAME
+
+RUN apt install -y qt5-default
 
 COPY --from=build $WORKSPACE/cpplocate $WORKSPACE/cpplocate
 COPY --from=build $WORKSPACE/glbinding $WORKSPACE/glbinding

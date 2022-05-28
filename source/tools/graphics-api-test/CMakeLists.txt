@@ -98,7 +98,7 @@ target_link_libraries(${target}
     PRIVATE
     ${DEFAULT_LIBRARIES}
     
-    glm
+    glm::glm
     eglbinding::eglbinding
     eglbinding::eglbinding-aux
     glbinding::glbinding

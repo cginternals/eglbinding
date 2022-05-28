@@ -10,6 +10,8 @@
 #include <KHR/khrplatform.h>
 #include <EGL/eglplatform.h>
 
+#undef None
+
 #ifdef _MSC_VER
 #define EGL_APIENTRY __stdcall
 #else
