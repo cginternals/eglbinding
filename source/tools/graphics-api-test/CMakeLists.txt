@@ -8,7 +8,6 @@ find_package(EGL       REQUIRED)
 find_package(KHR       REQUIRED)
 find_package(glbinding REQUIRED)
 find_package(glesbinding REQUIRED)
-find_package(eglbinding REQUIRED)
 find_package(cpplocate REQUIRED)
 
 find_package(Qt5Core    5.1 REQUIRED)
@@ -99,8 +98,6 @@ target_link_libraries(${target}
     ${DEFAULT_LIBRARIES}
     
     glm::glm
-    eglbinding::eglbinding
-    eglbinding::eglbinding-aux
     glbinding::glbinding
     glbinding::glbinding-aux
     glesbinding::glesbinding
@@ -109,6 +106,8 @@ target_link_libraries(${target}
     Qt5::Core
     Qt5::Gui
     Qt5::Widgets
+    ${META_PROJECT_NAME}::eglbinding
+    ${META_PROJECT_NAME}::eglbinding-aux
 )
 
 
