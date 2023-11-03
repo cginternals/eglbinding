@@ -69,7 +69,7 @@ target_link_libraries(${target}
     ${DEFAULT_LIBRARIES}
     ${META_PROJECT_NAME}::eglbinding
     ${META_PROJECT_NAME}::eglbinding-aux
-    gmock-dev
+    googletest::googletest
 )
 
 

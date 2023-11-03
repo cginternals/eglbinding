@@ -239,7 +239,7 @@ void outputConfigs(EGLDisplay display)
 }
 
 
-int main(int argc, char * argv[])
+int main(int /*argc*/, char * /*argv*/[])
 {
     eglbinding::initialize(eglbinding::getProcAddress);
 
