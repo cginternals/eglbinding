@@ -14,6 +14,7 @@ Function<EGLBoolean, EGLDisplay, EGLStreamKHR, EGLenum, EGLAttrib> Binding::SetS
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR, EGLint, EGLint, EGLint, const void *> Binding::SetStreamMetadataNV("eglSetStreamMetadataNV");
 Function<EGLBoolean, EGLDisplay, EGLSyncKHR, EGLenum> Binding::SignalSyncKHR("eglSignalSyncKHR");
 Function<EGLBoolean, EGLSyncNV, EGLenum> Binding::SignalSyncNV("eglSignalSyncNV");
+Function<EGLBoolean, EGLDisplay, EGLStreamKHR, EGLImage *, EGLSync> Binding::StreamAcquireImageNV("eglStreamAcquireImageNV");
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR, EGLenum, EGLint> Binding::StreamAttribKHR("eglStreamAttribKHR");
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR, const EGLAttrib *> Binding::StreamConsumerAcquireAttribKHR("eglStreamConsumerAcquireAttribKHR");
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR> Binding::StreamConsumerAcquireKHR("eglStreamConsumerAcquireKHR");
@@ -23,6 +24,8 @@ Function<EGLBoolean, EGLDisplay, EGLStreamKHR, EGLOutputLayerEXT> Binding::Strea
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR, const EGLAttrib *> Binding::StreamConsumerReleaseAttribKHR("eglStreamConsumerReleaseAttribKHR");
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR> Binding::StreamConsumerReleaseKHR("eglStreamConsumerReleaseKHR");
 Function<EGLBoolean, EGLDisplay, EGLStreamKHR> Binding::StreamFlushNV("eglStreamFlushNV");
+Function<EGLBoolean, EGLDisplay, EGLStreamKHR, EGLint, const EGLuint64KHR *, const EGLAttrib *> Binding::StreamImageConsumerConnectNV("eglStreamImageConsumerConnectNV");
+Function<EGLBoolean, EGLDisplay, EGLStreamKHR, EGLImage, EGLSync> Binding::StreamReleaseImageNV("eglStreamReleaseImageNV");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, EGLint> Binding::SurfaceAttrib("eglSurfaceAttrib");
 Function<EGLBoolean, EGLDisplay, EGLSurface> Binding::SwapBuffers("eglSwapBuffers");
 Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint, const EGLint *> Binding::SwapBuffersRegion2NOK("eglSwapBuffersRegion2NOK");

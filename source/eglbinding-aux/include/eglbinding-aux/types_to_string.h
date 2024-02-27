@@ -16,8 +16,8 @@ namespace egl
 {
 
 
-EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLBoolean & value);
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLenum & value);
+EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLBoolean & value);
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLextension & value);
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLContextFlagMask & value);
 EGLBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const EGLContextProfileMask & value);

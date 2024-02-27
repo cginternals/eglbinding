@@ -28,6 +28,11 @@ EGLBoolean eglQueryDeviceAttribEXT(EGLDeviceEXT device, EGLint attribute, EGLAtt
     return eglbinding::Binding::QueryDeviceAttribEXT(device, attribute, value);
 }
 
+EGLBoolean eglQueryDeviceBinaryEXT(EGLDeviceEXT device, EGLint name, EGLint max_size, void * value, EGLint * size)
+{
+    return eglbinding::Binding::QueryDeviceBinaryEXT(device, name, max_size, value, size);
+}
+
 EGLBoolean eglQueryDevicesEXT(EGLint max_devices, EGLDeviceEXT * devices, EGLint * num_devices)
 {
     return eglbinding::Binding::QueryDevicesEXT(max_devices, devices, num_devices);
@@ -103,6 +108,11 @@ EGLBoolean eglQueryStreamAttribKHR(EGLDisplay dpy, EGLStreamKHR stream, EGLenum 
     return eglbinding::Binding::QueryStreamAttribKHR(dpy, stream, attribute, value);
 }
 
+EGLint eglQueryStreamConsumerEventNV(EGLDisplay dpy, EGLStreamKHR stream, EGLTime timeout, EGLenum * event, EGLAttrib * aux)
+{
+    return eglbinding::Binding::QueryStreamConsumerEventNV(dpy, stream, timeout, event, aux);
+}
+
 EGLBoolean eglQueryStreamKHR(EGLDisplay dpy, EGLStreamKHR stream, EGLenum attribute, EGLint * value)
 {
     return eglbinding::Binding::QueryStreamKHR(dpy, stream, attribute, value);
@@ -126,6 +136,11 @@ EGLBoolean eglQueryStreamu64KHR(EGLDisplay dpy, EGLStreamKHR stream, EGLenum att
 const char * eglQueryString(EGLDisplay dpy, EGLint name)
 {
     return eglbinding::Binding::QueryString(dpy, name);
+}
+
+EGLBoolean eglQuerySupportedCompressionRatesEXT(EGLDisplay dpy, EGLConfig config, const EGLAttrib * attrib_list, EGLint * rates, EGLint rate_size, EGLint * num_rates)
+{
+    return eglbinding::Binding::QuerySupportedCompressionRatesEXT(dpy, config, attrib_list, rates, rate_size, num_rates);
 }
 
 EGLBoolean eglQuerySurface(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLint * value)

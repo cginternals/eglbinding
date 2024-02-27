@@ -33,6 +33,11 @@ EGLBoolean eglSignalSyncNV(EGLSyncNV sync, EGLenum mode)
     return eglbinding::Binding::SignalSyncNV(sync, mode);
 }
 
+EGLBoolean eglStreamAcquireImageNV(EGLDisplay dpy, EGLStreamKHR stream, EGLImage * pImage, EGLSync sync)
+{
+    return eglbinding::Binding::StreamAcquireImageNV(dpy, stream, pImage, sync);
+}
+
 EGLBoolean eglStreamAttribKHR(EGLDisplay dpy, EGLStreamKHR stream, EGLenum attribute, EGLint value)
 {
     return eglbinding::Binding::StreamAttribKHR(dpy, stream, attribute, value);
@@ -76,6 +81,16 @@ EGLBoolean eglStreamConsumerReleaseKHR(EGLDisplay dpy, EGLStreamKHR stream)
 EGLBoolean eglStreamFlushNV(EGLDisplay dpy, EGLStreamKHR stream)
 {
     return eglbinding::Binding::StreamFlushNV(dpy, stream);
+}
+
+EGLBoolean eglStreamImageConsumerConnectNV(EGLDisplay dpy, EGLStreamKHR stream, EGLint num_modifiers, const EGLuint64KHR * modifiers, const EGLAttrib * attrib_list)
+{
+    return eglbinding::Binding::StreamImageConsumerConnectNV(dpy, stream, num_modifiers, modifiers, attrib_list);
+}
+
+EGLBoolean eglStreamReleaseImageNV(EGLDisplay dpy, EGLStreamKHR stream, EGLImage image, EGLSync sync)
+{
+    return eglbinding::Binding::StreamReleaseImageNV(dpy, stream, image, sync);
 }
 
 EGLBoolean eglSurfaceAttrib(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLint value)

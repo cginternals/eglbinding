@@ -30,6 +30,7 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_A =
     { "EGL_ANGLE_device_d3d", EGLextension::EGL_ANGLE_device_d3d },
     { "EGL_ANGLE_query_surface_pointer", EGLextension::EGL_ANGLE_query_surface_pointer },
     { "EGL_ANGLE_surface_d3d_texture_2d_share_handle", EGLextension::EGL_ANGLE_surface_d3d_texture_2d_share_handle },
+    { "EGL_ANGLE_sync_control_rate", EGLextension::EGL_ANGLE_sync_control_rate },
     { "EGL_ANGLE_window_fixed_size", EGLextension::EGL_ANGLE_window_fixed_size },
     { "EGL_ARM_image_format", EGLextension::EGL_ARM_image_format },
     { "EGL_ARM_implicit_external_sync", EGLextension::EGL_ARM_implicit_external_sync },
@@ -49,12 +50,18 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_E =
     { "EGL_EXT_client_extensions", EGLextension::EGL_EXT_client_extensions },
     { "EGL_EXT_client_sync", EGLextension::EGL_EXT_client_sync },
     { "EGL_EXT_compositor", EGLextension::EGL_EXT_compositor },
+    { "EGL_EXT_config_select_group", EGLextension::EGL_EXT_config_select_group },
     { "EGL_EXT_create_context_robustness", EGLextension::EGL_EXT_create_context_robustness },
     { "EGL_EXT_device_base", EGLextension::EGL_EXT_device_base },
     { "EGL_EXT_device_drm", EGLextension::EGL_EXT_device_drm },
+    { "EGL_EXT_device_drm_render_node", EGLextension::EGL_EXT_device_drm_render_node },
     { "EGL_EXT_device_enumeration", EGLextension::EGL_EXT_device_enumeration },
     { "EGL_EXT_device_openwf", EGLextension::EGL_EXT_device_openwf },
+    { "EGL_EXT_device_persistent_id", EGLextension::EGL_EXT_device_persistent_id },
     { "EGL_EXT_device_query", EGLextension::EGL_EXT_device_query },
+    { "EGL_EXT_device_query_name", EGLextension::EGL_EXT_device_query_name },
+    { "EGL_EXT_explicit_device", EGLextension::EGL_EXT_explicit_device },
+    { "EGL_EXT_gl_colorspace_bt2020_hlg", EGLextension::EGL_EXT_gl_colorspace_bt2020_hlg },
     { "EGL_EXT_gl_colorspace_bt2020_linear", EGLextension::EGL_EXT_gl_colorspace_bt2020_linear },
     { "EGL_EXT_gl_colorspace_bt2020_pq", EGLextension::EGL_EXT_gl_colorspace_bt2020_pq },
     { "EGL_EXT_gl_colorspace_display_p3", EGLextension::EGL_EXT_gl_colorspace_display_p3 },
@@ -75,9 +82,13 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_E =
     { "EGL_EXT_platform_device", EGLextension::EGL_EXT_platform_device },
     { "EGL_EXT_platform_wayland", EGLextension::EGL_EXT_platform_wayland },
     { "EGL_EXT_platform_x11", EGLextension::EGL_EXT_platform_x11 },
+    { "EGL_EXT_platform_xcb", EGLextension::EGL_EXT_platform_xcb },
+    { "EGL_EXT_present_opaque", EGLextension::EGL_EXT_present_opaque },
     { "EGL_EXT_protected_content", EGLextension::EGL_EXT_protected_content },
     { "EGL_EXT_protected_surface", EGLextension::EGL_EXT_protected_surface },
+    { "EGL_EXT_query_reset_notification_strategy", EGLextension::EGL_EXT_query_reset_notification_strategy },
     { "EGL_EXT_stream_consumer_egloutput", EGLextension::EGL_EXT_stream_consumer_egloutput },
+    { "EGL_EXT_surface_compression", EGLextension::EGL_EXT_surface_compression },
     { "EGL_EXT_surface_CTA861_3_metadata", EGLextension::EGL_EXT_surface_CTA861_3_metadata },
     { "EGL_EXT_surface_SMPTE2086_metadata", EGLextension::EGL_EXT_surface_SMPTE2086_metadata },
     { "EGL_EXT_swap_buffers_with_damage", EGLextension::EGL_EXT_swap_buffers_with_damage },
@@ -176,6 +187,8 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_N =
     { "EGL_NV_post_sub_buffer", EGLextension::EGL_NV_post_sub_buffer },
     { "EGL_NV_quadruple_buffer", EGLextension::EGL_NV_quadruple_buffer },
     { "EGL_NV_robustness_video_memory_purge", EGLextension::EGL_NV_robustness_video_memory_purge },
+    { "EGL_NV_stream_consumer_eglimage", EGLextension::EGL_NV_stream_consumer_eglimage },
+    { "EGL_NV_stream_consumer_eglimage_use_scanout_attrib", EGLextension::EGL_NV_stream_consumer_eglimage_use_scanout_attrib },
     { "EGL_NV_stream_consumer_gltexture_yuv", EGLextension::EGL_NV_stream_consumer_gltexture_yuv },
     { "EGL_NV_stream_cross_display", EGLextension::EGL_NV_stream_cross_display },
     { "EGL_NV_stream_cross_object", EGLextension::EGL_NV_stream_cross_object },
@@ -204,7 +217,11 @@ const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_O{};
 
 const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_P{};
 
-const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_Q{};
+const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_Q =
+{
+    { "EGL_QNX_image_native_buffer", EGLextension::EGL_QNX_image_native_buffer },
+    { "EGL_QNX_platform_screen", EGLextension::EGL_QNX_platform_screen }
+};
 
 const std::unordered_map<std::string, EGLextension> Meta_ExtensionsByString_R{};
 

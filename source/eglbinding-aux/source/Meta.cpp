@@ -75,13 +75,13 @@ std::vector<EGLbitfield> Meta::bitfields()
     return bitfields;    
 }
 
-std::vector<EGLenum> Meta::enums()
+std::set<EGLenum> Meta::enums()
 {
-    auto enums = std::vector<EGLenum>{};
+    auto enums = std::set<EGLenum>{};
 
     for (const auto & p : Meta_StringsByEnum)
     {
-        enums.push_back(p.first);
+        enums.insert(p.first);
     }
 
     return enums;

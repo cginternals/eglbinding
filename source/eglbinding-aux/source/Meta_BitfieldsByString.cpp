@@ -62,7 +62,7 @@ const std::unordered_map<std::string, EGLbitfield> Meta_BitfieldsByString_M =
 
 const std::unordered_map<std::string, EGLbitfield> Meta_BitfieldsByString_N =
 {
-    { "EGL_NONE_BIT", static_cast<EGLbitfield>(EGLSurfaceTypeMask::EGL_NONE_BIT) },
+    { "EGL_NONE_BIT", static_cast<EGLbitfield>(EGLContextFlagMask::EGL_NONE_BIT) },
     { "GL_UNUSED_BIT", static_cast<EGLbitfield>(UnusedMask::GL_UNUSED_BIT) }
 };
 

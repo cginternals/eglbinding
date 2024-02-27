@@ -18,6 +18,7 @@ Function<EGLDisplay, EGLNativeDisplayType> Binding::GetDisplay("eglGetDisplay");
 Function<char *, EGLDisplay> Binding::GetDisplayDriverConfig("eglGetDisplayDriverConfig");
 Function<const char *, EGLDisplay> Binding::GetDisplayDriverName("eglGetDisplayDriverName");
 Function<EGLint> Binding::GetError("eglGetError");
+Function<EGLBoolean, EGLDisplay, EGLSurface, EGLint *, EGLint *> Binding::GetMscRateANGLE("eglGetMscRateANGLE");
 Function<EGLBoolean, EGLDisplay, const EGLAttrib *, EGLOutputLayerEXT *, EGLint, EGLint *> Binding::GetOutputLayersEXT("eglGetOutputLayersEXT");
 Function<EGLBoolean, EGLDisplay, const EGLAttrib *, EGLOutputPortEXT *, EGLint, EGLint *> Binding::GetOutputPortsEXT("eglGetOutputPortsEXT");
 Function<EGLDisplay, EGLenum, void *, const EGLAttrib *> Binding::GetPlatformDisplay("eglGetPlatformDisplay");

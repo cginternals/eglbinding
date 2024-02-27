@@ -60,11 +60,11 @@ public:
     *  @brief
     *    The callback type of a function log callback with parameters and return value
     */
-    using FunctionLogCallback = std::function<void(FunctionCall *)>;
+    using FunctionLogCallback = std::function<void(FunctionCall &&)>;
 
     using ContextSwitchCallback = std::function<void(ContextHandle)>;   ///< The signature of the context switch callback
     
-    using array_t = std::array<AbstractFunction *, 140>; ///< The type of the build-in functions collection
+    using array_t = std::array<AbstractFunction *, 147>; ///< The type of the build-in functions collection
 
 
 public:
@@ -506,6 +506,7 @@ public:
     static Function<char *, egl::EGLDisplay> GetDisplayDriverConfig; ///< Wrapper for eglGetDisplayDriverConfig
     static Function<const char *, egl::EGLDisplay> GetDisplayDriverName; ///< Wrapper for eglGetDisplayDriverName
     static Function<EGLint> GetError; ///< Wrapper for eglGetError
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, egl::EGLint *, egl::EGLint *> GetMscRateANGLE; ///< Wrapper for eglGetMscRateANGLE
     static Function<egl::EGLBoolean, egl::EGLDisplay, const egl::EGLAttrib *, egl::EGLOutputLayerEXT *, EGLint, egl::EGLint *> GetOutputLayersEXT; ///< Wrapper for eglGetOutputLayersEXT
     static Function<egl::EGLBoolean, egl::EGLDisplay, const egl::EGLAttrib *, egl::EGLOutputPortEXT *, EGLint, egl::EGLint *> GetOutputPortsEXT; ///< Wrapper for eglGetOutputPortsEXT
     static Function<egl::EGLDisplay, egl::EGLenum, void *, const egl::EGLAttrib *> GetPlatformDisplay; ///< Wrapper for eglGetPlatformDisplay
@@ -528,6 +529,7 @@ public:
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLContext, EGLint, egl::EGLint *> QueryContext; ///< Wrapper for eglQueryContext
     static Function<egl::EGLBoolean, EGLint, egl::EGLAttrib *> QueryDebugKHR; ///< Wrapper for eglQueryDebugKHR
     static Function<egl::EGLBoolean, egl::EGLDeviceEXT, EGLint, egl::EGLAttrib *> QueryDeviceAttribEXT; ///< Wrapper for eglQueryDeviceAttribEXT
+    static Function<egl::EGLBoolean, egl::EGLDeviceEXT, EGLint, EGLint, void *, egl::EGLint *> QueryDeviceBinaryEXT; ///< Wrapper for eglQueryDeviceBinaryEXT
     static Function<egl::EGLBoolean, EGLint, egl::EGLDeviceEXT *, egl::EGLint *> QueryDevicesEXT; ///< Wrapper for eglQueryDevicesEXT
     static Function<const char *, egl::EGLDeviceEXT, EGLint> QueryDeviceStringEXT; ///< Wrapper for eglQueryDeviceStringEXT
     static Function<egl::EGLBoolean, egl::EGLDisplay, EGLint, egl::EGLAttrib *> QueryDisplayAttribEXT; ///< Wrapper for eglQueryDisplayAttribEXT
@@ -543,11 +545,13 @@ public:
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLOutputPortEXT, EGLint, egl::EGLAttrib *> QueryOutputPortAttribEXT; ///< Wrapper for eglQueryOutputPortAttribEXT
     static Function<const char *, egl::EGLDisplay, egl::EGLOutputPortEXT, EGLint> QueryOutputPortStringEXT; ///< Wrapper for eglQueryOutputPortStringEXT
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, egl::EGLenum, egl::EGLAttrib *> QueryStreamAttribKHR; ///< Wrapper for eglQueryStreamAttribKHR
+    static Function<EGLint, egl::EGLDisplay, egl::EGLStreamKHR, egl::EGLTime, egl::EGLenum *, egl::EGLAttrib *> QueryStreamConsumerEventNV; ///< Wrapper for eglQueryStreamConsumerEventNV
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, egl::EGLenum, egl::EGLint *> QueryStreamKHR; ///< Wrapper for eglQueryStreamKHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, egl::EGLenum, EGLint, EGLint, EGLint, void *> QueryStreamMetadataNV; ///< Wrapper for eglQueryStreamMetadataNV
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, egl::EGLenum, egl::EGLTimeKHR *> QueryStreamTimeKHR; ///< Wrapper for eglQueryStreamTimeKHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, egl::EGLenum, egl::EGLuint64KHR *> QueryStreamu64KHR; ///< Wrapper for eglQueryStreamu64KHR
     static Function<const char *, egl::EGLDisplay, EGLint> QueryString; ///< Wrapper for eglQueryString
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLConfig, const egl::EGLAttrib *, egl::EGLint *, EGLint, egl::EGLint *> QuerySupportedCompressionRatesEXT; ///< Wrapper for eglQuerySupportedCompressionRatesEXT
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint, egl::EGLint *> QuerySurface; ///< Wrapper for eglQuerySurface
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint, egl::EGLAttribKHR *> QuerySurface64KHR; ///< Wrapper for eglQuerySurface64KHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint, void **> QuerySurfacePointerANGLE; ///< Wrapper for eglQuerySurfacePointerANGLE
@@ -560,6 +564,7 @@ public:
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, EGLint, EGLint, EGLint, const void *> SetStreamMetadataNV; ///< Wrapper for eglSetStreamMetadataNV
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSyncKHR, egl::EGLenum> SignalSyncKHR; ///< Wrapper for eglSignalSyncKHR
     static Function<egl::EGLBoolean, egl::EGLSyncNV, egl::EGLenum> SignalSyncNV; ///< Wrapper for eglSignalSyncNV
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, egl::EGLImage *, egl::EGLSync> StreamAcquireImageNV; ///< Wrapper for eglStreamAcquireImageNV
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, egl::EGLenum, EGLint> StreamAttribKHR; ///< Wrapper for eglStreamAttribKHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, const egl::EGLAttrib *> StreamConsumerAcquireAttribKHR; ///< Wrapper for eglStreamConsumerAcquireAttribKHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR> StreamConsumerAcquireKHR; ///< Wrapper for eglStreamConsumerAcquireKHR
@@ -569,6 +574,8 @@ public:
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, const egl::EGLAttrib *> StreamConsumerReleaseAttribKHR; ///< Wrapper for eglStreamConsumerReleaseAttribKHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR> StreamConsumerReleaseKHR; ///< Wrapper for eglStreamConsumerReleaseKHR
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR> StreamFlushNV; ///< Wrapper for eglStreamFlushNV
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, EGLint, const egl::EGLuint64KHR *, const egl::EGLAttrib *> StreamImageConsumerConnectNV; ///< Wrapper for eglStreamImageConsumerConnectNV
+    static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLStreamKHR, egl::EGLImage, egl::EGLSync> StreamReleaseImageNV; ///< Wrapper for eglStreamReleaseImageNV
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint, EGLint> SurfaceAttrib; ///< Wrapper for eglSurfaceAttrib
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface> SwapBuffers; ///< Wrapper for eglSwapBuffers
     static Function<egl::EGLBoolean, egl::EGLDisplay, egl::EGLSurface, EGLint, const egl::EGLint *> SwapBuffersRegion2NOK; ///< Wrapper for eglSwapBuffersRegion2NOK

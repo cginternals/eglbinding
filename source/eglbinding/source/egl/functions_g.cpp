@@ -53,6 +53,11 @@ EGLint eglGetError()
     return eglbinding::Binding::GetError();
 }
 
+EGLBoolean eglGetMscRateANGLE(EGLDisplay dpy, EGLSurface surface, EGLint * numerator, EGLint * denominator)
+{
+    return eglbinding::Binding::GetMscRateANGLE(dpy, surface, numerator, denominator);
+}
+
 EGLBoolean eglGetOutputLayersEXT(EGLDisplay dpy, const EGLAttrib * attrib_list, EGLOutputLayerEXT * layers, EGLint max_layers, EGLint * num_layers)
 {
     return eglbinding::Binding::GetOutputLayersEXT(dpy, attrib_list, layers, max_layers, num_layers);

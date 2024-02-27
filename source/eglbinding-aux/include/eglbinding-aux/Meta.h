@@ -103,7 +103,7 @@ public:
     *  @return
     *    The list of all enums known by the egl.xml
     */
-    static std::vector<egl::EGLenum> enums();
+    static std::set<egl::EGLenum> enums();
 
     /**
     *  @brief
@@ -357,9 +357,24 @@ public:
     *    The enum value
     *
     *  @return
-    *    The string representation of the value
+    *    The shortest string representation of the value
+    *
+    *  @remark
+    *    Beware, that some enums in the API have different symbol names but identical enum values and that this function cannot differentiate between them
     */
     static const std::string & getString(egl::EGLenum eglenum);
+
+    /**
+    *  @brief
+    *    Convert enum to symbol name string representation
+    *
+    *  @param[in] enum
+    *    The enum value
+    *
+    *  @return
+    *    All string representations of the value
+    */
+    static std::vector<std::string> getStrings(egl::EGLenum eglenum);
 
 
 private:

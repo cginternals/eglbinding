@@ -110,7 +110,7 @@ EGLBINDING_CONSTEXPR static const EGLDRMBufferUseMESAMask EGL_DRM_BUFFER_USE_SHA
 EGLBINDING_CONSTEXPR static const EGLSurfaceTypeMask EGL_LOCK_SURFACE_BIT_KHR = EGLSurfaceTypeMask::EGL_LOCK_SURFACE_BIT_KHR;
 EGLBINDING_CONSTEXPR static const EGLSurfaceTypeMask EGL_MULTISAMPLE_RESOLVE_BOX_BIT = EGLSurfaceTypeMask::EGL_MULTISAMPLE_RESOLVE_BOX_BIT;
 EGLBINDING_CONSTEXPR static const EGLSurfaceTypeMask EGL_MUTABLE_RENDER_BUFFER_BIT_KHR = EGLSurfaceTypeMask::EGL_MUTABLE_RENDER_BUFFER_BIT_KHR;
-EGLBINDING_CONSTEXPR static const eglbinding::SharedBitfield<EGLContextFlagMask, EGLContextProfileMask, EGLDRMBufferUseMESAMask, EGLLockUsageHintKHRMask, EGLRenderableTypeMask, EGLSurfaceTypeMask, EGLSyncFlagsKHR> EGL_NONE_BIT = EGLSurfaceTypeMask::EGL_NONE_BIT;
+EGLBINDING_CONSTEXPR static const eglbinding::SharedBitfield<EGLContextFlagMask, EGLContextProfileMask, EGLDRMBufferUseMESAMask, EGLLockUsageHintKHRMask, EGLRenderableTypeMask, EGLSurfaceTypeMask, EGLSyncFlagsKHR> EGL_NONE_BIT = EGLContextFlagMask::EGL_NONE_BIT;
 EGLBINDING_CONSTEXPR static const EGLRenderableTypeMask EGL_OPENGL_BIT = EGLRenderableTypeMask::EGL_OPENGL_BIT;
 EGLBINDING_CONSTEXPR static const EGLRenderableTypeMask EGL_OPENGL_ES2_BIT = EGLRenderableTypeMask::EGL_OPENGL_ES2_BIT;
 EGLBINDING_CONSTEXPR static const EGLRenderableTypeMask EGL_OPENGL_ES3_BIT = EGLRenderableTypeMask::EGL_OPENGL_ES3_BIT;

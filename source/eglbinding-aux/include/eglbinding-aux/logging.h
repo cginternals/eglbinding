@@ -98,7 +98,7 @@ EGLBINDING_AUX_API void resume();
 *  @remarks
 *    This function is intended to get used by glbinding and not by a user of glbinding
 */
-EGLBINDING_AUX_API void log(LogEntry call);
+EGLBINDING_AUX_API void log(FunctionCall && call);
 
 
 } } // namespace eglbinding::aux
